@@ -18,9 +18,9 @@ namespace Saltandsands
 		"coralbrain-blue", "coralbrain-green", "coralbrain-red", "coralbrain-yellow",
 		"coralfan-blue", "coralfan-orange", "coralfan-purple", "coralfan-red", "coralfan-violet", "coralfan-yellow", 
 		"coralstaghorn-blue", "coralstaghorn-orange", "coralstaghorn-purple", "coralstaghorn-yellow", 
-		"coraltable-brown", "coraltable-gray", "coraltable-green", 
+		"coraltable-brown", "coraltable-gray", "coraltable-green", "coraltable-red", 
 		"coraltube-blue", "coraltube-orange", "coraltube-pink", "coraltube-purple", "coraltube-red", "coraltube-yellow" };
-		private AssetLocation[23] coralTypes;
+		private AssetLocation[24] coralTypes;
 
         public override void OnLoaded(ICoreAPI api)
         {
