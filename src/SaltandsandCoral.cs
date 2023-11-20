@@ -13,6 +13,7 @@ namespace Saltandsands
     {
         public ICoreAPI Api => api;
         private int maxDepth;
+        private string waterCode;
         private int minDepth;
 		public string[] coralStrings = new string[] { 
 		"coralbrain-blue", "coralbrain-green", "coralbrain-red", "coralbrain-yellow",
@@ -20,21 +21,24 @@ namespace Saltandsands
 		"coralstaghorn-blue", "coralstaghorn-orange", "coralstaghorn-purple", "coralstaghorn-yellow", 
 		"coraltable-brown", "coraltable-gray", "coraltable-green", "coraltable-red", 
 		"coraltube-blue", "coraltube-orange", "coraltube-pink", "coraltube-purple", "coraltube-red", "coraltube-yellow" };
-		private AssetLocation[24] coralTypes;
+		private AssetLocation[] coralTypes = new AssetLocation[24];
 
         public override void OnLoaded(ICoreAPI api)
         {
             base.OnLoaded(api);
-			if (this.Attributes["maxDepth"].Exists & this.Attributes["minDepth"].Exists & this.Attributes["waterCode"].Exists) 
+			if (Attributes["maxDepth"].Exists & Attributes["minDepth"].Exists & Attributes["waterCode"].Exists) 
 			{
-				minDepth = this.Attributes["minDepth"].AsInt(2);
-				maxDepth = this.Attributes["maxDepth"].AsInt(6);
-				waterCode = this.Attributes["waterCode"].AsString("saltwater");
+				minDepth = Attributes["minDepth"].AsInt(2);
+				maxDepth = Attributes["maxDepth"].AsInt(6);
+				waterCode = Attributes["waterCode"].AsString("saltwater");
 			}
 			// Get asset locations for coral blocks using coralStrings
 			for (var i = 0; i <= coralStrings.Length; i++)
 			{
-				coralTypes[i] = Api.World.GetBlock(new AssetLocation(Block.Code.Domain + ":" + coralStrings[i]));
+                //coralTypes[i] = Api.World.GetBlock(new AssetLocation(Code.Domain + ":" + coralStrings[i]));
+                /* You can't use Assetlocation to return a block it won't let you so I changed it too this > */
+                coralTypes[i] = new AssetLocation(Code.Domain + ":" + coralStrings[i]);
+               
 			}
 			
 			//coralTypes = this.Attributes["coralTypes"].AsString();
@@ -87,7 +91,7 @@ namespace Saltandsands
 							int rnd = worldGenRand.NextInt(coralTypes.Length-1);
 							Block coralPlacingBlock = api.World.GetBlock(coralTypes[rnd]);
 							blockAccessor.SetBlock(coralPlacingBlock.Id, pos.DownCopy(currentDepth));
-							Api.World.Logger.Notification("Placed coral substrate and coral block successfully!, depth: {0}, coral type: {1}, coral code: {2}",waterCode,coralStrings[rnd],coralTypes[rnd].Code);
+							Api.World.Logger.Notification($"Placed coral substrate and coral block successfully!, depth: {waterCode}, coral type: {coralStrings[rnd]}, coral code: {coralTypes[rnd]}"); // Not sure what you are trying to do here.
 							return true;
 						}
 						else

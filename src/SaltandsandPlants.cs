@@ -13,15 +13,19 @@ namespace Saltandsands
     {
         public ICoreAPI Api => api;
         private int maxDepth;
+        private string waterCode;
         private int minDepth;
 
 
         public override void OnLoaded(ICoreAPI api)
         {
             base.OnLoaded(api);
-            minDepth = this.Attributes["minDepth"].AsInt(2);
-            maxDepth = this.Attributes["maxDepth"].AsInt(6);
-			waterCode = this.Attributes["waterCode"].AsString();
+            if (Attributes["maxDepth"].Exists & Attributes["minDepth"].Exists & Attributes["waterCode"].Exists)
+            {
+                minDepth = Attributes["minDepth"].AsInt(2);
+                maxDepth = Attributes["maxDepth"].AsInt(6);
+                waterCode = Attributes["waterCode"].AsString();
+            }
 
         }
 

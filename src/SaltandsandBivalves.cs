@@ -14,24 +14,11 @@ using System.Text;
 
 namespace Saltandsands
 {
-
-     public class Core : ModSystem
-    { 
-        public override void Start(ICoreAPI api)
-        {
-            base.Start(api);
-
-            api.RegisterItemClass("Bivalve",typeof(ItemBivalve));
-            api.RegisterItemClass("Livebivalve",typeof(ItemLiveBivalve));
-            api.RegisterBlockClass("BlockBivalve", typeof(BlockBivalve));
-            api.RegisterBlockClass("BlockSASWaterPlant", typeof(BlockSASWaterPlant));
-        }
-    }
-
     public class BlockBivalve : BlockPlant
     {
         public ICoreAPI Api => api;
         private int maxDepth;
+        private string waterCode;
         private int minDepth;
 		WorldInteraction[] interactions = null;
 
@@ -39,9 +26,13 @@ namespace Saltandsands
         public override void OnLoaded(ICoreAPI api)
         {
             base.OnLoaded(api);
-            minDepth = this.Attributes["minDepth"].AsInt(2);
-            maxDepth = this.Attributes["maxDepth"].AsInt(6);
-			waterCode = this.Attributes["waterCode"].AsString();
+            if (Attributes["maxDepth"].Exists & Attributes["minDepth"].Exists & Attributes["waterCode"].Exists)
+            {
+                minDepth = Attributes["minDepth"].AsInt(2);
+                maxDepth = Attributes["maxDepth"].AsInt(6);
+                waterCode = Attributes["waterCode"].AsString();
+            }
+    
 			
 			//string hab = Variant["habitat"];
             //if (hab == "water") habitatBlockCode = "water-still-7";
@@ -129,8 +120,7 @@ namespace Saltandsands
             }
             else
             {
-                float mul;
-                if (itemslot.Itemstack.Collectible.MiningSpeed.TryGetValue(EnumBlockMaterial.Plant, out mul)) dt *= mul;
+                if (itemslot.Itemstack.Collectible.MiningSpeed.TryGetValue(EnumBlockMaterial.Plant, out float mul)) dt *= mul;
             }
 
             float resistance = RequiredMiningTier == 0 ? remainingResistance - dt : remainingResistance;
@@ -192,6 +182,7 @@ namespace Saltandsands
         ItemStack[] rareProcessingResultStacks;
         double[] rareProcessingResultChances;
 		bool[] isRareResultExclusive;
+        //private object pstack; not being used
 
         public override void OnLoaded(ICoreAPI api)
         {
@@ -213,10 +204,10 @@ namespace Saltandsands
                 if (jstack.ResolvedItemstack != null)
                 {
                     stacklist.Add(jstack.ResolvedItemstack);
-                    api.Logger.Error("Resolved processing result #{0}: {1}",i+1,jstack.ResolvedItemstack.GetName());
+                    api.Logger.Error("Resolved processing result #{0}: {1}", i+1 , jstack.ResolvedItemstack.GetName());
                 } else
                 {
-                    api.Logger.Error("Failed to resolve processing result #{0}: {1}!",i+1,pstack[i].Code.ToString());
+                    api.Logger.Error("Failed to resolve processing result #{0}: {1}!", i+1 , pstacks[i].Code.ToString());
                 }
             }
             api.Logger.Error("Completed processing results!");
@@ -229,7 +220,7 @@ namespace Saltandsands
             }
             else
             {
-                api.Logger.Error("No processing results, is item configured properly?")
+                api.Logger.Error("No processing results, is item configured properly?");
             }
             api.Logger.Error("Resolving rare processing results...");
             JsonItemStack[] rstacks = Attributes["rareProcessingResultStacks"].AsObject<JsonItemStack[]>();
