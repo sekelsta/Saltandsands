@@ -397,6 +397,8 @@ namespace Saltandsands
                    
                     slot.TakeOut(1);
                     slot.MarkDirty();
+					
+					return;
                 } else
                 {
                     slot.Itemstack.TempAttributes.SetBool("consumed", true);
