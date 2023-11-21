@@ -9,7 +9,7 @@ using Vintagestory.API.Common.Entities;
 
 namespace Saltandsands
 {
-    public class BlockSASCoralSubstrate : BlockPlant
+    public class BlockSASCoralSubstrate : Block
     {
         public ICoreAPI Api => api;
         private int maxDepth;
