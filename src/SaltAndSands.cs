@@ -15,6 +15,7 @@ namespace Saltandsands
             api.RegisterItemClass("Livebivalve",typeof(ItemLiveBivalve));
             api.RegisterBlockClass("BlockBivalve", typeof(BlockBivalve));
             api.RegisterBlockClass("BlockSASWaterPlant", typeof(BlockSASWaterPlant));
+            api.RegisterBlockClass("BlockSASCoralSubstrate", typeof(BlockSASCoralSubstrate));
         }
     }
 }
