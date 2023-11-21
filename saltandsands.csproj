@@ -31,6 +31,9 @@
 	<!-- </Reference> -->
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="src\Saltandsand.cs" />
+  </ItemGroup>
+  <ItemGroup>
     <Compile Include="src\SaltandsandBivalves.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -46,4 +49,6 @@
       copy "$(TargetDir)\$(TargetName).pdb" "$(ProjectDir)" 
     </PostBuildEvent>
   </PropertyGroup>
+</Project>
+
 </Project>
