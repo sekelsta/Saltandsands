@@ -56,7 +56,7 @@ namespace Saltandsands
                 return false;
             }
 
-            Block belowBlock = blockAccessor.GetBlock(pos.X, pos.Y - 1, pos.Z);
+            Block aboveBlock = blockAccessor.GetBlock(pos.X, pos.Y + 1, pos.Z);
 
 			/*
             if (belowBlock.Fertility > 0 && minDepth == 0)
@@ -69,37 +69,47 @@ namespace Saltandsands
             }
 			*/
 			
-            if(belowBlock.LiquidCode == waterCode)
+            if(aboveBlock.LiquidCode == waterCode)
             {
-				if(belowBlock.LiquidCode != waterCode) return false;
+
+				int rnd = worldGenRand.NextInt(coralTypes.Length-1);
+							
+				Block coralPlacingBlock = blockAccessor.GetBlock(coralTypes[rnd]);
+				blockAccessor.SetBlock(coralPlacingBlock.Id, pos.Up());
+				Api.World.Logger.Error("Placed coral substrate at depth {0}, coral type: {1}, coral code: {2}!",currentDepth,coralStrings[rnd],coralTypes[rnd]);
+				/*
                 for(var currentDepth = 1; currentDepth <= maxDepth + 1; currentDepth ++)
                 {
-                    belowBlock = blockAccessor.GetBlock(pos.X, pos.Y - currentDepth, pos.Z);
-                    if (belowBlock.Fertility > 0)
-                    {
+                    aboveBlock = blockAccessor.GetBlock(pos.X, pos.Y + currentDepth, pos.Z);
+					if(currentDepth < minDepth + 1) return false;
+					//if(aboveBlock.LiquidCode != waterCode) return false;
+				}
+                    //if (aboveBlock.Fertility > 0)
+                    //{
 						Block aboveBlock = blockAccessor.GetBlock(pos.X, pos.Y - currentDepth + 1, pos.Z);
                         if(aboveBlock.LiquidCode != waterCode) return false;
-                        //if(currentDepth < minDepth + 1) return false;
+						if(currentDepth < minDepth + 1) return false;
 						Api.World.Logger.Notification("Attempting to place coral substrate on lake/seabed, watercode: {0}, depth: {1}",waterCode,currentDepth);
-                        Block placingBlock = blockAccessor.GetBlock(Code);
-                        if (placingBlock == null) return false;
 
 						if (blockAccessor.GetBlock(pos).Replaceable > 500)
 						{
 							blockAccessor.SetBlock(placingBlock.BlockId, pos.DownCopy(currentDepth - 1));
 						
 							int rnd = worldGenRand.NextInt(coralTypes.Length-1);
-							Block coralPlacingBlock = api.World.GetBlock(coralTypes[rnd]);
-							blockAccessor.SetBlock(coralPlacingBlock.Id, pos.DownCopy(currentDepth));
-							Api.World.Logger.Notification($"Placed coral substrate and coral block successfully!, depth: {waterCode}, coral type: {coralStrings[rnd]}, coral code: {coralTypes[rnd]}"); // Not sure what you are trying to do here.
+							
+							Block coralPlacingBlock = blockAccessor.GetBlock(coralTypes[rnd]);
+							blockAccessor.SetBlock(coralPlacingBlock.Id, pos.UpCopy(currentDepth));
+							Api.World.Logger.Error("Placed coral substrate at depth {0}, coral type: {1}, coral code: {2}!",currentDepth,coralStrings[rnd],coralTypes[rnd]);
+							//Api.World.Logger.Notification($"Placed coral substrate and coral block successfully!, depth: {waterCode}, coral type: {coralStrings[rnd]}, coral code: {coralTypes[rnd]}"); 
 							return true;
 						}
 						else
 						{
-							Api.World.Logger.Notification("Could not place coral at depth {0}!",currentDepth);
+							Api.World.Logger.Notification("Could not place coral substrate at depth {0}!",currentDepth);
 						}
                         return false;
-                    }
+                    //}
+					*/
                 }
             }
             return false;
