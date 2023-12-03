@@ -291,6 +291,7 @@ namespace Saltandsands
             IPlayer byPlayer = (byEntity as EntityPlayer)?.Player;
             if (byPlayer == null) return;
 
+			/*
             byEntity.World.RegisterCallback((dt) =>
             {
                 if (byEntity.Controls.HandUse == EnumHandInteract.HeldItemInteract)
@@ -299,6 +300,7 @@ namespace Saltandsands
                     //byPlayer.Entity.World.PlaySoundAt(new AssetLocation("sounds/player/messycraft"), byPlayer, byPlayer);
                 }
             }, 250);
+			*/
         }
 
         public override bool OnHeldInteractStep(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
@@ -308,32 +310,17 @@ namespace Saltandsands
                 ModelTransform tf = new ModelTransform();
                 tf.EnsureDefaultValues();
 
-                float nowx = 0, nowy = 0;
-
                 if (secondsUsed > 0.3f)
                 {
-                    int cnt = (int)(secondsUsed * 10);
-                    rnd.InitPositionSeed(cnt, 0);
-
-                    float targetx = 3f * (rnd.NextFloat() - 0.5f);
-                    float targety = 1.5f * (rnd.NextFloat() - 0.5f);
-
-                    float dt = secondsUsed - prevSecUsed;
-
-                    nowx = (curX - targetx) * dt * 2;
-                    nowy = (curY - targety) * dt * 2;
+                    tf.Translation.X += (float)Math.Sin(secondsUsed * 30) / 10;
                 }
-
                 tf.Translation.Set(nowx - Math.Min(1.5f, secondsUsed*4), nowy, 0);
                 byEntity.Controls.UsingHeldItemTransformBefore = tf;
-
-                curX = nowx;
-                curY = nowy;
 
                 prevSecUsed = secondsUsed;
             }
 
-            if (api.World.Side == EnumAppSide.Server) return true;
+            //if (api.World.Side == EnumAppSide.Server) return true;
 
             return secondsUsed < processingSecRequired + 0.1f;
         }
