@@ -33,7 +33,7 @@ namespace Saltandsands
 				waterCode = Attributes["waterCode"].AsString("saltwater");
 			}
 			// Get asset locations for coral blocks using coralStrings
-			for (var i = 0; i <= coralStrings.Length; i++)
+			for (var i = 0; i < coralStrings.Length; i++)
 			{
                 //coralTypes[i] = Api.World.GetBlock(new AssetLocation(Code.Domain + ":" + coralStrings[i]));
                 /* You can't use Assetlocation to return a block it won't let you so I changed it too this > */
