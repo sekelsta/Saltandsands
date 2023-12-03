@@ -284,7 +284,6 @@ namespace Saltandsands
 
         public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling)
         {
-            if (slot.Itemstack.TempAttributes.GetBool("consumed") == true) return;
 
             handling = EnumHandHandling.PreventDefault;
 
@@ -324,6 +323,8 @@ namespace Saltandsands
 
             return secondsUsed < processingSecRequired + 0.1f;
         }
+		
+		
 
         public override bool OnHeldInteractCancel(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, EnumItemUseCancelReason cancelReason)
         {
@@ -386,9 +387,6 @@ namespace Saltandsands
                     slot.MarkDirty();
 					
 					return true;
-                } else
-                {
-                    slot.Itemstack.TempAttributes.SetBool("consumed", true);
                 }
             }
         }
