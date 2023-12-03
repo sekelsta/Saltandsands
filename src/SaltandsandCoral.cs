@@ -33,11 +33,13 @@ namespace Saltandsands
 				waterCode = Attributes["waterCode"].AsString("saltwater");
 			}
 			// Get asset locations for coral blocks using coralStrings
+			Api.World.Logger.Error("Beginning coral substrate type registration");
 			for (var i = 0; i < coralStrings.Length; i++)
 			{
                 //coralTypes[i] = Api.World.GetBlock(new AssetLocation(Code.Domain + ":" + coralStrings[i]));
                 /* You can't use Assetlocation to return a block it won't let you so I changed it too this > */
-                coralTypes[i] = new AssetLocation(Code.Domain + ":" + coralStrings[i]);
+                coralTypes[i] = new AssetLocation("saltandsands:" + coralStrings[i]);
+				Api.World.Logger.Error("Converted coral type {0} to code {1} for assetlocation {2}",coralStrings[i],"saltandsands:"+coralStrings[i],coralTypes[i]);
                
 			}
 			
@@ -49,12 +51,12 @@ namespace Saltandsands
         // Worldgen placement, tests to see how many blocks below water the plant is being placed, and if that's allowed for the plant
         public override bool TryPlaceBlockForWorldGen(IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, LCGRandom worldGenRand)
         {
-            Block block = blockAccessor.GetBlock(pos);
+            //Block block = blockAccessor.GetBlock(pos);
 
-            if (!block.IsReplacableBy(this))
-            {
-                return false;
-            }
+            //if (!block.IsReplacableBy(this))
+            //{
+            //    return false;
+            //}
 
             Block aboveBlock = blockAccessor.GetBlock(pos.X, pos.Y + 1, pos.Z);
 
@@ -73,8 +75,9 @@ namespace Saltandsands
             {
 
 				int rnd = worldGenRand.NextInt(coralTypes.Length-1);
-							
+				Api.World.Logger.Error("Selected coral type {0}",coralTypes[rnd]);				
 				Block coralPlacingBlock = blockAccessor.GetBlock(coralTypes[rnd]);
+				Api.World.Logger.Error("Coral block resolved: {0}, block ID: {1}",coralPlacingBlock.Code,coralPlacingBlock.Id);
 				blockAccessor.SetBlock(coralPlacingBlock.Id, pos.Up());
 				Api.World.Logger.Error("Placed coral substrate at depth {0}, coral type: {1}, coral code: {2}!",currentDepth,coralStrings[rnd],coralTypes[rnd]);
 				return true;
@@ -113,6 +116,10 @@ namespace Saltandsands
 					*/
                 
             }
+			else
+			{
+				Api.World.Logger.Error("Failed coral substrate placement!");
+			}
             return false;
         }   
     }
