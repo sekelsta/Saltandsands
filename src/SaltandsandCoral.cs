@@ -77,6 +77,7 @@ namespace Saltandsands
 				Block coralPlacingBlock = blockAccessor.GetBlock(coralTypes[rnd]);
 				blockAccessor.SetBlock(coralPlacingBlock.Id, pos.Up());
 				Api.World.Logger.Error("Placed coral substrate at depth {0}, coral type: {1}, coral code: {2}!",currentDepth,coralStrings[rnd],coralTypes[rnd]);
+				return true;
 				/*
                 for(var currentDepth = 1; currentDepth <= maxDepth + 1; currentDepth ++)
                 {
