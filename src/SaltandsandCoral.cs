@@ -177,12 +177,4 @@ namespace Saltandsands
         }
     }
 	
-	public class BlockSASCoral : BlockWaterPlant
-    {
-		public override bool CanPlantStay(IBlockAccessor blockAccessor, BlockPos pos)
-        {
-            Block block = blockAccessor.GetBlock(pos.X, pos.Y - 1, pos.Z);
-            return (block is BlockSASCoralSubstrate) || (blockAccessor.GetBlock(pos.X, pos.Y, pos.Z).LiquidCode == waterCode);
-        }
-	}
 }
