@@ -325,7 +325,8 @@ namespace Saltandsands
                 }
 
                 tf.Translation.Set(nowx - Math.Min(1.5f, secondsUsed*4), nowy, 0);
-                byEntity.Controls.UsingHeldItemTransformBefore = tf;
+                //byEntity.Controls.UsingHeldItemTransformBefore = tf;
+				byEntity.Controls.UsingHeldItemTransformAfter = tf;
 
                 curX = nowx;
                 curY = nowy;

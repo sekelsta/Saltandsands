@@ -80,7 +80,7 @@ namespace Saltandsands
             return false;
         }   
     }
-	
+	/*
     public class BlockSASSeaweed : BlockWaterPlant
     {
         public override string RemapToLiquidsLayer { get { return "saltwater-still-7"; } }
@@ -197,7 +197,7 @@ namespace Saltandsands
 					{
 						if ( PlaceSeaweed(blockAccessor, belowPos, depth) == true ) completed = true; 
 					} else {
-						if ( PlaceSeaweedComplex(blockAccessor, belowPos, depth) ) completed = true;
+						if ( PlaceSeaweedComplex(blockAccessor, belowPos, depth) == true ) completed = true;
 					}
                 } else
                 {
@@ -214,7 +214,7 @@ namespace Saltandsands
 		/// <summary>
         /// Generates a column of blocks upwards only using the first element in the
         /// </summary>
-        private void PlaceSeaweed(IBlockAccessor blockAccessor, BlockPos pos, int depth)
+        private bool PlaceSeaweed(IBlockAccessor blockAccessor, BlockPos pos, int depth)
         {
             int height = Math.Min(depth-1,  minLength + random.Next(1+(maxLength-minLength)));
 
@@ -265,7 +265,7 @@ namespace Saltandsands
 		/// If segments[rnd] is not null (it could be if only the base or a "short" base is to be placed) it will place a length of blocks of segments[rnd] topped by a block of ends[rnd]
 		/// The length of segments is a random number based on placeMaxLength + rand.NextInt(placeMaxLengthRand)
         /// </summary>
-		private void PlaceSeaweedComplex(IBlockAccessor blockAccessor, BlockPos pos, LCGRandom worldGenRand)
+		private bool PlaceSeaweedComplex(IBlockAccessor blockAccessor, BlockPos pos, LCGRandom worldGenRand)
         {
             int rnd = worldGenRand.NextInt(bases.Length);
 
@@ -311,14 +311,14 @@ namespace Saltandsands
 					pos.Up();
                 }
 				
-				/*
-                pos.Up();
-                placeblock = api.World.GetBlock(CodeWithVariant("type", ends[rnd]));
-                if (blockAccessor.GetBlock(pos).Replaceable > minReplaceable)
-                {
-                    blockAccessor.SetBlock(placeblock.Id, pos);
-                }
-				*/
+				
+                //pos.Up();
+                //placeblock = api.World.GetBlock(CodeWithVariant("type", ends[rnd]));
+                //if (blockAccessor.GetBlock(pos).Replaceable > minReplaceable)
+                //{
+                //    blockAccessor.SetBlock(placeblock.Id, pos);
+                //}
+				
 				
 				return true;
             }
@@ -326,5 +326,6 @@ namespace Saltandsands
         }
 		
     }
+	*/
 	
 }
