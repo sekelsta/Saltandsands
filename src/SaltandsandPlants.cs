@@ -275,6 +275,7 @@ namespace Saltandsands
 			
 			// Attempt to place a base block and check if the appropriate code exists
             if (placeBase == true)
+            {
 				Block baseblock = blockAccessor.GetBlock(CodeWithVariant("type", bases[rnd]));
 				if (baseblock != null)
 				{
@@ -327,6 +328,5 @@ namespace Saltandsands
         }
 		
     }
-	*/
 	
 }
