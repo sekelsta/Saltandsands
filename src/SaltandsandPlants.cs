@@ -239,7 +239,7 @@ namespace Saltandsands
 				}
 				else
 				{
-					Api.World.Logger.Error("Block ({0}) with class BlockSASSeaweed had no appropriate variants for ",block.Code);
+					Api.World.Logger.Error("Block ({0}) with class BlockSASSeaweed had no appropriate variants for 'segment1' or 'segment'");
 					return false;
 				}
                 
@@ -277,12 +277,12 @@ namespace Saltandsands
 				Block baseblock = blockAccessor.GetBlock(CodeWithVariant("type", bases[rnd]));
 				if (baseblock != null)
 				{
-					blockAccessor.SetBlock(placeblock.Id, pos);
+					blockAccessor.SetBlock(baseblock.Id, pos);
 					pos.Up();
 				}
 				else
 				{
-					Api.World.Logger.Error("Block ({0}) with class BlockSASSeaweed had no base block for random value {1} (it would be {2})",block.Code,rnd,CodeWithVariant("type",bases[rnd]));
+					Api.World.Logger.Error("Block with class BlockSASSeaweed had no base block for random value {1} (it would be {2})");
 					return false;
 				}
 			}
