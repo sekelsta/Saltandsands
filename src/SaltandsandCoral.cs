@@ -5,6 +5,7 @@ using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 using Vintagestory.GameContent;
 using System.Linq;
+using System;
 using Vintagestory.API.Common.Entities;
 
 namespace Saltandsands
@@ -27,7 +28,7 @@ namespace Saltandsands
 		"coraltable-brown", "coraltable-gray", "coraltable-green", "coraltable-red", 
 		"coraltube-blue", "coraltube-orange", "coraltube-pink", "coraltube-purple", "coraltube-red", "coraltube-yellow" };
 		private AssetLocation[] coralTypes = new AssetLocation[24];
-		private AssetLocation coralSubstrateBlock = new AssetLocation;
+		private AssetLocation coralSubstrateBlock = new AssetLocation();
 		private bool extremeSlopeCancels;
 		private int extremeSlopeThreshold;
 		BlockPos tmpPos = new BlockPos();
@@ -115,7 +116,7 @@ namespace Saltandsands
         public override bool TryPlaceBlockForWorldGen(IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, LCGRandom worldGenRand)
         {
 				
-				int cnt = reefRadiusMin + worldgenRand.NextInt(reefRadiusMax - reefRadiusMin);
+				int cnt = reefRadiusMin + worldGenRand.NextInt(reefRadiusMax - reefRadiusMin);
 				//float depth = GameMath.Sqrt(GameMath.Sqrt(cnt));
 				float reefRadius = GameMath.Sqrt(cnt) * 1.25f;
 
@@ -126,10 +127,10 @@ namespace Saltandsands
 				if (extremeSlopeCancels)
 				{
 					// Check the four corners of a square for extreme height differences
-					int y1 = blAcc.GetTerrainMapheightAt(tmpPos.Set(pos.X - extremeSlopeThreshold, pos.Y, pos.Z));
-					int y2 = blAcc.GetTerrainMapheightAt(tmpPos.Set(pos.X + extremeSlopeThreshold, pos.Y, pos.Z));
-					int y3 = blAcc.GetTerrainMapheightAt(tmpPos.Set(pos.X, pos.Y, pos.Z + extremeSlopeThreshold));
-					int y4 = blAcc.GetTerrainMapheightAt(tmpPos.Set(pos.X, pos.Y, pos.Z - extremeSlopeThreshold));
+					int y1 = blockAccessor.GetTerrainMapheightAt(tmpPos.Set(pos.X - extremeSlopeThreshold, pos.Y, pos.Z));
+					int y2 = blockAccessor.GetTerrainMapheightAt(tmpPos.Set(pos.X + extremeSlopeThreshold, pos.Y, pos.Z));
+					int y3 = blockAccessor.GetTerrainMapheightAt(tmpPos.Set(pos.X, pos.Y, pos.Z + extremeSlopeThreshold));
+					int y4 = blockAccessor.GetTerrainMapheightAt(tmpPos.Set(pos.X, pos.Y, pos.Z - extremeSlopeThreshold));
 
 					if ((GameMath.Max(y1, y2, y3, y4) - GameMath.Min(y1, y2, y3, y4)) > maxSlopeHeightDiff)
 					{
@@ -156,13 +157,13 @@ namespace Saltandsands
 					tmpPos.Y = blockAccessor.GetTerrainMapheightAt(tmpPos);
 
 					Block block = blockAccessor.GetBlock(tmpPos);
-                    blockAccessor.SetBlock(coralSubstrateBlock, tmpPos);
+                    blockAccessor.SetBlock(api.World.GetBlock(coralSubstrateBlock).BlockId, tmpPos);
 					int rnd = worldGenRand.NextInt(coralTypes.Length-1);
 					Api.World.Logger.Error("Selected coral type {0}",coralTypes[rnd]);				
 					Block coralPlacingBlock = blockAccessor.GetBlock(coralTypes[rnd]);
 					Api.World.Logger.Error("Coral block resolved: {0}, block ID: {1}",coralPlacingBlock.Code,coralPlacingBlock.Id);
 					blockAccessor.SetBlock(coralPlacingBlock.Id, tmpPos.UpCopy());
-					Api.World.Logger.Error("Placed coral substrate at depth {0}, coral type: {1}, coral code: {2}!",currentDepth,coralStrings[rnd],coralTypes[rnd]);
+					Api.World.Logger.Error("Placed coral substrate at depth {0}, coral type: {1}, coral code: {2}!",tmpPos.Y,coralStrings[rnd],coralTypes[rnd]);
                     
 				}
 			}
