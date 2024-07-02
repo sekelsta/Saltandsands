@@ -140,7 +140,7 @@ namespace Saltandsands
 				
 			tmpPos = tmpPos.Set(pos.X, pos.Y, pos.Z);	
             float reefSubstrateRadius = reefRadius * 1.2f;
-            int range = (int)Math.Ceiling(impactRockRadius);
+            int range = (int)Math.Ceiling(reefSubstrateRadius);
             int chunksize = api.World.BlockAccessor.ChunkSize;
             Vec2i vecTmp = new Vec2i();
 

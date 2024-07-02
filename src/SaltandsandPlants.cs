@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
@@ -80,7 +81,7 @@ namespace Saltandsands
             return false;
         }   
     }
-	/*
+ 
     public class BlockSASSeaweed : BlockWaterPlant
     {
         public override string RemapToLiquidsLayer { get { return "saltwater-still-7"; } }
@@ -195,9 +196,9 @@ namespace Saltandsands
                     belowPos.Up();
 					if (!useComplexGeneration)
 					{
-						if ( PlaceSeaweed(blockAccessor, belowPos, depth) == true ) completed = true; 
+						if ( PlaceSeaweed(blockAccessor, belowPos, depth, worldGenRand) == true ) completed = true; 
 					} else {
-						if ( PlaceSeaweedComplex(blockAccessor, belowPos, depth) == true ) completed = true;
+						if ( PlaceSeaweedComplex(blockAccessor, belowPos, depth, worldGenRand) == true ) completed = true;
 					}
                 } else
                 {
@@ -214,7 +215,7 @@ namespace Saltandsands
 		/// <summary>
         /// Generates a column of blocks upwards only using the first element in the
         /// </summary>
-        private bool PlaceSeaweed(IBlockAccessor blockAccessor, BlockPos pos, int depth)
+        private bool PlaceSeaweed(IBlockAccessor blockAccessor, BlockPos pos, int depth, worldGenRand)
         {
             int height = Math.Min(depth-1,  minLength + random.Next(1+(maxLength-minLength)));
 
@@ -265,7 +266,7 @@ namespace Saltandsands
 		/// If segments[rnd] is not null (it could be if only the base or a "short" base is to be placed) it will place a length of blocks of segments[rnd] topped by a block of ends[rnd]
 		/// The length of segments is a random number based on placeMaxLength + rand.NextInt(placeMaxLengthRand)
         /// </summary>
-		private bool PlaceSeaweedComplex(IBlockAccessor blockAccessor, BlockPos pos, LCGRandom worldGenRand)
+		private bool PlaceSeaweedComplex(IBlockAccessor blockAccessor, BlockPos pos, int depth, LCGRandom worldGenRand)
         {
             int rnd = worldGenRand.NextInt(bases.Length);
 
@@ -300,12 +301,12 @@ namespace Saltandsands
 					};
 				}
 				//int len = placeMaxLength + worldGenRand.NextInt(placeMaxLengthRand+1);
-                int len = Math.Min(placeBase == true ? depth-1 : depth, minLength+worldGenRand.NextInt(maxLength-minLength) + placeBase == true ? 0 : 1);
+                int len = Math.Min(placeBase == true ? depth-1 : depth, minLength+worldGenRand.NextInt(maxLength-minLength) + (placeBase == true ? 0 : 1));
                 while (len-- > 0)
                 {
                     if (blockAccessor.GetBlock(pos).Replaceable > minReplaceable)
                     {
-						blockAccessor.SetBlock(height == 0 ? blocks[1].BlockId : blocks[0].BlockId, pos);
+						blockAccessor.SetBlock(len == 0 ? blocks[1].BlockId : blocks[0].BlockId, pos);
                         //blockAccessor.SetBlock(placeblock.Id, pos);
                     }
 					pos.Up();
@@ -320,9 +321,9 @@ namespace Saltandsands
                 //}
 				
 				
-				return true;
+				
             }
-
+			return true;
         }
 		
     }
