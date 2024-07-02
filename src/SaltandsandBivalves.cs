@@ -344,7 +344,7 @@ namespace Saltandsands
 
         public override void OnHeldInteractStop(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel)
         {
-            if (secondsUsed > processingSecRequired  + 0.1f;)
+            if (secondsUsed > processingSecRequired  + 0.1f)
             {
                 if (api.Side == EnumAppSide.Server)
                 {
