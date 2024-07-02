@@ -16,7 +16,7 @@ namespace Saltandsands
             api.RegisterBlockClass("BlockBivalve", typeof(BlockBivalve));
             //api.RegisterBlockClass("BlockSASSeaweed", typeof(BlockSASSeaweed));
             api.RegisterBlockClass("BlockSASWaterPlant", typeof(BlockSASWaterPlant));
-            //api.RegisterBlockClass("BlockSASCoralSeed", typeof(BlockSASCoralSubstrate));
+            api.RegisterBlockClass("BlockSASCoralSeed", typeof(BlockSASCoralSeed));
         }
     }
 }
