@@ -215,7 +215,7 @@ namespace Saltandsands
 		/// <summary>
         /// Generates a column of blocks upwards only using the first element in the
         /// </summary>
-        private bool PlaceSeaweed(IBlockAccessor blockAccessor, BlockPos pos, int depth, worldGenRand)
+        private bool PlaceSeaweed(IBlockAccessor blockAccessor, BlockPos pos, int depth, LCGRandom worldGenRand)
         {
             int height = Math.Min(depth-1,  minLength + random.Next(1+(maxLength-minLength)));
 
