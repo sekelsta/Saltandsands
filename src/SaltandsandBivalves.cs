@@ -355,7 +355,7 @@ namespace Saltandsands
                     byEntity.World.Logger.Error("Providing processing results...");
                     for (int i = 0; i < processingResultStacks.Length; i++)
                     {
-                        resultstack = processingResultStacks[i].Clone();;
+                        resultstack = processingResultStacks[i].Clone();
                         byEntity.World.Logger.Error("Giving resultstack {0} to entity {1}!", resultstack.GetName(), byEntity.EntityId);
                         if (!byEntity.TryGiveItemStack(resultstack))
                         {
@@ -423,6 +423,7 @@ namespace Saltandsands
         public AssetLocation placedBivalve;
         //public Block placedBivalve; 
         public string waterType;
+		private bool debugMessages;
         public override void OnLoaded(ICoreAPI api)
         {
             base.OnLoaded(api);
@@ -442,25 +443,35 @@ namespace Saltandsands
                     return;
                 }
 
+				string debugMessages = Attributes["debugMessages"].ToBool();
+                if (debugMessages == true)
+                {
+                    api.Logger.Error("ItemLiveBivalve debugMessages is TRUE, debug messages active!");
+                }
+				else
+				{
+					api.Logger.Error("ItemLiveBivalve debugMessages is FLASE, no debug messages will be printed and logged...");
+				}
+				
                 string wcode = Attributes["waterCode"].ToString();
                 if (wcode == "")
                 {
-                    api.Logger.Error("ItemLiveBivalve had no valid water type code, defaulting to saltwater");
+                    if (debugMessages) api.Logger.Error("ItemLiveBivalve had no valid water type code, defaulting to saltwater");
                     waterType = "saltwater";
                 }
                 else if (wcode == "boilingwater" || wcode == "lava") 
                 {
-                    api.Logger.Error("ItemLiveBivalve had watercode of {0}, this would make no sense, defaulting to saltwater",wcode);
+                    if (debugMessages) api.Logger.Error("ItemLiveBivalve had watercode of {0}, this would make no sense, defaulting to saltwater",wcode);
                     waterType = "saltwater";
                 }
                 else if (wcode != "water" && wcode != "saltwater" && wcode != "boilingwater") 
                 {
-                    api.Logger.Error("ItemLiveBivalve had an invalid water type code {0}, defaulting to saltwater",wcode);
+                    if (debugMessages) api.Logger.Error("ItemLiveBivalve had an invalid water type code {0}, defaulting to saltwater",wcode);
                     waterType = "saltwater";
                 }
                 else
                 {
-                    api.Logger.Error("ItemLiveBivalve resolved with water code {0}",wcode);
+                    if (debugMessages) api.Logger.Error("ItemLiveBivalve resolved with water code {0}",wcode);
                     waterType = wcode;
                 }
         }
@@ -473,7 +484,7 @@ namespace Saltandsands
                 return;
             }
 
-            byEntity.World.Logger.Error("Entity attempting to plant live bivalve, type: {0}", this.Code.FirstCodePart());
+            if (debugMessages) byEntity.World.Logger.Error("Entity attempting to plant live bivalve, type: {0}", this.Code.FirstCodePart());
 
             Block waterBlock = byEntity.World.BlockAccessor.GetBlock(blockSel.Position.AddCopy(blockSel.Face), BlockLayersAccess.Fluid);
             string waterBlockCode = waterBlock.LiquidCode;
@@ -482,7 +493,7 @@ namespace Saltandsands
             bool waterBlockGood = waterBlockCode == waterType;
             Block block = null;
 
-            byEntity.World.Logger.Error("Attempting to plant inside water, water valid: {0}, is saltwater: {1}", waterBlockCode, waterBlockSalt);
+            if (debugMessages) byEntity.World.Logger.Error("Attempting to plant inside water, water valid: {0}, is saltwater: {1}", waterBlockCode, waterBlockSalt);
 
             /*
             if (this.Code.Path.Contains("scallop") && waterBlockValid && waterBlockSalt)
@@ -502,7 +513,7 @@ namespace Saltandsands
             block = byEntity.World.GetBlock(placedBivalve);
             if (block == null)
             {
-                byEntity.World.Logger.Error("Placed bivalve was null for some reason, backing out...");
+                if (debugMessages) byEntity.World.Logger.Error("Placed bivalve was null for some reason, backing out...");
                 base.OnHeldInteractStart(itemslot, byEntity, blockSel, entitySel, firstEvent, ref handHandling);
                 return;
             }
@@ -520,7 +531,7 @@ namespace Saltandsands
                     }
                     
                 }
-                byEntity.World.Logger.Error("Attempting to plant bivalves in incorrect water type, water code needed was {0}, got {1}",waterType,waterBlockCode);
+                if (debugMessages)                             byEntity.World.Logger.Error("Attempting to plant bivalves in incorrect water type, water code needed was {0}, got {1}",waterType,waterBlockCode);
                 base.OnHeldInteractStart(itemslot, byEntity, blockSel, entitySel, firstEvent, ref handHandling);
                 return;
             }
@@ -533,13 +544,13 @@ namespace Saltandsands
 
             string useless = "";
 
-            byEntity.World.Logger.Error("Correct water type and bivalve type found, now attempting to place block!");
+            if (debugMessages) byEntity.World.Logger.Error("Correct water type and bivalve type found, now attempting to place block!");
 
             bool ok = block.TryPlaceBlock(byEntity.World, byPlayer, itemslot.Itemstack, blockSel, ref useless);
 
             if (ok)
             {
-                byEntity.World.Logger.Error("Everything was ok, playing audio and taking an item from the player now!");
+                if (debugMessages) byEntity.World.Logger.Error("Everything was ok, playing audio and taking an item from the player now!");
                 byEntity.World.PlaySoundAt(block.Sounds.GetBreakSound(byPlayer), blockSel.Position.X + 0.5, blockSel.Position.Y + 0.5, blockSel.Position.Z + 0.5, byPlayer);
                 itemslot.TakeOut(1);
                 itemslot.MarkDirty();
@@ -553,8 +564,7 @@ namespace Saltandsands
                 new WorldInteraction()
                 {
                     HotKeyCode = "shift",
-                    ActionLangCode = "heldhelp-plant",
-                    MouseButton = EnumMouseButton.Right,
+					MouseButton = EnumMouseButton.Right,
                 }
             }.Append(base.GetHeldInteractionHelp(inSlot));
         }
