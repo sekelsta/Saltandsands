@@ -355,7 +355,7 @@ namespace Saltandsands
                     byEntity.World.Logger.Error("Providing processing results...");
                     for (int i = 0; i < processingResultStacks.Length; i++)
                     {
-                        resultstack = processingResultStacks[i];
+                        resultstack = processingResultStacks[i].Clone();;
                         byEntity.World.Logger.Error("Giving resultstack {0} to entity {1}!", resultstack.GetName(), byEntity.EntityId);
                         if (!byEntity.TryGiveItemStack(resultstack))
                         {
@@ -379,7 +379,7 @@ namespace Saltandsands
                             byEntity.World.Logger.Error("Roll {0} > drop chance {1}, continuing...",roll,rareStackChances[i]);
                             continue;
                         }
-                        resultstack = rareStacks[i];
+                        resultstack = rareStacks[i].Clone();;
                         byEntity.World.Logger.Error("Roll succeeded, giving resultstack {0} to entity {1}!", resultstack.GetName(), byEntity.EntityId);
                         if (!byEntity.TryGiveItemStack(resultstack))
                         {
