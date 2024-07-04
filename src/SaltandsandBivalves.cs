@@ -366,8 +366,8 @@ namespace Saltandsands
 							ItemStack istack = dstack.ResolvedItemstack;
 							if (istack != null)
 							{
-								api.Logger.Error("Resolved processing result #{0}: {1}", i+1 , dstack.ResolvedItemstack.Code);
-								api.World.Logger.Error("Giving resultstack {0} ({1}) x {2} to entity {3}!", istack.GetName(). dstack.Code, dstack.StacSsize, byEntity.EntityId);
+								api.Logger.Error("Resolved processing result #{0}: {1}", i+1 , dstack.ResolvedItemstack.GetName());
+								api.World.Logger.Error("Giving resultstack {0} ({1}) x {2} to entity {3}!", istack.GetName(), dstack.Code, dstack.StackSize, byEntity.EntityId);
 								if (!byEntity.TryGiveItemStack(istack))
 								{
 									api.World.Logger.Error("Entity had insufficient space, dumping item on the ground!");
@@ -376,7 +376,7 @@ namespace Saltandsands
 								
 							} else
 							{
-								api.Logger.Error("Failed to resolve processing result #{0}: {1}!", i+1 , istack.Code.ToString());
+								api.Logger.Error("Failed to resolve processing result #{0}!", i+1);
 							}
 						}
 						api.Logger.Error("Completed processing results!");
@@ -432,7 +432,7 @@ namespace Saltandsands
 									continue;
 								}
 								
-								api.World.Logger.Error("Giving resultstack {0} ({1}) x {2} to entity {3}!", ristack.GetName(). rdstack.Code, rdstack.StacSsize, byEntity.EntityId);
+								api.World.Logger.Error("Giving resultstack {0} ({1}) x {2} to entity {3}!", ristack.GetName(), rdstack.Code, rdstack.StackSize, byEntity.EntityId);
 								if (!byEntity.TryGiveItemStack(ristack))
 								{
 									api.World.Logger.Error("Entity had insufficient space, dumping item on the ground!");
@@ -441,7 +441,7 @@ namespace Saltandsands
 								
 							} else
 							{
-								api.Logger.Error("Failed to resolve processing result #{0}: {1}!", i+1 , rstacks[i].Code.ToString());
+								api.Logger.Error("Failed to resolve processing result #{0}!", i+1);
 							}
 						}
 					}
