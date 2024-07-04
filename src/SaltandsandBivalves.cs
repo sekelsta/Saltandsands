@@ -189,6 +189,8 @@ namespace Saltandsands
             base.OnLoaded(api);
 
             rnd = new LCGRandom(api.World.Seed);
+			
+			/*
             api.Logger.Error("Resolving processing results...");
             JsonItemStack[] pstacks = Attributes["processingResults"].AsObject<JsonItemStack[]>();
             List<ItemStack> stacklist = new List<ItemStack>();
@@ -280,6 +282,7 @@ namespace Saltandsands
                 api.Logger.Error("rareProcessingResults length is zero- no rareProcessingResults to resolve!");
             }
             api.Logger.Error("Done resolving ItemBivalve processing results!");
+			*/
         }
 
         public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling)
@@ -350,8 +353,47 @@ namespace Saltandsands
                 {
                     //ItemStack resultstack = processingResultStacks[api.World.Rand.Next(processingResultStacks.Length)];
                     
+					api.Logger.Error("Finished processing getting results...");
+					JsonItemStack[] pstacks = Attributes["processingResults"].AsObject<JsonItemStack[]>();
+					//List<ItemStack> stacklist = new List<ItemStack>();
+					api.Logger.Error("{0} processing results to resolve...",pstacks.Length);
+					if (pstacks.Length > 1)
+					{
+						for (int i = 0; i < pstacks.Length; i++)
+						{
+							JsonItemStack dstack = pstacks[i];
+							dstack.Resolve(api.World, "Bivalve opening result");
+							ItemStack istack = dstack.ResolvedItemstack;
+							if (istack != null)
+							{
+								api.Logger.Error("Resolved processing result #{0}: {1}", i+1 , istack.ResolvedItemstack.GetName());
+								api.World.Logger.Error("Giving resultstack {0} to entity {1}!", istack.GetName(), byEntity.EntityId);
+								if (!byEntity.TryGiveItemStack(istack))
+								{
+									api.World.Logger.Error("Entity had insufficient space, dumping item on the ground!");
+									byEntity.World.SpawnItemEntity(resultstack, byEntity.Pos.XYZ.Add(0, 0.5, 0));
+								}
+								
+							} else
+							{
+								api.Logger.Error("Failed to resolve processing result #{0}: {1}!", i+1 , istacks[i].Code.ToString());
+							}
+						}
+						api.Logger.Error("Completed processing results!");
+						processingResultStacks = stacklist.ToArray();
+						api.Logger.Error("Processing results added to array");
+						//stacklist.Clear();
+						//api.Logger.Error("Stacklist cleared!");
+					}
+					else
+					{
+						api.Logger.Error("No processing results, is item configured properly?");
+					}
+					
+					
+					/*
                     // Handle processing results - shells, meat, other mundane items
-                    ItemStack resultstack;
+                    ItemStack resultstack = ;
                     byEntity.World.Logger.Error("Providing processing results...");
                     for (int i = 0; i < processingResultStacks.Length; i++)
                     {
@@ -363,9 +405,52 @@ namespace Saltandsands
                             byEntity.World.SpawnItemEntity(resultstack, byEntity.Pos.XYZ.Add(0, 0.5, 0));
                         }
                     }
+					*/
+					Random ran = new Random();
+					JsonItemStack[] rstacks = Attributes["rareProcessingResultStacks"].AsObject<JsonItemStack[]>();
+					double[] rchances = Attributes["rareProcessingResultChances"].AsObject<Double[]>();
+					if (rstacks.Length > 0)
+					{
+						api.Logger.Error("rareProcessingResultChances defined, length: {0}",rChances.Length);
+ 
+						api.Logger.Error("{0} rare processing results to resolve...",rstacks.Length);
+						for (int i = 0; i < rstacks.Length; i++)
+						{
+						
+							JsonItemStack rdstack = rstacks[i];
+							rdstack.Resolve(api.World, "Bivalve rare opening result");
+							ItemStack ristack = rdstack.ResolvedItemstack;
+							if (ristack != null)
+							{
+								api.Logger.Error("Resolved processing result #{0}: {1}", i+1 , ristack.ResolvedItemstack.GetName());
+								
+								double roll = byEntity.World.Rand.NextDouble();
+								byEntity.World.Logger.Error("Checking rare processing stack {0}, with drop chance of {1} vs roll of {2}!",rareStacks[i].GetName(),rchances[i],roll);
+								if (roll > rchances[i])
+								{
+									byEntity.World.Logger.Error("Roll {0} > drop chance {1}, continuing...",roll,rchances[i]);
+									continue;
+								}
+								
+								api.World.Logger.Error("Giving resultstack {0} to entity {1}!", ristack.GetName(), byEntity.EntityId);
+								if (!byEntity.TryGiveItemStack(ristack))
+								{
+									api.World.Logger.Error("Entity had insufficient space, dumping item on the ground!");
+									byEntity.World.SpawnItemEntity(resultstack, byEntity.Pos.XYZ.Add(0, 0.5, 0));
+								}
+								
+							} else
+							{
+								api.Logger.Error("Failed to resolve processing result #{0}: {1}!", i+1 , istacks[i].Code.ToString());
+							}
+						
+					}
+					
+					/*
                     //rareProcessingResultStacks
                     //rareProcessingResultChances
-                    Random ran = new Random();
+                   
+					
                     ItemStack[] rareStacks = rareProcessingResultStacks.Shuffle(ran);
                     double[] rareStackChances = rareProcessingResultChances.Shuffle(ran);
 					bool[] isRareExclusive = isRareResultExclusive.Shuffle(ran);
@@ -393,7 +478,8 @@ namespace Saltandsands
 							break;
 						}
                     }
-                   
+                   */
+				   
                     slot.TakeOut(1);
                     slot.MarkDirty();
                 }
