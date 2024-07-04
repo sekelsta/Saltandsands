@@ -529,7 +529,7 @@ namespace Saltandsands
                     return;
                 }
 
-				string debugMessages = Attributes["debugMessages"].ToBool();
+				bool debugMessages = Attributes["debugMessages"].ToBool();
                 if (debugMessages == true)
                 {
                     api.Logger.Error("ItemLiveBivalve debugMessages is TRUE, debug messages active!");
