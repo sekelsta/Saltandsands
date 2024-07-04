@@ -178,10 +178,10 @@ namespace Saltandsands
 		float processingSecRequired;
         LCGRandom rnd;
 
-        ItemStack[] processingResultStacks;
-        ItemStack[] rareProcessingResultStacks;
-        double[] rareProcessingResultChances;
-		bool[] isRareResultExclusive;
+        //ItemStack[] processingResultStacks;
+        //ItemStack[] rareProcessingResultStacks;
+        //double[] rareProcessingResultChances;
+		//bool[] isRareResultExclusive;
         //private object pstack; not being used
 
         public override void OnLoaded(ICoreAPI api)
@@ -380,7 +380,7 @@ namespace Saltandsands
 							}
 						}
 						api.Logger.Error("Completed processing results!");
-						processingResultStacks = stacklist.ToArray();
+						//processingResultStacks = stacklist.ToArray();
 						api.Logger.Error("Processing results added to array");
 						//stacklist.Clear();
 						//api.Logger.Error("Stacklist cleared!");
@@ -411,7 +411,7 @@ namespace Saltandsands
 					double[] rchances = Attributes["rareProcessingResultChances"].AsObject<Double[]>();
 					if (rstacks.Length > 0)
 					{
-						api.Logger.Error("rareProcessingResultChances defined, length: {0}",rChances.Length);
+						api.Logger.Error("rareProcessingResultChances defined, length: {0}",rchances.Length);
  
 						api.Logger.Error("{0} rare processing results to resolve...",rstacks.Length);
 						for (int i = 0; i < rstacks.Length; i++)
@@ -422,10 +422,10 @@ namespace Saltandsands
 							ItemStack ristack = rdstack.ResolvedItemstack;
 							if (ristack != null)
 							{
-								api.Logger.Error("Resolved processing result #{0}: {1}", i+1 , ristack.ResolvedItemstack.GetName());
+								api.Logger.Error("Resolved processing result #{0}: {1}", i+1 , ristack.GetName());
 								
 								double roll = byEntity.World.Rand.NextDouble();
-								byEntity.World.Logger.Error("Checking rare processing stack {0}, with drop chance of {1} vs roll of {2}!",rareStacks[i].GetName(),rchances[i],roll);
+								byEntity.World.Logger.Error("Checking rare processing stack {0}, with drop chance of {1} vs roll of {2}!",ristack.GetName(),rchances[i],roll);
 								if (roll > rchances[i])
 								{
 									byEntity.World.Logger.Error("Roll {0} > drop chance {1}, continuing...",roll,rchances[i]);
@@ -441,7 +441,7 @@ namespace Saltandsands
 								
 							} else
 							{
-								api.Logger.Error("Failed to resolve processing result #{0}: {1}!", i+1 , istacks[i].Code.ToString());
+								api.Logger.Error("Failed to resolve processing result #{0}: {1}!", i+1 , rstacks[i].Code.ToString());
 							}
 						}
 					}
