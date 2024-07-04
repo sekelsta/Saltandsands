@@ -443,7 +443,7 @@ namespace Saltandsands
 							{
 								api.Logger.Error("Failed to resolve processing result #{0}: {1}!", i+1 , istacks[i].Code.ToString());
 							}
-						
+						}
 					}
 					
 					/*
