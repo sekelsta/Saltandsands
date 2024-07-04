@@ -366,17 +366,17 @@ namespace Saltandsands
 							ItemStack istack = dstack.ResolvedItemstack;
 							if (istack != null)
 							{
-								api.Logger.Error("Resolved processing result #{0}: {1}", i+1 , istack.ResolvedItemstack.GetName());
-								api.World.Logger.Error("Giving resultstack {0} to entity {1}!", istack.GetName(), byEntity.EntityId);
+								api.Logger.Error("Resolved processing result #{0}: {1}", i+1 , dstack.ResolvedItemstack.Code);
+								api.World.Logger.Error("Giving resultstack {0} ({1}) x {2} to entity {3}!", istack.GetName(). dstack.Code, dstack.StacSsize, byEntity.EntityId);
 								if (!byEntity.TryGiveItemStack(istack))
 								{
 									api.World.Logger.Error("Entity had insufficient space, dumping item on the ground!");
-									byEntity.World.SpawnItemEntity(resultstack, byEntity.Pos.XYZ.Add(0, 0.5, 0));
+									byEntity.World.SpawnItemEntity(istack, byEntity.Pos.XYZ.Add(0, 0.5, 0));
 								}
 								
 							} else
 							{
-								api.Logger.Error("Failed to resolve processing result #{0}: {1}!", i+1 , istacks[i].Code.ToString());
+								api.Logger.Error("Failed to resolve processing result #{0}: {1}!", i+1 , istack.Code.ToString());
 							}
 						}
 						api.Logger.Error("Completed processing results!");
@@ -432,7 +432,7 @@ namespace Saltandsands
 									continue;
 								}
 								
-								api.World.Logger.Error("Giving resultstack {0} to entity {1}!", ristack.GetName(), byEntity.EntityId);
+								api.World.Logger.Error("Giving resultstack {0} ({1}) x {2} to entity {3}!", ristack.GetName(). rdstack.Code, rdstack.StacSsize, byEntity.EntityId);
 								if (!byEntity.TryGiveItemStack(ristack))
 								{
 									api.World.Logger.Error("Entity had insufficient space, dumping item on the ground!");
@@ -529,7 +529,7 @@ namespace Saltandsands
                     return;
                 }
 
-				bool debugMessages = Attributes["debugMessages"].ToBool();
+				bool debugMessages = Attributes["debugMessages"].AsBool(false);
                 if (debugMessages == true)
                 {
                     api.Logger.Error("ItemLiveBivalve debugMessages is TRUE, debug messages active!");
