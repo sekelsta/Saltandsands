@@ -436,7 +436,7 @@ namespace Saltandsands
 								if (!byEntity.TryGiveItemStack(ristack))
 								{
 									api.World.Logger.Error("Entity had insufficient space, dumping item on the ground!");
-									byEntity.World.SpawnItemEntity(resultstack, byEntity.Pos.XYZ.Add(0, 0.5, 0));
+									byEntity.World.SpawnItemEntity(ristack, byEntity.Pos.XYZ.Add(0, 0.5, 0));
 								}
 								
 							} else

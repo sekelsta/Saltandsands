@@ -134,7 +134,7 @@ namespace Saltandsands
 
 					if ((GameMath.Max(y1, y2, y3, y4) - GameMath.Min(y1, y2, y3, y4)) > maxSlopeHeightDiff)
 					{
-						Api.World.Logger.Error("Coral reef failed to place due to extreme slope! Difference {0} > threshold {1} ",GameMath.Max(y1, y2, y3, y4) - GameMath.Min(y1, y2, y3, y4),maxSlopeHeightDiff);
+						//Api.World.Logger.Error("Coral reef failed to place due to extreme slope! Difference {0} > threshold {1} ",GameMath.Max(y1, y2, y3, y4) - GameMath.Min(y1, y2, y3, y4),maxSlopeHeightDiff);
 						return false;
 					}
 				}
@@ -155,15 +155,20 @@ namespace Saltandsands
 					tmpPos.X = pos.X + dx;
                     tmpPos.Z = pos.Z + dz;
 					tmpPos.Y = blockAccessor.GetTerrainMapheightAt(tmpPos);
-
 					Block block = blockAccessor.GetBlock(tmpPos);
+					// a second check to make sure the coral or coral substrate isn't being placed at or above the waterline
+					// had some issues with corals invading the land again
+					if (blockAccessor.GetBlock(tmpPos).LiquidCode != waterCode || blockAccessor.GetBlock(tmpPos.UpCopy()).LiquidCode != waterCode)
+					{
+						continue;
+					}
                     blockAccessor.SetBlock(api.World.GetBlock(coralSubstrateBlock).BlockId, tmpPos);
 					int rnd = worldGenRand.NextInt(coralTypes.Length-1);
-					Api.World.Logger.Error("Selected coral type {0}",coralTypes[rnd]);				
+					//Api.World.Logger.Error("Selected coral type {0}",coralTypes[rnd]);				
 					Block coralPlacingBlock = blockAccessor.GetBlock(coralTypes[rnd]);
-					Api.World.Logger.Error("Coral block resolved: {0}, block ID: {1}",coralPlacingBlock.Code,coralPlacingBlock.Id);
+					//Api.World.Logger.Error("Coral block resolved: {0}, block ID: {1}",coralPlacingBlock.Code,coralPlacingBlock.Id);
 					blockAccessor.SetBlock(coralPlacingBlock.Id, tmpPos.UpCopy());
-					Api.World.Logger.Error("Placed coral substrate at depth {0}, coral type: {1}, coral code: {2}!",tmpPos.Y,coralStrings[rnd],coralTypes[rnd]);
+					//Api.World.Logger.Error("Placed coral substrate at depth {0}, coral type: {1}, coral code: {2}!",tmpPos.Y,coralStrings[rnd],coralTypes[rnd]);
                     
 				}
 			}
