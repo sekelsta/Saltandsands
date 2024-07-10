@@ -631,16 +631,5 @@ namespace Saltandsands
             }
         }
 
-        public override WorldInteraction[] GetHeldInteractionHelp(ItemSlot inSlot)
-        {
-            return new WorldInteraction[] {
-                new WorldInteraction()
-                {
-                    HotKeyCode = "shift",
-					MouseButton = EnumMouseButton.Right,
-                }
-            }.Append(base.GetHeldInteractionHelp(inSlot));
-        }
-
     }
 }
