@@ -353,10 +353,10 @@ namespace Saltandsands
                 {
                     //ItemStack resultstack = processingResultStacks[api.World.Rand.Next(processingResultStacks.Length)];
                     
-					api.Logger.Error("Finished processing getting results...");
+					//api.Logger.Error("Finished processing getting results...");
 					JsonItemStack[] pstacks = Attributes["processingResults"].AsObject<JsonItemStack[]>();
 					//List<ItemStack> stacklist = new List<ItemStack>();
-					api.Logger.Error("{0} processing results to resolve...",pstacks.Length);
+					//api.Logger.Error("{0} processing results to resolve...",pstacks.Length);
 					if (pstacks.Length > 1)
 					{
 						for (int i = 0; i < pstacks.Length; i++)
@@ -366,11 +366,11 @@ namespace Saltandsands
 							ItemStack istack = dstack.ResolvedItemstack;
 							if (istack != null)
 							{
-								api.Logger.Error("Resolved processing result #{0}: {1}", i+1 , dstack.ResolvedItemstack.GetName());
-								api.World.Logger.Error("Giving resultstack {0} ({1}) x {2} to entity {3}!", istack.GetName(), dstack.Code, dstack.StackSize, byEntity.EntityId);
+								//api.Logger.Error("Resolved processing result #{0}: {1}", i+1 , dstack.ResolvedItemstack.GetName());
+								//api.World.Logger.Error("Giving resultstack {0} ({1}) x {2} to entity {3}!", istack.GetName(), dstack.Code, dstack.StackSize, byEntity.EntityId);
 								if (!byEntity.TryGiveItemStack(istack))
 								{
-									api.World.Logger.Error("Entity had insufficient space, dumping item on the ground!");
+									//api.World.Logger.Error("Entity had insufficient space, dumping item on the ground!");
 									byEntity.World.SpawnItemEntity(istack, byEntity.Pos.XYZ.Add(0, 0.5, 0));
 								}
 								
@@ -379,9 +379,9 @@ namespace Saltandsands
 								api.Logger.Error("Failed to resolve processing result #{0}!", i+1);
 							}
 						}
-						api.Logger.Error("Completed processing results!");
+						//api.Logger.Error("Completed processing results!");
 						//processingResultStacks = stacklist.ToArray();
-						api.Logger.Error("Processing results added to array");
+						//api.Logger.Error("Processing results added to array");
 						//stacklist.Clear();
 						//api.Logger.Error("Stacklist cleared!");
 					}
@@ -490,17 +490,6 @@ namespace Saltandsands
             }
         }
 
-        public override WorldInteraction[] GetHeldInteractionHelp(ItemSlot inSlot)
-        {
-            return new WorldInteraction[]
-            {
-                new WorldInteraction()
-                {
-                    ActionLangCode = "heldhelp-openbivalve",
-                    MouseButton = EnumMouseButton.Right
-                }
-            };
-        }
     }
 
     public class ItemLiveBivalve : Item
@@ -516,28 +505,26 @@ namespace Saltandsands
 
                 //jstack.Resolve(api.World, "Bivalve opening result");
                 //AssetLocation toPlaceCode;
-                placedBivalve = new AssetLocation(this.Attributes["bivalveBlock"].AsString());
-                //Block toPlaceBlock = api.World.GetBlock(placeBivalve);
-                if (api.World.GetBlock(placedBivalve) != null)
-                {
-
-                    api.Logger.Error("Resolved block code {0}, for live bivalve item {1}",placedBivalve.GetName(),this.Code);
-                }
-                else
-                {
-                    api.Logger.Error("Could not resolve invalid block code '{0}' for live bivalve item {1}!",placedBivalve.GetName(),this.Code);
-                    return;
-                }
-
 				bool debugMessages = Attributes["debugMessages"].AsBool(false);
                 if (debugMessages == true)
                 {
                     api.Logger.Error("ItemLiveBivalve debugMessages is TRUE, debug messages active!");
                 }
-				else
-				{
-					api.Logger.Error("ItemLiveBivalve debugMessages is FLASE, no debug messages will be printed and logged...");
-				}
+				
+                placedBivalve = new AssetLocation(this.Attributes["bivalveBlock"].AsString());
+                //Block toPlaceBlock = api.World.GetBlock(placeBivalve);
+                if (api.World.GetBlock(placedBivalve) != null)
+                {
+
+                    if (debugMessages) api.Logger.Error("Resolved block code {0}, for live bivalve item {1}",placedBivalve.GetName(),this.Code);
+                }
+                else
+                {
+                    if (debugMessages) api.Logger.Error("Could not resolve invalid block code '{0}' for live bivalve item {1}!",placedBivalve.GetName(),this.Code);
+                    return;
+                }
+
+
 				
                 string wcode = Attributes["waterCode"].ToString();
                 if (wcode == "")
