@@ -2,6 +2,8 @@
 
   <PropertyGroup>
     <TargetFramework>net7.0</TargetFramework>
+    <AppendTargetFrameworkToOutputPath>false</AppendTargetFrameworkToOutputPath>
+    <OutputPath>bin</OutputPath>
   </PropertyGroup>
 
    <ItemGroup>
@@ -30,25 +32,4 @@
 		<!-- <Private>False</Private> -->
 	<!-- </Reference> -->
   </ItemGroup>
-  <ItemGroup>
-    <Compile Include="src\Saltandsand.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="src\SaltandsandBivalves.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="src\SaltandsandCoral.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Compile Include="src\SaltandsandPlants.cs" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <PropertyGroup>
-    <PostBuildEvent>
-      copy "$(TargetPath)" "$(ProjectDir)" 
-      copy "$(TargetDir)\$(TargetName).pdb" "$(ProjectDir)" 
-    </PostBuildEvent>
-  </PropertyGroup>
-</Project>
-
 </Project>

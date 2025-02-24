@@ -113,7 +113,7 @@ namespace Saltandsands
         }
 
         // Worldgen placement, tests to see how many blocks below water the plant is being placed, and if that's allowed for the plant
-        public override bool TryPlaceBlockForWorldGen(IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, LCGRandom worldGenRand)
+        public override bool TryPlaceBlockForWorldGen(IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, IRandom worldGenRand, BlockPatchAttributes attributes = null)
         {
 				
 				int cnt = reefRadiusMin + worldGenRand.NextInt(reefRadiusMax - reefRadiusMin);

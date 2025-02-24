@@ -37,7 +37,7 @@ namespace Saltandsands
         }
 		
         // Worldgen placement, tests to see how many blocks below water the plant is being placed, and if that's allowed for the plant
-        public override bool TryPlaceBlockForWorldGen(IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, LCGRandom worldGenRand)
+        public override bool TryPlaceBlockForWorldGen(IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, IRandom worldGenRand, BlockPatchAttributes attributes = null)
         {
             Block block = blockAccessor.GetBlock(pos);
 
@@ -178,7 +178,7 @@ namespace Saltandsands
             }
         }
 
-        public override bool TryPlaceBlockForWorldGen(IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, LCGRandom worldGenRand)
+        public override bool TryPlaceBlockForWorldGen(IBlockAccessor blockAccessor, BlockPos pos, BlockFacing onBlockFace, IRandom worldGenRand, BlockPatchAttributes attributes = null)
         {
             BlockPos belowPos = pos.DownCopy();
 			bool completed = false;
@@ -215,7 +215,7 @@ namespace Saltandsands
 		/// <summary>
         /// Generates a column of blocks upwards only using the first element in the
         /// </summary>
-        private bool PlaceSeaweed(IBlockAccessor blockAccessor, BlockPos pos, int depth, LCGRandom worldGenRand)
+        private bool PlaceSeaweed(IBlockAccessor blockAccessor, BlockPos pos, int depth, IRandom worldGenRand)
         {
             int height = Math.Min(depth-1,  minLength + random.Next(1+(maxLength-minLength)));
 
@@ -266,7 +266,7 @@ namespace Saltandsands
 		/// If segments[rnd] is not null (it could be if only the base or a "short" base is to be placed) it will place a length of blocks of segments[rnd] topped by a block of ends[rnd]
 		/// The length of segments is a random number based on placeMaxLength + rand.NextInt(placeMaxLengthRand)
         /// </summary>
-		private bool PlaceSeaweedComplex(IBlockAccessor blockAccessor, BlockPos pos, int depth, LCGRandom worldGenRand)
+		private bool PlaceSeaweedComplex(IBlockAccessor blockAccessor, BlockPos pos, int depth, IRandom worldGenRand)
         {
             int rnd = worldGenRand.NextInt(bases.Length);
 
