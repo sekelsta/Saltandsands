@@ -21,13 +21,12 @@ namespace Saltandsands
 		private int reefMaxHeightBelowSealevel;
 		private int reefMaxHeightAboveSealevel;
 		private int maxSlopeHeightDiff;
-		public string[] coralStrings = new string[] { 
-		"coralbrain-blue", "coralbrain-green", "coralbrain-red", "coralbrain-yellow",
-		"coralfan-blue", "coralfan-orange", "coralfan-purple", "coralfan-red", "coralfan-violet", "coralfan-yellow", 
-		"coralstaghorn-blue", "coralstaghorn-orange", "coralstaghorn-purple", "coralstaghorn-yellow", 
-		"coraltable-brown", "coraltable-gray", "coraltable-green", "coraltable-red", 
-		"coraltube-blue", "coraltube-orange", "coraltube-pink", "coraltube-purple", "coraltube-red", "coraltube-yellow" };
-		private AssetLocation[] coralTypes = new AssetLocation[24];
+		private AssetLocation[] coralTypes = new AssetLocation[] { 
+		"saltandsands:coralbrain-blue", "saltandsands:coralbrain-green", "saltandsands:coralbrain-red", "saltandsands:coralbrain-yellow",
+		"saltandsands:coralfan-blue", "saltandsands:coralfan-orange", "saltandsands:coralfan-purple", "saltandsands:coralfan-red", "saltandsands:coralfan-violet", "saltandsands:coralfan-yellow", 
+		"saltandsands:coralstaghorn-blue", "saltandsands:coralstaghorn-orange", "saltandsands:coralstaghorn-purple", "saltandsands:coralstaghorn-yellow", 
+		"saltandsands:coraltable-brown", "saltandsands:coraltable-gray", "saltandsands:coraltable-green", "saltandsands:coraltable-red", 
+		"saltandsands:coraltube-blue", "saltandsands:coraltube-orange", "saltandsands:coraltube-pink", "saltandsands:coraltube-purple", "saltandsands:coraltube-red", "saltandsands:coraltube-yellow" };
 		private AssetLocation coralSubstrateBlock = new AssetLocation();
 		private bool extremeSlopeCancels;
 		private int extremeSlopeThreshold;
@@ -77,7 +76,6 @@ namespace Saltandsands
 			
 			reefMaxHeightBelowSealevel = Attributes["reefMaxHeightBelowSealevel"].Exists ? Attributes["reefMaxHeightBelowSealevel"].AsInt(15) : 15;
 			reefMaxHeightAboveSealevel = Attributes["reefMaxHeightAboveSealevel"].Exists ? Attributes["reefMaxHeightAboveSealevel"].AsInt(5) : 5;
-			//maxSlopeHeightDiff = Attributes["maxSlopeHeightDiff"].Exists ? Attributes["maxSlopeHeightDiff"].AsInt(5) : 5;
 			// Define maximum height difference between the corners of a potential reef above which generation is cancelle
 			if (Attributes["maxSlopeHeightDiff"].Exists)
 			{
@@ -86,16 +84,6 @@ namespace Saltandsands
 			else
 			{
 				maxSlopeHeightDiff = 5;
-			}
-			// Get asset locations for coral blocks using coralStrings
-			Api.World.Logger.Error("Beginning coral substrate type registration");
-			for (var i = 0; i < coralStrings.Length; i++)
-			{
-                //coralTypes[i] = Api.World.GetBlock(new AssetLocation(Code.Domain + ":" + coralStrings[i]));
-                /* You can't use Assetlocation to return a block it won't let you so I changed it too this > */
-                coralTypes[i] = new AssetLocation("saltandsands:" + coralStrings[i]);
-				Api.World.Logger.Error("Converted coral type {0} to code {1} for assetlocation {2}",coralStrings[i],"saltandsands:"+coralStrings[i],coralTypes[i]);
-               
 			}
 			
 			if (Attributes["coralSubstrateBlock"].Exists) 
@@ -106,9 +94,6 @@ namespace Saltandsands
 			{
 				coralSubstrateBlock = new AssetLocation("saltandsands:coralsubstrate");
 			}
-			
-			//coralTypes = this.Attributes["coralTypes"].AsString();
-			//var assetCodes = Block.Attributes["suitableFor"].Token.ToObject<IEnumerable<string>>();
 
         }
 
@@ -164,12 +149,8 @@ namespace Saltandsands
 					}
                     blockAccessor.SetBlock(api.World.GetBlock(coralSubstrateBlock).BlockId, tmpPos);
 					int rnd = worldGenRand.NextInt(coralTypes.Length-1);
-					//Api.World.Logger.Error("Selected coral type {0}",coralTypes[rnd]);				
 					Block coralPlacingBlock = blockAccessor.GetBlock(coralTypes[rnd]);
-					//Api.World.Logger.Error("Coral block resolved: {0}, block ID: {1}",coralPlacingBlock.Code,coralPlacingBlock.Id);
 					blockAccessor.SetBlock(coralPlacingBlock.Id, tmpPos.UpCopy());
-					//Api.World.Logger.Error("Placed coral substrate at depth {0}, coral type: {1}, coral code: {2}!",tmpPos.Y,coralStrings[rnd],coralTypes[rnd]);
-                    
 				}
 			}
 			
