@@ -19,74 +19,35 @@
 		}
 	},
 	storageFlags: 128,
-	attributesByType: {
-		"*-pearl-bracelet": {
-			wearableAttachment: true,
-			clothescategory: "arm",
-			warmth: 0
-		},
-		"*-coral-bracelet": {
-			wearableAttachment: true,
-			clothescategory: "arm",
-			warmth: 0
-		},
-		"*": {
-			clothescategory: "arm",
-			warmth: 0
-		}
+	attributes: {
+		wearableAttachment: true,
+		clothescategory: "arm",
+		warmth: 0
+	},
+    textures: {
+		"pearls": { base: "item/pearls" },
+		"coralpieces": { base: "item/coralpieces" },
+		"seraph": { base: "game:block/transparent" }
 	},
 	texturesByType: {
-		"*-copper-pearl-bracelet": {
-			"pearls": { base: "item/pearls" },
-			"metal": { base: "game:block/metal/ingot/copper" }
+		"clothes-arm-copper-*": {
+			"metal": { base: "game:block/metal/ingot/copper" },
 		},
-		"*-brass-pearl-bracelet": {
-			"pearls": { base: "item/pearls" },
-			"metal": { base: "game:block/metal/ingot/brass" }
+		"clothes-arm-brass-*": {
+			"metal": { base: "game:block/metal/ingot/brass" },
 		},
-		"*-silver-pearl-bracelet": {
-			"pearls": { base: "item/pearls" },
-			"metal": { base: "game:block/metal/ingot/silver" }
+		"clothes-arm-silver-*": {
+			"metal": { base: "game:block/metal/ingot/silver" },
 		},
-		"*-gold-pearl-bracelet": {
-			"pearls": { base: "item/pearls" },
-			"metal": { base: "game:block/metal/ingot/gold" }
+		"clothes-arm-gold-*": {
+			"metal": { base: "game:block/metal/ingot/gold" },
 		},
-		"*-electrum-pearl-bracelet": {
-			"pearls": { base: "item/pearls" },
-			"metal": { base: "game:block/metal/ingot/electrum" }
+		"clothes-arm-electrum-*": {
+			"metal": { base: "game:block/metal/ingot/electrum" },
 		},
-		"*-platinum-pearl-bracelet": {
-			"pearls": { base: "item/pearls" },
-			"metal": { base: "game:block/metal/ingot/platinum" }
+		"clothes-arm-platinum-*": {
+			"metal": { base: "game:block/metal/ingot/platinum" },
 		},
-		"*-copper-coral-bracelet": {
-			"coralpieces": { base: "item/coralpieces" },
-			"metal": { base: "game:block/metal/ingot/copper" }
-		},
-		"*-brass-coral-bracelet": {
-			"coralpieces": { base: "item/coralpieces" },
-			"metal": { base: "game:block/metal/ingot/brass" }
-		},
-		"*-silver-coral-bracelet": {
-			"coralpieces": { base: "item/coralpieces" },
-			"metal": { base: "game:block/metal/ingot/silver" }
-		},
-		"*-gold-coral-bracelet": {
-			"coralpieces": { base: "item/coralpieces" },
-			"metal": { base: "game:block/metal/ingot/gold" }
-		},
-		"*-electrum-coral-bracelet": {
-			"coralpieces": { base: "item/coralpieces" },
-			"metal": { base: "game:block/metal/ingot/electrum" }
-		},
-		"*-platinum-coral-bracelet": {
-			"coralpieces": { base: "item/coralpieces" },
-			"metal": { base: "game:block/metal/ingot/platinum" }
-		},
-		"*": {
-			"seraph": { base: "game:block/transparent" }
-		}
 	},
 	creativeinventory: { "general": ["*"], "items": ["*"], "clothing": ["*"] },
 	renderAlphaTest: 0.25,
