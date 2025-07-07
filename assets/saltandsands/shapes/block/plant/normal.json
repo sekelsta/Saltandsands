@@ -1,0 +1,49 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+	},
+	"elements": [
+		{
+			"name": "Leaves",
+			"from": [ 0.0, 0.0, 0.0 ], 
+			"to": [ 22.6, 22.6, 0.0 ], 
+			"shade": false,
+			"renderPass": 2,
+			"rotationOrigin": [ 0.0, 0.0, 0.0 ],
+			"rotationY": -45.0,
+			"faces": {
+				"north": { "texture": "#plant", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false, "windMode": [0,2,2,0], "windData": [0,1,1,0] },
+				"east": { "texture": "#plant", "uv": [ 0.0, 0.0, 0.5, 22.5 ], "enabled": false },
+				"south": { "texture": "#plant", "uv": [ 0.0, 0.0, 22.5, 22.5 ], "enabled": false },
+				"west": { "texture": "#plant", "uv": [ 0.0, 0.0, 0.5, 22.5 ], "enabled": false },
+				"up": { "texture": "#plant", "uv": [ 0.0, 0.0, 22.5, 0.5 ], "enabled": false },
+				"down": { "texture": "#plant", "uv": [ 0.0, 0.0, 22.5, 0.5 ], "enabled": false }
+			},
+			"children": [
+				{
+					"name": "Leaves2",
+					"from": [ 12.3795, 0.0, 10.3842 ], 
+					"to": [ 34.9795, 22.6, 10.3842 ], 
+					"shade": false,
+					"renderPass": 2,
+					"rotationOrigin": [ 12.3744, 0.0, 11.3844 ],
+					"rotationY": 89.98,
+					"faces": {
+						"north": { "texture": "#plant", "uv": [ 0.0, 0.0, 22.5, 22.5 ], "enabled": false },
+						"east": { "texture": "#plant", "uv": [ 0.0, 0.0, 0.5, 22.5 ], "enabled": false },
+						"south": { "texture": "#plant", "uv": [ 0.0, 0.0, 16.0, 16.0 ], "autoUv": false, "windMode": [0,0,2,2], "windData": [0,0,1,1] },
+						"west": { "texture": "#plant", "uv": [ 0.0, 0.0, 0.5, 22.5 ], "enabled": false },
+						"up": { "texture": "#plant", "uv": [ 0.0, 0.0, 22.5, 0.5 ], "enabled": false },
+						"down": { "texture": "#plant", "uv": [ 0.0, 0.0, 22.5, 0.5 ], "enabled": false }
+					}
+				}
+			]
+		}
+	]}

@@ -1,0 +1,9 @@
+{
+	code: "curedmeat",
+	sealHours: 480,
+	ingredients: [
+		{ type: "item", code: "game:salt",  quantity: 2 },
+		{ type: "item", code: "bivalvemeat-*-raw", name: "meat", quantity: 1, allowedVariants: ["scallop", "clam", "freshwatermussel", "urchin"] }
+	],
+	output: { type: "item", code: "bivalvemeat-{meat}-cured", stackSize: 1 }
+}

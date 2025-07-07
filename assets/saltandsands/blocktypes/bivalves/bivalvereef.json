@@ -1,0 +1,161 @@
+{
+	code: "bivalvereef",
+	"classByType":{
+        "*": "BlockBivalve"
+    },
+	entityClassByType: {
+		"*-harvested-*": "Transient",
+		"*-establishing-*": "Transient"
+	},
+	attributes: {
+		transientPropsByType: {
+			"bivalvereef-scallop-*-harvested-*": {
+				convertFrom: "*-scallop-{habitat}-harvested-{cover}", 
+				convertTo: "bivalvereef-scallop-{habitat}-normal-{cover}", 
+				inGameHours: "336",
+				resetBelowTemperature: -8,
+				stopBelowTemperature: -6
+			},
+			"bivalvereef-clam-*-harvested-*": {
+				convertFrom: "*-clam-{habitat}-harvested-{cover}", 
+				convertTo: "bivalvereef-clam-{habitat}-normal-{cover}", 
+				inGameHours: "336",
+				resetBelowTemperature: 2,
+				stopBelowTemperature: 4
+			},
+			"bivalvereef-freshwatermussel-*-harvested-*": {
+				convertFrom: "*-freshwatermussel-{habitat}-harvested-{cover}", 
+				convertTo: "bivalvereef-freshwatermussel-{habitat}-normal-{cover}", 
+				inGameHours: "336",
+				resetBelowTemperature: 2,
+				stopBelowTemperature: 4
+			},
+			"bivalvereef-scallop-*-establishing-*": {
+				convertFrom: "*-scallop-{habitat}-establishing-{cover}", 
+				convertTo: "bivalvereef-scallop-{habitat}-normal-{cover}", 
+				inGameHours: "480",
+				resetBelowTemperature: -8,
+				stopBelowTemperature: -6
+			},
+			"bivalvereef-clam-*-establishing-*": {
+				convertFrom: "*-clam-{habitat}-establishing-{cover}", 
+				convertTo: "bivalvereef-clam-{habitat}-normal-{cover}", 
+				inGameHours: "480",
+				resetBelowTemperature: 2,
+				stopBelowTemperature: 4
+			},
+			"bivalvereef-freshwatermussel-*-establishing-*": {
+				convertFrom: "*-freshwatermussel-{habitat}-establishing-{cover}", 
+				convertTo: "bivalvereef-freshwatermussel-{habitat}-normal-{cover}", 
+				inGameHours: "480",
+				resetBelowTemperature: 2,
+				stopBelowTemperature: 4
+			}
+		},
+		"waterCodeByType":{
+			"*-freshwatermussel-*": "water",
+            "*": "saltwater"
+        },
+		"minDepthByType": {
+            		"bivalvereef-scallop-*": 1,
+            		"bivalvereef-clam-*": 1,
+			"bivalvereef-freshwatermussel-*": 1
+        },
+        "maxDepthByType": {
+           		"bivalvereef-scallop-*": 14,
+            		"bivalvereef-clam-*": 16,
+			"bivalvereef-freshwatermussel-*": 11
+        }
+	},
+	allowedVariants: [ 
+		"*-scallop-saltwater-normal-free",
+		"*-scallop-saltwater-harvested-free",
+		"*-scallop-saltwater-establishing-free",
+		"*-clam-saltwater-normal-free",
+		"*-clam-saltwater-harvested-free",
+		"*-clam-saltwater-establishing-free",
+		"*-freshwatermussel-water-normal-free",
+		"*-freshwatermussel-water-harvested-free",
+		"*-freshwatermussel-water-establishing-free",
+		"*-ice-normal-free",
+		"*-ice-harvested-free",
+		"*-ice-establishing-free"
+	],
+	variantgroups: [
+		{ code: "type", states: ["scallop", "clam", "freshwatermussel"] },
+		{ code: "habitat", states: ["water", "saltwater", "ice"] },
+		{ code: "state", states: ["normal", "harvested", "establishing"] },
+		{ code: "cover", states: ["free", "snow"] },
+	],
+	creativeinventory: { 
+		"general": ["*-scallop-saltwater-normal-free", "*-clam-saltwater-normal-free", "*-freshwatermussel-water-normal-free"], 
+		"flora": ["*-scallop-saltwater-normal-free", "*-clam-saltwater-normal-free", "*-freshwatermussel-water-normal-free"] 
+	},
+	shapeByType: {
+		"bivalvereef-scallop-*-normal-*": { base: "block/scallopreef-normal1", alternates: [ { base: "block/scallopreef-normal2" } ] },		
+		"bivalvereef-clam-*-normal-*": { base: "block/clamreef-normal1", alternates: [ { base: "block/clamreef-normal2" } ] },
+		"bivalvereef-freshwatermussel-*-normal-*": { base: "block/musselreef-normal1", alternates: [ { base: "block/musselreef-normal2" } ] },
+	
+		"bivalvereef-scallop-*-harvested-*": { base: "block/scallopreef-harvested1", alternates: [ { base: "block/scallopreef-harvested2" } ] },		
+		"bivalvereef-clam-*-harvested-*": { base: "block/clamreef-harvested1", alternates: [ { base: "block/clamreef-harvested2" } ] },
+		"bivalvereef-freshwatermussel-*-harvested-*": { base: "block/musselreef-harvested1", alternates: [ { base: "block/musselreef-harvested2" } ] },
+		
+		"bivalvereef-scallop-*-establishing-*": { base: "block/scallopreef-harvested1", alternates: [ { base: "block/scallopreef-harvested2" } ] },		
+		"bivalvereef-clam-*-establishing-*": { base: "block/clamreef-harvested1", alternates: [ { base: "block/clamreef-harvested2" } ] },
+		"bivalvereef-freshwatermussel-*-establishing-*": { base: "block/musselreef-harvested1", alternates: [ { base: "block/musselreef-harvested2" } ] }
+	},
+	drawtypeByType: {
+		"*-snow": "JSONAndSnowLayer",
+		"*": "JSON"
+	},
+	renderpass: "OpaqueNoCull",
+	matterstate: "solid",
+	blockmaterial: "plant",
+	faceCullMode: "default",
+	randomDrawOffset: true,
+	randomizeRotations: true,
+	sideopaqueByType: {
+		"*-snow": { all: false, down: true },
+		"*": { all: false }
+	},
+	sidesolid: { all : false },
+	emitsideao: { all: false },
+	sideao: { all: true },
+	replaceable: 3000,
+	lightAbsorption: 0,
+	resistance: 1,
+	collisionbox: null,
+	selectionbox: { x1: 0.15, y1: 0, z1: 0.15, x2: 0.85, y2: 0.3, z2: 0.85 },
+	selectionbox: {
+		x1: 0, y1: 0, z1: 0,
+		x2: 1, y2: 1, z2: 1
+	},
+	randomDrawOffset: true,
+	guitransform: {
+		rotation: { x: 0, y: 0, z: 0 }
+	},
+	sounds: {
+		place: "game:block/plant",
+		break: "game:block/plant",
+		hit: "game:block/plant"
+	},
+	rainPermeableByType: {
+		"*-land-*": true
+	},
+	materialDensity: 200,
+	frostable: true,
+	guiTransform: {
+		translation: { x: 0, y: -1.5, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 1.2, z: 0.5 },
+		scale: 0.65
+	},
+	dropsByType: {
+		"*scallop-*-normal-*": [ { type: "item", code: "bivalve-scallop-live", quantity: { avg: 2, var: 1 } } ],
+		"*scallop-*-harvested-*":  [ { type: "item", code: "bivalve-scallop-live", quantity: { avg: 1, var: 0 } } ],
+		"*clam-*-normal-*":  [ { type: "item", code: "bivalve-clam-live", quantity: { avg: 2, var: 1 } } ],
+		"*clam-*-harvested-*":  [ { type: "item", code: "bivalve-clam-live", quantity: { avg: 1, var: 0 } } ],
+		"*freshwatermussel-*-normal-*":  [ { type: "item", code: "bivalve-freshwatermussel-live", quantity: { avg: 2, var: 1 } } ],
+		"*freshwatermussel-*-harvested-*":  [ { type: "item", code: "bivalve-freshwatermussel-live", quantity: { avg: 1, var: 0 } } ]
+	}
+}

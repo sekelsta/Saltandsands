@@ -1,0 +1,60 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"fan1": "block/coral/fan-orange1",
+		"fan2": "block/coral/fan-orange2",
+		"fan3": "block/coral/fan-orange3"
+	},
+	"elements": [
+		{
+			"name": "Cube2",
+			"from": [ 5.0, 0.0, 11.0 ],
+			"to": [ 21.0, 16.0, 11.0 ],
+			"rotationOrigin": [ 13.0, 0.0, 11.0 ],
+			"rotationY": 46.0,
+			"faces": {
+				"north": { "texture": "#fan1", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+			},
+			"children": [
+				{
+					"name": "Cube3",
+					"from": [ 0.0028, 0.0, 0.0028 ],
+					"to": [ 16.0028, 16.0, 0.0028 ],
+					"rotationOrigin": [ 8.0, 0.0, 0.0 ],
+					"rotationY": 89.98,
+					"faces": {
+						"north": { "texture": "#fan2", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Cube4",
+			"from": [ -2.5, 0.0, 4.0 ],
+			"to": [ 13.5, 16.0, 4.0 ],
+			"rotationOrigin": [ 5.5, 0.0, 4.0 ],
+			"rotationY": 20.0,
+			"faces": {
+				"north": { "texture": "#fan3", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+			},
+			"children": [
+				{
+					"name": "Cube5",
+					"from": [ -2.0, 0.0, 0.0028 ],
+					"to": [ 14.0, 16.0, 0.0028 ],
+					"rotationOrigin": [ 6.0, 0.0, 0.0 ],
+					"rotationY": 89.98,
+					"faces": {
+						"north": { "texture": "#fan2", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+					}
+				}
+			]
+		}
+	]}

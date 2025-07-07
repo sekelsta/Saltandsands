@@ -1,0 +1,107 @@
+{
+    "code": "coraltable",
+	"variantgroups": [
+		{ "code": "type", "states": ["brown", "gray", "green", "red"] }
+	],
+	"attributes": {
+		"minDepth": 2,
+        "maxDepth": 15,
+        "waterCode": "saltwater"
+    },
+    "drawtype": "JSONAndWater",
+	"renderpass": "liquid",
+	"matterstate": "liquid",
+	"blockmaterial": "liquid",
+	"faceCullMode": "liquid",
+    "randomDrawOffset": true,
+    "texturesByType": {
+        "*-brown": {
+			"table-brown1": { "base": "block/coral/table-brown1" },
+			"table-brown2": { "base": "block/coral/table-brown2" },
+			"table-brown3": { "base": "block/coral/table-brown3" },
+			"table-brown4": { "base": "block/coral/table-brown4" },
+			"table-brown5": { "base": "block/coral/table-brown5" },
+			"table-brown6": { "base": "block/coral/table-brown6" }
+        },
+        "*-gray": {
+            "table-brown1": { "base": "block/coral/table-gray1" },
+			"table-brown2": { "base": "block/coral/table-gray2" },
+			"table-brown3": { "base": "block/coral/table-gray3" },
+			"table-brown4": { "base": "block/coral/table-gray4" },
+			"table-brown5": { "base": "block/coral/table-gray5" },
+			"table-brown6": { "base": "block/coral/table-gray6" }
+        },
+        "*-green": {
+            "table-brown1": { "base": "block/coral/table-green1" },
+			"table-brown2": { "base": "block/coral/table-green2" },
+			"table-brown3": { "base": "block/coral/table-green3" },
+			"table-brown4": { "base": "block/coral/table-green4" },
+			"table-brown5": { "base": "block/coral/table-green5" },
+			"table-brown6": { "base": "block/coral/table-green6" }
+        },
+        "*-red": {
+            "table-brown1": { "base": "block/coral/table-red1" },
+			"table-brown2": { "base": "block/coral/table-red2" },
+			"table-brown3": { "base": "block/coral/table-red3" },
+			"table-brown4": { "base": "block/coral/table-red4" },
+			"table-brown5": { "base": "block/coral/table-red5" },
+			"table-brown6": { "base": "block/coral/table-red6" }
+        }
+    },
+	"creativeinventory": {
+        "general": ["*"],
+        "flora": ["*"]
+    },
+    "shapeByType": {
+		"*": { "base": "block/coral/coral-table*" }
+    },
+    "dropsByType": {},
+	"randomizeRotations": true,
+	"sideopaque": {
+		"all": false
+	},
+	"sidesolid": {
+		"all": false
+	},
+	randomDrawOffset: true,
+	randomizeRotations: true,
+	randomizeAxes: "xz",
+	randomSizeAdjustByType: {
+		"*": 0.5
+	},
+	"replaceable": 3000,
+	"lightAbsorption": 0,
+	"resistance": 1.5,
+	"collisionbox": null,
+	"selectionBoxByType": {
+        "*": { "x1": 0 , "y1": 0, "z1": 0, "x2": 1, "y2": 1.5, "z2": 1 }
+    },
+    "guiTransformByType": {
+        "*":{
+        "rotation": { "x": -22, "y": 107, "z": 0 },
+        "origin": { "x": 0.3, "y": 0.5, "z": 0.4 },
+        "scale": 1.32
+        }
+    },
+	"groundTransform": {
+		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+		"scale": 2.5
+	},
+	"tpHandTransform": {
+		"translation": { "x": -0.93, "y": -0.17, "z": -0.8 },
+		"rotation": { "x": 15, "y": -10, "z": -114 },
+		"origin": { "x": 0.5, "y": 0.1, "z": 0.5 },
+		"scale": 0.58
+	},
+	drops: [ 
+		{ type: "item", code: "coralpiece", quantity: { avg: 2, var: 1 } },
+		{ type: "item", code: "game:stone-limestone", quantity: { avg: 1, var: 1 } } 
+	],
+	"sounds": {
+		walk: "game:walk/stone",
+		byTool: {
+			"Pickaxe": { hit: "game:block/rock-hit-pickaxe", break: "game:block/rock-break-pickaxe" }
+		}
+	},
+	"materialDensity": 200
+}

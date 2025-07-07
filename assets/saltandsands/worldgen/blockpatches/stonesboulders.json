@@ -1,0 +1,61 @@
+[
+
+	{
+		comment: "Single loose stones under the sea",
+		blockCodes: ["game:loosestones-{rocktype}-free"],
+		quantity: { avg: 1, var: 0 },
+		placement: "UnderSeaWater",
+		chance: 2
+	},
+	{
+		comment: "Small patches of loose stones under the sea",
+		blockCodes: ["game:loosestones-{rocktype}-free"],
+		quantity: { avg: 3, var: 6 },
+		placement: "UnderSeaWater",
+		chance: 1
+	},
+	{
+		comment: "Small patches of loose stones under the sea",
+		blockCodes: ["game:loosestones-{rocktype}-free"],
+		quantity: { avg: 6, var: 9 },
+		offsetX: { avg: 0, var: 10 },
+		offsetZ: { avg: 0, var: 10 },
+		placement: "UnderSeaWater",
+		chance: 0.8
+	},
+	{
+		comment: "Big patches of loose stones under the sea",
+		blockCodes: ["game:loosestones-{rocktype}-free"],
+		quantity: { avg: 25, var: 15 },
+		offsetX: { avg: 0, var: 10 },
+		offsetZ: { avg: 0, var: 10 },
+		placement: "UnderSeaWater",
+		chance: 0.4
+	},
+	
+	{
+		comment: "Single loose boulders under the sea",
+		blockCodes: ["game:looseboulders-{rocktype}-free"],
+		quantity: { avg: 1, var: 0 },
+		placement: "UnderSeaWater",
+		chance: 1.2
+	},
+	
+	{
+		comment: "Small patches of loose boulders under the sea",
+		blockCodes: ["game:looseboulders-{rocktype}-free"],
+		quantity: { avg: 3, var: 6 },
+		placement: "UnderSeaWater",
+		chance: 0.4
+	},
+	{
+		comment: "Larger patches of loose boulders under the sea",
+		blockCodes: ["game:looseboulders-{rocktype}-free"],
+		quantity: { avg: 6, var: 12 },
+		offsetX: { avg: 0, var: 12 },
+		offsetZ: { avg: 0, var: 12 },
+		placement: "UnderSeaWater",
+		chance: 0.2
+	}
+	
+]

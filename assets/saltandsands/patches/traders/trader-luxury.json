@@ -1,0 +1,296 @@
+[
+  {
+    "file": "game:config/tradeliststrader-luxuries.json",
+    "op": "add",
+    "path": "buying/list/-",
+    "value": {
+      "code": "saltandsands:coralpiece",
+      "type": "item",
+      "stacksize": 16,
+      "stock": {
+        "avg": 2,
+        "var": 1.25
+      },
+      "price": {
+        "avg": 2,
+        "var": 0.5
+      }
+    }
+  },
+  {
+    "file": "game:config/tradeliststrader-luxuries.json",
+    "op": "add",
+    "path": "buying/list/-",
+    "value": {
+      "code": "saltandsands:pearl",
+      "type": "item",
+      "stacksize": 1,
+      "stock": {
+        "avg": 4,
+        "var": 1.25
+      },
+      "price": {
+        "avg": 4,
+        "var": 1.25
+      }
+    }
+  },
+
+  {
+    "file": "game:config/tradeliststrader-luxuries.json",
+    "op": "add",
+    "path": "buying/list/-",
+    "value": {
+      "code": "saltandsands:clothes-neck-coral-necklace",
+      "type": "item",
+      "stacksize": 1,
+      "stock": {
+        "avg": 1,
+        "var": 0.25
+      },
+      "price": {
+        "avg": 8,
+        "var": 2.5
+      }
+    }
+  },
+  {
+    "file": "game:config/tradeliststrader-luxuries.json",
+    "op": "add",
+    "path": "buying/list/-",
+    "value": {
+      "code": "saltandsands:clothes-neck-coral-choker",
+      "type": "item",
+      "stacksize": 1,
+      "stock": {
+        "avg": 1,
+        "var": 0.25
+      },
+      "price": {
+        "avg": 8,
+        "var": 2.5
+      }
+    }
+  },
+  {
+    "file": "game:config/tradeliststrader-luxuries.json",
+    "op": "add",
+    "path": "buying/list/-",
+    "value": {
+      "code": "saltandsands:clothes-arm-silver-pearl-bracelet",
+      "type": "item",
+      "stacksize": 1,
+      "stock": {
+        "avg": 1,
+        "var": 0.25
+      },
+      "price": {
+        "avg": 4,
+        "var": 1.25
+      }
+    }
+  },
+  {
+    "file": "game:config/tradeliststrader-luxuries.json",
+    "op": "add",
+    "path": "buying/list/-",
+    "value": {
+      "code": "saltandsands:clothes-arm-gold-pearl-bracelet",
+      "type": "item",
+      "stacksize": 1,
+      "stock": {
+        "avg": 1,
+        "var": 0.25
+      },
+      "price": {
+        "avg": 7,
+        "var": 1.5
+      }
+    }
+  },
+  {
+    "file": "game:config/tradeliststrader-luxuries.json",
+    "op": "add",
+    "path": "buying/list/-",
+    "value": {
+      "code": "saltandsands:clothes-arm-electrum-pearl-bracelet",
+      "type": "item",
+      "stacksize": 1,
+      "stock": {
+        "avg": 1,
+        "var": 0.25
+      },
+      "price": {
+        "avg": 6,
+        "var": 2.5
+      }
+    }
+  },
+  
+  {
+    "file": "game:config/tradeliststrader-luxuries.json",
+    "op": "add",
+    "path": "buying/list/-",
+    "value": {
+      "code": "saltandsands:clothes-emblem-silver-pearl-brooch",
+      "type": "item",
+      "stacksize": 1,
+      "stock": {
+        "avg": 1,
+        "var": 0.25
+      },
+      "price": {
+        "avg": 4,
+        "var": 1.25
+      }
+    }
+  },
+  {
+    "file": "game:config/tradeliststrader-luxuries.json",
+    "op": "add",
+    "path": "buying/list/-",
+    "value": {
+      "code": "saltandsands:clothes-emblem-gold-pearl-brooch",
+      "type": "item",
+      "stacksize": 1,
+      "stock": {
+        "avg": 1,
+        "var": 0.25
+      },
+      "price": {
+        "avg": 7,
+        "var": 1.5
+      }
+    }
+  },
+  {
+    "file": "game:config/tradeliststrader-luxuries.json",
+    "op": "add",
+    "path": "buying/list/-",
+    "value": {
+      "code": "saltandsands:clothes-emblem-electrum-pearl-brooch",
+      "type": "item",
+      "stacksize": 1,
+      "stock": {
+        "avg": 1,
+        "var": 0.25
+      },
+      "price": {
+        "avg": 6,
+        "var": 2.5
+      }
+    }
+  },
+  
+  
+  {
+    "file": "game:config/tradeliststrader-luxuries.json",
+    "op": "add",
+    "path": "buying/list/-",
+    "value": {
+      "code": "saltandsands:clothes-arm-silver-coral-bracelet",
+      "type": "item",
+      "stacksize": 1,
+      "stock": {
+        "avg": 1,
+        "var": 0.25
+      },
+      "price": {
+        "avg": 2,
+        "var": 1.5
+      }
+    }
+  },
+  {
+    "file": "game:config/tradeliststrader-luxuries.json",
+    "op": "add",
+    "path": "buying/list/-",
+    "value": {
+      "code": "saltandsands:clothes-arm-gold-coral-bracelet",
+      "type": "item",
+      "stacksize": 1,
+      "stock": {
+        "avg": 1,
+        "var": 0.25
+      },
+      "price": {
+        "avg": 5,
+        "var": 1.5
+      }
+    }
+  },
+  {
+    "file": "game:config/tradeliststrader-luxuries.json",
+    "op": "add",
+    "path": "buying/list/-",
+    "value": {
+      "code": "saltandsands:clothes-arm-electrum-coral-bracelet",
+      "type": "item",
+      "stacksize": 1,
+      "stock": {
+        "avg": 1,
+        "var": 0.25
+      },
+      "price": {
+        "avg": 4,
+        "var": 2.5
+      }
+    }
+  },
+  
+  {
+    "file": "game:config/tradeliststrader-luxuries.json",
+    "op": "add",
+    "path": "buying/list/-",
+    "value": {
+      "code": "saltandsands:clothes-emblem-silver-coral-brooch",
+      "type": "item",
+      "stacksize": 1,
+      "stock": {
+        "avg": 1,
+        "var": 0.25
+      },
+      "price": {
+        "avg": 2,
+        "var": 1.25
+      }
+    }
+  },
+  {
+    "file": "game:config/tradeliststrader-luxuries.json",
+    "op": "add",
+    "path": "buying/list/-",
+    "value": {
+      "code": "saltandsands:clothes-emblem-gold-coral-brooch",
+      "type": "item",
+      "stacksize": 1,
+      "stock": {
+        "avg": 1,
+        "var": 0.25
+      },
+      "price": {
+        "avg": 5,
+        "var": 1.5
+      }
+    }
+  },
+  {
+    "file": "game:config/tradeliststrader-luxuries.json",
+    "op": "add",
+    "path": "buying/list/-",
+    "value": {
+      "code": "saltandsands:clothes-emblem-electrum-coral-brooch",
+      "type": "item",
+      "stacksize": 1,
+      "stock": {
+        "avg": 1,
+        "var": 0.25
+      },
+      "price": {
+        "avg": 4,
+        "var": 2.5
+      }
+    }
+  }
+  
+]

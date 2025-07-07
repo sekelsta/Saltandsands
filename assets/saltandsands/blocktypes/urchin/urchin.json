@@ -1,0 +1,90 @@
+{
+	code: "urchin",
+	variantgroups: [
+		{ code: "type", states: ["antarctic", "banded", "cape", "chilean", "egg", "fire", "green", "kina", "longspine", "needle", "pacificpurple", "redspined", "tuxedo"] },
+		{ code: "habitat", states: ["water", "saltwater", "ice"] },
+		{ code: "cover", states: ["free", "snow"] },
+	],
+	allowedVariants: [ 
+		"*-saltwater-free",
+		"*-saltwater-snow",
+		"*-ice-free",
+		"*-ice-snow",
+	],
+	"classByType":{
+        "*": "BlockSASWaterPlant"
+    },
+	shape: { base: "block/urchin/{type}" },
+	attributes: {
+		"waterCode": "saltwater",
+		"maxDepthByType": {
+            "antarctic": 34,
+			"banded": 16,
+			"cape": 13,
+			"chilean": 29,
+			"egg": 11,
+			"fire": 11,
+			"green": 26,
+			"kina": 13,
+			"longspine": 16,
+			"needle": 18, 
+			"pacificpurple": 23, 
+			"redspined": 8, 
+			"tuxedo": 13,
+			"*": 15
+        },
+        "minDepthByType": 
+		{
+			"antarctic": 3,
+			"chilean": 2,
+			"green": 2,
+			"pacificpurple": 2,
+			"*": 1
+		}
+	},
+
+	drawtypeByType: {
+		"*-snow": "JSONAndSnowLayer",
+		"*": "JSON"
+	},
+	renderpass: "OpaqueNoCull",
+	matterstate: "solid",
+	blockmaterial: "plant",
+	faceCullMode: "default",
+	randomDrawOffset: true,
+	randomizeRotations: true,
+	sideopaqueByType: {
+		"*-snow": { all: false, down: true },
+		"*": { all: false }
+	},
+	sidesolid: { all : false },
+	emitsideao: { all: false },
+	sideao: { all: true },
+	replaceable: 3000,
+	lightAbsorption: 0,
+	resistance: 1,
+	collisionbox: null,
+	selectionbox: { x1: 0.35, y1: 0, z1: 0.35, x2: 0.65, y2: 0.4, z2: 0.65 },
+	selectionbox: {
+		x1: 0, y1: 0, z1: 0,
+		x2: 1, y2: 1, z2: 1
+	},
+	randomDrawOffset: true,
+	guitransform: {
+		rotation: { x: 0, y: 0, z: 0 }
+	},
+	drops: [ { type: "item", code: "urchin-{type}",  quantity: { avg: 1, var: 0 }  } ],
+	sounds: {
+		place: "game:block/plant",
+		break: "game:block/plant",
+		hit: "game:block/plant"
+	},
+	materialDensity: 200,
+	frostable: false,
+	guiTransform: {
+		translation: { x: 0, y: -1.5, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 1.2, z: 0.5 },
+		scale: 0.65
+	}
+}

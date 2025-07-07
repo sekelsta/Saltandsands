@@ -1,0 +1,36 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"fan1": "block/coral/fan-orange1",
+		"fan3": "block/coral/fan-orange3"
+	},
+	"elements": [
+		{
+			"name": "Cube2",
+			"from": [ 0.0, 0.0, 8.0 ],
+			"to": [ 16.0, 16.0, 8.0 ],
+			"rotationOrigin": [ 8.0, 0.0, 8.0 ],
+			"faces": {
+				"north": { "texture": "#fan3", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+			},
+			"children": [
+				{
+					"name": "Cube3",
+					"from": [ 0.0028, 0.0, 0.0028 ],
+					"to": [ 16.0028, 16.0, 0.0028 ],
+					"rotationOrigin": [ 8.0, 0.0, 0.0 ],
+					"rotationY": 89.98,
+					"faces": {
+						"north": { "texture": "#fan3", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+					}
+				}
+			]
+		}
+	]}

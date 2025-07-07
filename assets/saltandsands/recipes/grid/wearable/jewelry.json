@@ -1,0 +1,87 @@
+[
+
+{
+	ingredientPattern: "T,P",
+	ingredients: {
+		"T": { type: "item", code: "game:flaxtwine" },
+		"P": { type: "item", code: "pearl", quantity: 8 }
+	},
+	width: 1,
+	height: 2,
+	output: { type: "item", code: "game:clothes-neck-pearl-necklace"  }
+},
+
+{
+	ingredientPattern: "T,P",
+	ingredients: {
+		"T": { type: "item", code: "game:flaxtwine" },
+		"P": { type: "item", code: "coralpiece", quantity: 8 },
+	},
+	width: 1,
+	height: 2,
+	output: { type: "item", code: "clothes-neck-coral-necklace"  }
+},
+
+
+{
+	ingredientPattern: "PTP",
+	ingredients: {
+		"T": { type: "item", code: "game:flaxtwine" },
+		"P": { type: "item", code: "coralpiece", quantity: 4 },
+	},
+	width: 3,
+	height: 1,
+	output: { type: "item", code: "clothes-neck-coral-choker"  }
+},
+
+{
+	ingredientPattern: "H,B,P",
+	ingredients: {
+		"H": { type: "item", code: "game:hammer-*", isTool: true  },
+		"B": { type: "item", code: "game:metalbit-*", name: "metal", allowedVariants: [ "copper", "brass", "silver", "gold", "electrum", "platinum" ], quantity: 5 },
+		"P": { type: "item", code: "pearl", quantity: 5 }
+	},
+	width: 1,
+	height: 3,
+	output: { type: "item", code: "clothes-arm-{metal}-pearl-bracelet"  }
+},
+
+{
+	ingredientPattern: "H,B,P",
+	ingredients: {
+		"H": { type: "item", code: "game:hammer-*", isTool: true  },
+		"B": { type: "item", code: "game:metalbit-*", name: "metal", allowedVariants: [ "copper", "brass", "silver", "gold", "electrum", "platinum" ], quantity: 5 },
+		"P": { type: "item", code: "coralpiece", quantity: 5 }
+	},
+	width: 1,
+	height: 3,
+	output: { type: "item", code: "clothes-arm-{metal}-coral-bracelet"  }
+},
+
+{
+	ingredientPattern: "HT,BP",
+	ingredients: {
+		"H": { type: "item", code: "game:hammer-*", isTool: true  },
+		"T": { type: "item", code: "game:flaxtwine" },
+		"B": { type: "item", code: "game:metalbit-*", name: "metal", allowedVariants: [ "copper", "brass", "silver", "gold", "electrum", "platinum" ], quantity: 10 },
+		"P": { type: "item", code: "pearl", quantity: 4 }
+	},
+	width: 2,
+	height: 2,
+	output: { type: "item", code: "clothes-emblem-{metal}-pearl-brooch"  }
+},
+
+{
+	ingredientPattern: "HT,BP",
+	ingredients: {
+		"H": { type: "item", code: "game:hammer-*", isTool: true  },
+		"T": { type: "item", code: "game:flaxtwine" },
+		"B": { type: "item", code: "game:metalbit-*", name: "metal", allowedVariants: [ "copper", "brass", "silver", "gold", "electrum", "platinum" ], quantity: 10 },
+		"P": { type: "item", code: "coralpiece", quantity: 4 }
+	},
+	width: 2,
+	height: 2,
+	output: { type: "item", code: "clothes-emblem-{metal}-coral-brooch"  }
+}
+
+]

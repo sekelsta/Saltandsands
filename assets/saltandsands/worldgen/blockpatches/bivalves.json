@@ -1,0 +1,72 @@
+[
+	{
+		comment: "Large patches of scallops",
+		blockCodes: ["bivalvereef-scallop-saltwater-normal-free"],
+		minTemp: -1,
+		maxTemp: 40,
+		minRain: 0,
+		maxRain: 1,
+		quantity: { avg: 10, var: 5 },
+		offsetX: { avg: 0, var: 8 },
+		offsetZ: { avg: 0, var: 8 },
+		chance: 0.2,
+		placement: "UnderSeaWater"
+	},
+	{
+		comment: "Small patches of scallops",
+		blockCodes: ["bivalvereef-scallop-saltwater-normal-free"],
+		minTemp: -7,
+		maxTemp: 40,
+		minRain: 0,
+		maxRain: 1,
+		quantity: { avg: 4, var: 2 },
+		offsetX: { avg: 0, var: 5 },
+		offsetZ: { avg: 0, var: 5 },
+		chance: 0.4,
+		placement: "UnderSeaWater"
+	},
+	{
+		comment: "Large patches of clams",
+		blockCodes: ["bivalvereef-clam-saltwater-normal-free"],
+		minTemp: -1,
+		maxTemp: 40,
+		quantity: { avg: 10, var: 5 },
+		offsetX: { avg: 0, var: 8 },
+		offsetZ: { avg: 0, var: 8 },
+		chance: 0.2,
+		placement: "UnderSeaWater"
+	},
+	{
+		comment: "Small patches of clams",
+		blockCodes: ["bivalvereef-clam-saltwater-normal-free"],
+		minTemp: -7,
+		maxTemp: 40,
+		quantity: { avg: 4, var: 2 },
+		offsetX: { avg: 0, var: 5 },
+		offsetZ: { avg: 0, var: 5 },
+		chance: 0.4,
+		placement: "UnderSeaWater"
+	},
+	{
+		comment: "Large patches of freshwater mussels",
+		blockCodes: ["bivalvereef-freshwatermussel-water-normal-free"],
+		minTemp: 0,
+		maxTemp: 40,
+		quantity: { avg: 10, var: 5 },
+		offsetX: { avg: 0, var: 8 },
+		offsetZ: { avg: 0, var: 8 },
+		chance: 0.2,
+		placement: "UnderWater"
+	},
+	{
+		comment: "Small patches of freshwater mussels",
+		blockCodes: ["bivalvereef-freshwatermussel-water-normal-free"],
+		minTemp: -4,
+		maxTemp: 40,
+		quantity: { avg: 4, var: 2 },
+		offsetX: { avg: 0, var: 5 },
+		offsetZ: { avg: 0, var: 5 },
+		chance: 0.4,
+		placement: "UnderWater"
+	}
+]

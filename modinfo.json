@@ -1,0 +1,24 @@
+﻿{
+  "type": "code",
+  "modid": "saltandsands",
+  "name": "Salt and sands",
+  "Authors": [
+    "Catasteroid"
+  ],
+  "contributors": [
+    "Lucas",
+    "cyanoplax",
+    "Hieronymus",
+    "Ледяная Соня",
+    "AzuliBluespots",
+    "Sekelsta"
+  ],
+  "description": "Adds an array of ocean-enriching content, cultivate shellfish for meat and shells!",
+  "version": "1.1.1",
+  "dependency": {
+    "game": "",
+  },
+  "Side": "Universal",
+  "RequiredOnClient": true,
+  "RequiredOnServer": true
+}

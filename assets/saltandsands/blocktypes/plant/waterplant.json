@@ -1,0 +1,92 @@
+{
+    "code": "waterplant",
+    "classByType":{
+        "*": "BlockSASWaterPlant"
+    },
+	"variantgroups": [
+		{ "code": "type", "states": ["seagrass", "watermilfoil"] },
+		{ "code": "state", "states": ["small", "medium", "large"] }
+	],
+    "attributes": {
+		"minDepthByType": {
+            "*-seagrass-*": 1,
+            "*-watermilfoil-*": 2
+        },
+        "maxDepthByType": {
+            "*-seagrass-*": 14,
+            "*-watermilfoil-*": 15
+        },
+        "waterCodeByType":{
+            "*-seagrass-*": "saltwater",
+            "*-watermilfoil-*": "water"
+        }
+    },
+    "drawtype": "JSONAndWater",
+	"renderpass": "liquid",
+	"matterstate": "liquid",
+	"blockmaterial": "liquid",
+	"faceCullMode": "liquid",
+    "randomDrawOffset": true,
+    "texturesByType": {
+        "*-small": {
+            "plant": { "base": "block/plant/{type}/{type}_short" }
+        },
+        "*-medium": {
+            "plant": { "base": "block/plant/{type}/{type}_medium" }
+        },
+        "*-large": {
+            "plant": { "base": "block/plant/{type}/{type}_tall" }
+        }
+    },
+	"creativeinventory": {
+        "general": ["*-small", "*-medium", "*-large"],
+        "flora": ["*-small", "*-medium", "*-large"]
+    },
+    "shapeByType": {
+        "*-watermilfoil-large": {"base": "block/plant/tall" },
+        "*": {"base": "block/plant/normal" }
+    },
+    "dropsByType": {},
+	"randomizeRotations": true,
+	"sideopaque": {
+		"all": false
+	},
+	"sidesolid": {
+		"all": false
+	},
+	"replaceable": 3000,
+	"lightAbsorption": 0,
+	"resistance": 1.5,
+	"collisionbox": null,
+	"selectionBoxByType": {
+        "*": { "x1": 0 , "y1": 0, "z1": 0, "x2": 1, "y2": 1.5, "z2": 1 }
+    },
+    "guiTransformByType": {
+        "*":{
+        "rotation": { "x": -22, "y": 107, "z": 0 },
+        "origin": { "x": 0.3, "y": 0.5, "z": 0.4 },
+        "scale": 1.32
+        }
+    },
+	"groundTransform": {
+		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+		"scale": 2.5
+	},
+	"tpHandTransform": {
+		"translation": { "x": -0.93, "y": -0.17, "z": -0.8 },
+		"rotation": { "x": 15, "y": -10, "z": -114 },
+		"origin": { "x": 0.5, "y": 0.1, "z": 0.5 },
+		"scale": 0.58
+	},
+	"sounds": {
+		"place": "game:block/plant",
+		"break": "game:block/plant",
+		"hit": "game:block/plant",
+        "inside": "game:walk/water"
+	},
+	"vertexFlags": {
+		"leavesWindWave": true
+	},
+	"materialDensity": 200,
+	"frostable": true
+}

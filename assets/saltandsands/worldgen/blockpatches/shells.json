@@ -1,0 +1,37 @@
+[
+
+	{
+		comment: "Single loose shells under the sea",
+		blockCodes: ["game:seashell-scallop-plain"],
+		quantity: { avg: 1, var: 0 },
+		placement: "NearSeaWater",
+		chance: 1.5
+	},
+	{
+		comment: "Small patches of loose shells under the sea",
+		blockCodes: ["game:seashell-scallop-plain"],
+		quantity: { avg: 3, var: 6 },
+		offsetX: { avg: 0, var: 10 },
+		offsetZ: { avg: 0, var: 10 },
+		placement: "NearSeaWater",
+		chance: 0.5
+	},
+	
+	{
+		comment: "Single loose shells under the sea",
+		blockCodes: ["game:seashell-scallop-plain"],
+		quantity: { avg: 1, var: 0 },
+		placement: "UnderSeaWater",
+		chance: 1.5
+	},
+	{
+		comment: "Small patches of loose shells under the sea",
+		blockCodes: ["game:seashell-scallop-plain"],
+		quantity: { avg: 3, var: 6 },
+		offsetX: { avg: 0, var: 10 },
+		offsetZ: { avg: 0, var: 10 },
+		placement: "UnderSeaWater",
+		chance: 0.5
+	}
+
+]

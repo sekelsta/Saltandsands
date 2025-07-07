@@ -1,0 +1,81 @@
+[
+	{
+		comment: "Large patches of seagrass",
+		blockCodes: ["waterplant-seagrass-small", "waterplant-seagrass-medium", "waterplant-seagrass-large"],
+		minTemp: 3,
+		maxTemp: 40,
+		minRain: 0,
+		maxRain: 1,
+		quantity: { avg: 32, var: 16 },
+		offsetX: { avg: 0, var: 12 },
+		offsetZ: { avg: 0, var: 12 },
+		chance: 2,
+		placement: "UnderSeaWater"
+	},
+	{
+		comment: "Medium patches of seagrass",
+		blockCodes: ["waterplant-seagrass-small", "waterplant-seagrass-medium", "waterplant-seagrass-large"],
+		minTemp: 1,
+		maxTemp: 40,
+		minRain: 0,
+		maxRain: 1,
+		quantity: { avg: 16, var: 8 },
+		offsetX: { avg: 0, var: 6 },
+		offsetZ: { avg: 0, var: 6 },
+		chance: 4,
+		placement: "UnderSeaWater"
+	},
+	{
+		comment: "Small patches of seagrass",
+		blockCodes: ["waterplant-seagrass-small", "waterplant-seagrass-medium", "waterplant-seagrass-large"],
+		minTemp: -1,
+		maxTemp: 40,
+		minRain: 0,
+		maxRain: 1,
+		quantity: { avg: 8, var: 4 },
+		offsetX: { avg: 0, var: 3 },
+		offsetZ: { avg: 0, var: 3 },
+		chance: 4,
+		placement: "UnderWater"
+	},
+	
+	{
+		comment: "Large patches of watermilfoil",
+		blockCodes: ["waterplant-watermilfoil-small", "waterplant-watermilfoil-medium", "waterplant-watermilfoil-large"],
+		minTemp: 3,
+		maxTemp: 40,
+		minRain: 0,
+		maxRain: 1,
+		quantity: { avg: 32, var: 16 },
+		offsetX: { avg: 0, var: 12 },
+		offsetZ: { avg: 0, var: 12 },
+		chance: 2,
+		placement: "UnderWater"
+	},
+	{
+		comment: "Medium patches of watermilfoil",
+		blockCodes: ["waterplant-watermilfoil-small", "waterplant-watermilfoil-medium", "waterplant-watermilfoil-large"],
+		minTemp: 1,
+		maxTemp: 40,
+		minRain: 0,
+		maxRain: 1,
+		quantity: { avg: 16, var: 8 },
+		offsetX: { avg: 0, var: 6 },
+		offsetZ: { avg: 0, var: 6 },
+		chance: 4,
+		placement: "UnderWater"
+	},
+	{
+		comment: "Small patches of watermilfoil",
+		blockCodes: ["waterplant-watermilfoil-small", "waterplant-watermilfoil-medium", "waterplant-watermilfoil-large"],
+		minTemp: -1,
+		maxTemp: 40,
+		minRain: 0,
+		maxRain: 1,
+		quantity: { avg: 8, var: 4 },
+		offsetX: { avg: 0, var: 3 },
+		offsetZ: { avg: 0, var: 3 },
+		chance: 4,
+		placement: "UnderWater"
+	}
+]

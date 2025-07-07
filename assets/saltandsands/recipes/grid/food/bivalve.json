@@ -1,0 +1,35 @@
+[
+	{
+		ingredientPattern: "H,S",
+		shapeless: true,
+		ingredients: {
+			"S": { type: "item", code: "game:knife-*", isTool: true, toolDurabilityCost: 1 },
+			"H": { type: "item", code: "saltandsands:bivalve-scallop-live", quantity: 1 }
+		},
+		width: 1,
+		height: 2,
+		output: { type: "item", code: "saltandsands:bivalve-scallop-dead"  }
+	},
+	{
+		ingredientPattern: "H,S",
+		shapeless: true,
+		ingredients: {
+			"S": { type: "item", code: "game:knife-*", isTool: true, toolDurabilityCost: 1 },
+			"H": { type: "item", code: "saltandsands:bivalve-clam-live", quantity: 1 }
+		},
+		width: 1,
+		height: 2,
+		output: { type: "item", code: "saltandsands:bivalve-clam-dead"  }
+	},
+	{
+		ingredientPattern: "H,S",
+		shapeless: true,
+		ingredients: {
+			"S": { type: "item", code: "game:knife-*", isTool: true, toolDurabilityCost: 1 },
+			"H": { type: "item", code: "saltandsands:bivalve-freshwatermussel-live", quantity: 1 }
+		},
+		width: 1,
+		height: 2,
+		output: { type: "item", code: "saltandsands:bivalve-freshwatermussel-dead"  }
+	}
+]

@@ -1,0 +1,99 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"fan1": "block/coral/fan-orange1",
+		"fan3": "block/coral/fan-orange3",
+		"fanbranch1": "block/coral/fanbranch-orange1",
+		"fanbranch3": "block/coral/fanbranch-orange3"
+	},
+	"elements": [
+		{
+			"name": "Cube2",
+			"from": [ 0.0, 0.0, 8.0 ],
+			"to": [ 16.0, 16.0, 8.0 ],
+			"rotationOrigin": [ 8.0, 0.0, 8.0 ],
+			"rotationY": -119.0,
+			"faces": {
+				"north": { "texture": "#fan3", "uv": [ 0.0, 0.0, 16.0, 16.0 ] }
+			},
+			"children": [
+				{
+					"name": "Cube4",
+					"from": [ 3.75, 7.0, 0.0 ],
+					"to": [ 11.75, 14.0, 0.0 ],
+					"rotationOrigin": [ 9.25, 7.0, 0.0 ],
+					"rotationY": -120.0,
+					"faces": {
+						"north": { "texture": "#fanbranch1", "uv": [ 7.5, 0.0, 15.5, 7.0 ] }
+					}
+				},
+				{
+					"name": "Cube8",
+					"from": [ 1.0, 0.5, 0.0 ],
+					"to": [ 8.0, 10.5, 0.0 ],
+					"rotationOrigin": [ 6.0, 0.5, 0.0 ],
+					"rotationY": 67.0,
+					"faces": {
+						"north": { "texture": "#fanbranch3", "uv": [ 7.5, 0.0, 14.5, 10.0 ] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Cube5",
+			"from": [ 5.5, 0.0, 12.0 ],
+			"to": [ 13.5, 10.0, 12.0 ],
+			"rotationOrigin": [ 11.5, 0.0, 12.0 ],
+			"rotationY": 51.0,
+			"faces": {
+				"north": { "texture": "#fanbranch3", "uv": [ 7.5, 0.0, 15.5, 10.0 ] }
+			},
+			"children": [
+				{
+					"name": "Cube6",
+					"from": [ 0.0, 0.0, 0.0 ],
+					"to": [ 7.0, 10.0, 0.0 ],
+					"rotationOrigin": [ 5.8, 0.0, 0.0 ],
+					"rotationX": -180.0,
+					"rotationY": 74.0,
+					"rotationZ": -180.0,
+					"faces": {
+						"north": { "texture": "#fanbranch3", "uv": [ 8.5, 0.0, 15.5, 10.0 ] }
+					}
+				}
+			]
+		},
+		{
+			"name": "Cube3",
+			"from": [ -0.5, 0.0, 3.0 ],
+			"to": [ 7.5, 7.0, 3.0 ],
+			"rotationOrigin": [ 5.0233, 0.0, 2.9976 ],
+			"rotationX": 0.0,
+			"rotationY": -45.0,
+			"rotationZ": 0.0,
+			"faces": {
+				"north": { "texture": "#fanbranch1", "uv": [ 7.5, 0.0, 15.5, 7.0 ] }
+			},
+			"children": [
+				{
+					"name": "Cube7",
+					"from": [ -0.25, 0.0, 0.0 ],
+					"to": [ 7.75, 10.0, 0.0 ],
+					"rotationOrigin": [ 5.3233, 0.0, -0.0024 ],
+					"rotationX": 0.0,
+					"rotationY": -123.0,
+					"rotationZ": 0.0,
+					"faces": {
+						"north": { "texture": "#fanbranch3", "uv": [ 7.5, 0.0, 15.5, 10.0 ] }
+					}
+				}
+			]
+		}
+	]}

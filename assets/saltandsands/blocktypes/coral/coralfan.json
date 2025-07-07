@@ -1,0 +1,123 @@
+{
+    "code": "coralfan",
+	"variantgroups": [
+		{ "code": "type", "states": ["blue", "orange", "purple", "red", "violet", "yellow"] }
+	],
+	"attributes": {
+		"minDepth": 2,
+        	"maxDepth": 15,
+        	"waterCode": "saltwater"
+    },
+    "drawtype": "JSONAndWater",
+	"renderpass": "liquid",
+	"matterstate": "liquid",
+	"blockmaterial": "liquid",
+	"faceCullMode": "liquid",
+    "randomDrawOffset": true,
+    "texturesByType": {
+        "*-blue": {
+            "fan1": { "base": "block/coral/fan-blue1" },
+			"fan2": { "base": "block/coral/fan-blue2" },
+			"fan3": { "base": "block/coral/fan-blue3" },
+			"fanbranch1": { "base": "block/coral/fanbranch-blue1" },
+			"fanbranch2": { "base": "block/coral/fanbranch-blue2" },
+			"fanbranch3": { "base": "block/coral/fanbranch-blue3" }
+        },
+        "*-orange": {
+			"fan1": { "base": "block/coral/fan-orange1" },
+			"fan2": { "base": "block/coral/fan-orange2" },
+			"fan3": { "base": "block/coral/fan-orange3" },
+			"fanbranch1": { "base": "block/coral/fanbranch-orange1" },
+			"fanbranch2": { "base": "block/coral/fanbranch-orange2" },
+			"fanbranch3": { "base": "block/coral/fanbranch-orange3" }
+        },
+        "*-purple": {
+		    "fan1": { "base": "block/coral/fan-purple1" },
+			"fan2": { "base": "block/coral/fan-purple2" },
+			"fan3": { "base": "block/coral/fan-purple3" },
+			"fanbranch1": { "base": "block/coral/fanbranch-purple1" },
+			"fanbranch2": { "base": "block/coral/fanbranch-purple2" },
+			"fanbranch3": { "base": "block/coral/fanbranch-purple3" }
+        },
+		"*-red": {
+		    "fan1": { "base": "block/coral/fan-red1" },
+			"fan2": { "base": "block/coral/fan-red2" },
+			"fan3": { "base": "block/coral/fan-red3" },
+			"fanbranch1": { "base": "block/coral/fanbranch-red1" },
+			"fanbranch2": { "base": "block/coral/fanbranch-red2" },
+			"fanbranch3": { "base": "block/coral/fanbranch-red3" }
+        },
+        "*-violet": {
+		    "fan1": { "base": "block/coral/fan-violet1" },
+			"fan2": { "base": "block/coral/fan-violet2" },
+			"fan3": { "base": "block/coral/fan-violet3" },
+			"fanbranch1": { "base": "block/coral/fanbranch-violet1" },
+			"fanbranch2": { "base": "block/coral/fanbranch-violet2" },
+			"fanbranch3": { "base": "block/coral/fanbranch-violet3" }
+        },
+        "*-yellow": {
+		    "fan1": { "base": "block/coral/fan-yellow1" },
+			"fan2": { "base": "block/coral/fan-yellow2" },
+			"fan3": { "base": "block/coral/fan-yellow3" },
+			"fanbranch1": { "base": "block/coral/fanbranch-yellow1" },
+			"fanbranch2": { "base": "block/coral/fanbranch-yellow2" },
+			"fanbranch3": { "base": "block/coral/fanbranch-yellow3" }
+        }
+    },
+	"creativeinventory": {
+        "general": ["*"],
+        "flora": ["*"]
+    },
+    "shapeByType": {
+        "*": { "base": "block/coral/coral-fan*" }
+    },
+    "dropsByType": {},
+	"randomizeRotations": true,
+	"sideopaque": {
+		"all": false
+	},
+	"sidesolid": {
+		"all": false
+	},
+	randomDrawOffset: true,
+	randomizeRotations: true,
+	randomizeAxes: "xz",
+	randomSizeAdjustByType: {
+		"*": 0.5
+	},
+	"replaceable": 3000,
+	"lightAbsorption": 0,
+	"resistance": 1.5,
+	"collisionbox": null,
+	"selectionBoxByType": {
+        "*": { "x1": 0 , "y1": 0, "z1": 0, "x2": 1, "y2": 1.5, "z2": 1 }
+    },
+    "guiTransformByType": {
+        "*":{
+        "rotation": { "x": -22, "y": 107, "z": 0 },
+        "origin": { "x": 0.3, "y": 0.5, "z": 0.4 },
+        "scale": 1.32
+        }
+    },
+	"groundTransform": {
+		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+		"scale": 2.5
+	},
+	"tpHandTransform": {
+		"translation": { "x": -0.93, "y": -0.17, "z": -0.8 },
+		"rotation": { "x": 15, "y": -10, "z": -114 },
+		"origin": { "x": 0.5, "y": 0.1, "z": 0.5 },
+		"scale": 0.58
+	},
+	drops: [ 
+		{ type: "item", code: "coralpiece", quantity: { avg: 2, var: 1 } },
+		{ type: "item", code: "game:stone-limestone", quantity: { avg: 1, var: 1 } } 
+	],
+	"sounds": {
+		walk: "game:walk/stone",
+		byTool: {
+			"Pickaxe": { hit: "game:block/rock-hit-pickaxe", break: "game:block/rock-break-pickaxe" }
+		}
+	},
+	"materialDensity": 200
+}

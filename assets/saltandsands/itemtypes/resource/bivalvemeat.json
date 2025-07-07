@@ -1,0 +1,149 @@
+{
+	code: "bivalvemeat",
+	maxstacksize: 64,
+	attributes: {
+		inContainerTextureByType: {
+			//"*-raw": { base: "game:block/wood/barrel/{type}-fish" },
+			//"*-cured": { base: "game:block/wood/barrel/{type}-fish" }
+		},
+		inFirePitProps: {
+			transform: {
+				scale: 0.8,
+				origin: { x: 0.5, y: 0.0625, z: 0.5 },
+				translation: { x: 0, y: 0.1875, z: 0 },
+				rotation: { x: 0, y: 53, z: -90 }
+			},
+			useFirepitModel: "Spit"
+		},		
+		nutritionPropsWhenInMeal: { satiety: 200, foodcategory: "Protein" },
+		displaycaseable: true,
+		shelvable: true,
+	},
+	variantgroups: [
+		{ code: "species", states: ["scallop", "clam", "freshwatermussel", "urchin"] },
+		{ code: "type", states: ["raw", "cooked", "cured"] },
+	],
+	shape: { base: "game:item/food/meat/fish" },
+	textures: {
+		"raw": { 
+				base: "game:item/food/meat/{type}",
+				overlays: ["game:block/slightlydarker"]
+			},
+		"cooked": { 
+				base: "game:item/food/meat/{type}",
+				overlays: ["game:block/slightlydarker"]
+			}
+	},
+	creativeinventory: { "general": ["*-raw", "*-cooked"], "items": ["*-raw", "*-cooked"] },
+	nutritionPropsByType: {
+		"*-freshwatermussel-raw": { satiety: 75, foodcategory: "Protein" },
+		"*-freshwatermussel-cooked": { satiety: 125, foodcategory: "Protein" },
+		"*-freshwatermussel-cured": { satiety: 100, foodcategory: "Protein" },
+		"*-urchin-raw": { satiety: 75, foodcategory: "Protein" },
+		"*-urchin-cooked": { satiety: 125, foodcategory: "Protein" },
+		"*-urchin-cured": { satiety: 100, foodcategory: "Protein" },
+		"*-raw": { satiety: 150, foodcategory: "Protein" },
+		"*-cooked": { satiety: 250, foodcategory: "Protein" },
+		"*-cured": { satiety: 200, foodcategory: "Protein" }
+	},
+	transitionablePropsByType: {
+		"*-raw": [{
+			type: "Perish",
+			freshHours: { avg: 48 },
+			transitionHours: { avg: 24 },
+			transitionedStack: { type: "item", code: "game:rot" },
+			transitionRatio: 1
+		}],
+		"*-cooked": [{
+			type: "Perish",
+			freshHours: { avg: 120 },
+			transitionHours: { avg: 36 },
+			transitionedStack: { type: "item", code: "game:rot" },
+			transitionRatio: 1
+		}],
+		"*-cured": [{
+			type: "Perish",
+			freshHours: { avg: 8760 },
+			spoilHours: { avg: 4380 },
+			transitionedStack: { type: "item", code: "game:rot" },
+			transitionRatio: 1
+		}]
+	},
+	materialDensity: 600,
+	guiTransform: {
+		translation: { x: 3, y: 0, z: 0 },
+		rotation: { x: -22.5, y: -44.6875, z: -158 },
+		origin: { x: 0.55, y: 0.03, z: 0.51 },
+		scale: 2.81
+	},
+	fpHandTransform: {
+		translation: { x: 0.1, y: 0.2, z: 0.2 },
+		rotation: { x: 44, y: 99, z: 20 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 1.67
+	},
+	tpHandTransform: {
+		translation: { x: -0.75, y: -0.2, z: -0.8 },
+		rotation: { x: -59, y: -1, z: -8 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 0.58
+	},
+	groundTransform: {
+		translation: { x: 0, y: 0, z: 0 },
+		rotation: { x: 0, y: 0, z: 0 },
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 1.9
+	},
+	combustiblePropsByType: {
+		"bivalvemeat-scallop-raw": {
+			meltingPoint: 150,
+			meltingDuration: 30,
+			smeltedRatio: 1,
+			smeltingType: "cook",
+			smeltedStack: { type: "item", code: "saltandsands:bivalvemeat-scallop-cooked" },
+			requiresContainer: false
+		},
+		"bivalvemeat-clam-raw": {
+			meltingPoint: 150,
+			meltingDuration: 30,
+			smeltedRatio: 1,
+			smeltingType: "cook",
+			smeltedStack: { type: "item", code: "saltandsands:bivalvemeat-clam-cooked" },
+			requiresContainer: false
+		},
+		"bivalvemeat-freshwatermussel-raw": {
+			meltingPoint: 150,
+			meltingDuration: 20,
+			smeltedRatio: 1,
+			smeltingType: "cook",
+			smeltedStack: { type: "item", code: "saltandsands:bivalvemeat-freshwatermussel-cooked" },
+			requiresContainer: false
+		},
+		"bivalvemeat-urchin-raw": {
+			meltingPoint: 150,
+			meltingDuration: 20,
+			smeltedRatio: 1,
+			smeltingType: "cook",
+			smeltedStack: { type: "item", code: "saltandsands:bivalvemeat-urchin-cooked" },
+			requiresContainer: false
+		}
+	},
+	guiTransform: {
+		rotation: { x: -43, y: 132, z: 0 },
+		origin: { x: 0.5, y: 0.1, z: 0.5 },
+		scale: 2.7
+	},
+	fpHandTransform: {
+		rotation: { x: 0, y: -24, z: 0 }
+	},
+	tpHandTransform: {
+		translation: { x: -0.87, y: 0.04, z: -0.8 },
+		rotation: { x: 2, y: 31, z: -25 },
+		origin: { x: 0.5, y: -0.1, z: 0.5 },
+		scale: 0.6
+	},
+	groundTransform: {
+		origin: { x: 0.5, y: 0, z: 0.5 },
+		scale: 3
+	}
+}

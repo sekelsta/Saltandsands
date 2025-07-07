@@ -1,0 +1,64 @@
+{
+	"editor": {
+		"allAngles": false,
+		"entityTextureMode": false
+	},
+	"textureWidth": 16,
+	"textureHeight": 16,
+	"textureSizes": {
+	},
+	"textures": {
+		"table-brown1": "block/coral/table-brown1"
+	},
+	"elements": [
+		{
+			"name": "Cube2",
+			"from": [ 1.0, 2.0, 1.0 ],
+			"to": [ 15.0, 2.0, 15.0 ],
+			"rotationOrigin": [ 8.0, 2.0, 8.0 ],
+			"faces": {
+				"up": { "texture": "#table-brown1", "uv": [ 1.0, 1.0, 15.0, 15.0 ] }
+			},
+			"children": [
+				{
+					"name": "Cube3",
+					"from": [ 6.0, -2.0, 6.0 ],
+					"to": [ 8.0, -1.0, 8.0 ],
+					"rotationOrigin": [ 7.0, -2.0, 7.0 ],
+					"faces": {
+						"north": { "texture": "#table-brown1", "uv": [ 6.0, 5.0, 8.0, 6.0 ] },
+						"east": { "texture": "#table-brown1", "uv": [ 7.0, 7.0, 9.0, 8.0 ] },
+						"south": { "texture": "#table-brown1", "uv": [ 7.0, 7.5, 9.0, 8.5 ] },
+						"west": { "texture": "#table-brown1", "uv": [ 8.0, 4.5, 10.0, 5.5 ] },
+						"down": { "texture": "#table-brown1", "uv": [ 9.0, 8.0, 11.0, 10.0 ] }
+					}
+				},
+				{
+					"name": "Cube4",
+					"from": [ 5.0, -0.5, 5.0 ],
+					"to": [ 9.0, -0.02, 9.0 ],
+					"rotationOrigin": [ 7.0, -0.5, 7.0 ],
+					"faces": {
+						"north": { "texture": "#table-brown1", "uv": [ 6.0, 5.0, 10.0, 5.5 ] },
+						"east": { "texture": "#table-brown1", "uv": [ 7.0, 7.0, 11.0, 7.5 ] },
+						"south": { "texture": "#table-brown1", "uv": [ 7.0, 7.5, 11.0, 8.0 ] },
+						"west": { "texture": "#table-brown1", "uv": [ 8.0, 4.5, 12.0, 5.0 ] },
+						"down": { "texture": "#table-brown1", "uv": [ 9.0, 8.0, 13.0, 12.0 ] }
+					}
+				},
+				{
+					"name": "Cube5",
+					"from": [ 5.7, -1.0, 5.7 ],
+					"to": [ 8.3, -0.5, 8.3 ],
+					"rotationOrigin": [ 6.7, -1.0, 6.7 ],
+					"faces": {
+						"north": { "texture": "#table-brown1", "uv": [ 6.0, 5.0, 8.5, 5.5 ] },
+						"east": { "texture": "#table-brown1", "uv": [ 7.0, 7.0, 9.5, 7.5 ] },
+						"south": { "texture": "#table-brown1", "uv": [ 7.0, 7.5, 9.5, 8.0 ] },
+						"west": { "texture": "#table-brown1", "uv": [ 8.0, 4.5, 10.5, 5.0 ] },
+						"down": { "texture": "#table-brown1", "uv": [ 9.0, 8.0, 11.5, 10.5 ] }
+					}
+				}
+			]
+		}
+	]}

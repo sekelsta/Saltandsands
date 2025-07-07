@@ -1,0 +1,144 @@
+{
+	code: "clothes",
+	class: "ItemWearable",
+	variantgroups: [
+		{ code: "category",  states: ["arm"] },
+		{ code: "arm", combine: "SelectiveMultiply", onVariant: "category", states: [
+		"copper-pearl-bracelet", "brass-pearl-bracelet",  "silver-pearl-bracelet", 
+		"gold-pearl-bracelet", "electrum-pearl-bracelet", "platinum-pearl-bracelet", 
+		"copper-coral-bracelet", "brass-coral-bracelet", "silver-coral-bracelet", 
+		"gold-coral-bracelet", "electrum-coral-bracelet", "platinum-coral-bracelet"
+		] },
+	],
+	shapeByType: {
+		"*-pearl-bracelet": {
+			base: "entity/clothing/copper-pearl-bracelet"
+		},
+		"*-coral-bracelet": {
+			base: "entity/clothing/copper-coral-bracelet"
+		}
+	},
+	storageFlags: 128,
+	attributesByType: {
+		"*-pearl-bracelet": {
+			wearableAttachment: true,
+			clothescategory: "arm",
+			warmth: 0
+		},
+		"*-coral-bracelet": {
+			wearableAttachment: true,
+			clothescategory: "arm",
+			warmth: 0
+		},
+		"*": {
+			clothescategory: "arm",
+			warmth: 0
+		}
+	},
+	texturesByType: {
+		"*-copper-pearl-bracelet": {
+			"pearls": { base: "item/pearls" },
+			"metal": { base: "game:block/metal/ingot/copper" }
+		},
+		"*-brass-pearl-bracelet": {
+			"pearls": { base: "item/pearls" },
+			"metal": { base: "game:block/metal/ingot/brass" }
+		},
+		"*-silver-pearl-bracelet": {
+			"pearls": { base: "item/pearls" },
+			"metal": { base: "game:block/metal/ingot/silver" }
+		},
+		"*-gold-pearl-bracelet": {
+			"pearls": { base: "item/pearls" },
+			"metal": { base: "game:block/metal/ingot/gold" }
+		},
+		"*-electrum-pearl-bracelet": {
+			"pearls": { base: "item/pearls" },
+			"metal": { base: "game:block/metal/ingot/electrum" }
+		},
+		"*-platinum-pearl-bracelet": {
+			"pearls": { base: "item/pearls" },
+			"metal": { base: "game:block/metal/ingot/platinum" }
+		},
+		"*-copper-coral-bracelet": {
+			"coralpieces": { base: "item/coralpieces" },
+			"metal": { base: "game:block/metal/ingot/copper" }
+		},
+		"*-brass-coral-bracelet": {
+			"coralpieces": { base: "item/coralpieces" },
+			"metal": { base: "game:block/metal/ingot/brass" }
+		},
+		"*-silver-coral-bracelet": {
+			"coralpieces": { base: "item/coralpieces" },
+			"metal": { base: "game:block/metal/ingot/silver" }
+		},
+		"*-gold-coral-bracelet": {
+			"coralpieces": { base: "item/coralpieces" },
+			"metal": { base: "game:block/metal/ingot/gold" }
+		},
+		"*-electrum-coral-bracelet": {
+			"coralpieces": { base: "item/coralpieces" },
+			"metal": { base: "game:block/metal/ingot/electrum" }
+		},
+		"*-platinum-coral-bracelet": {
+			"coralpieces": { base: "item/coralpieces" },
+			"metal": { base: "game:block/metal/ingot/platinum" }
+		},
+		"*": {
+			"seraph": { base: "game:block/transparent" }
+		}
+	},
+	creativeinventory: { "general": ["*"], "items": ["*"], "clothing": ["*"] },
+	renderAlphaTest: 0.25,
+	fpHandTransformByType: {
+		"*-bracelet": {
+			translation: { x: 0.6, y: -0.3, z: -0.7 },
+			rotation: { x: 180, y: 42, z: -29 },
+			scale: 2.5
+		},
+		"*": {
+			translation: { x: 0.6, y: 0, z: -0.5 },
+			rotation: { x: 180, y: 42, z: -29 },
+			scale: 2.5
+		}
+	},
+	tpHandTransformByType: {
+		"*-bracelet": {
+			translation: { x: -0.9, y: -0.8, z: -0.55 },
+			rotation: { x: -13, y: -64, z: 49 },
+			scale: 0.87
+		},
+		"*": {
+			translation: { x: -0.9, y: -1, z: -1 },
+			rotation: { x: -13, y: -64, z: 49 },
+			scale: 0.55
+		}
+	},
+	guiTransformByType: {
+		"*-bracelet": {
+			translation: { x: -7, y: -1.4, z: -0 },
+			rotation: { x: 139, y: -53, z: -28 },
+			origin: { x: 1.6, y: 0.36, z: 1.45 },
+			scale: 4.5
+		},
+		"*": {
+			rotate: false,
+			translation: { x: 0, y: 0, z: 19 },
+			rotation: { x: 174, y: -30, z: 23 },
+			origin: { x: 0.52, y: 0.78, z: 0.5 },
+			scale: 2.5
+		}
+	},
+	groundTransformByType: {
+		"*-bracelet": {
+			translation: { x: 0.05, y: -0.08, z: 0 },
+			rotation: { x: 0, y: 0, z: 0 },
+			scale: 2
+		},
+		"*": {
+			translation: { x: 0.05, y: -0.3, z: 0 },
+			rotation: { x: 0, y: 0, z: 0 },
+			scale: 2
+		}
+	}
+}

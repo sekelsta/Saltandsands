@@ -1,0 +1,15 @@
+[
+
+	{
+    "op": "add",
+    "path": "/variantgroups/0/states/-",
+    "value": "mussel",
+    "file": "game:blocktypes/bone/seashell.json"	},
+	
+	{
+    "op": "addeach",
+    "path": "/variantgroups/1/states/-",
+    "value": [ "musselblue", "mustard" ],
+    "file": "game:blocktypes/bone/seashell.json"	}
+
+]
