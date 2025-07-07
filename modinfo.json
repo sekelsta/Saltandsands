@@ -1,11 +1,11 @@
 ﻿{
-  "type": "code",
-  "modid": "saltandsands",
-  "name": "Salt and sands",
+  "Type": "code",
+  "ModID": "saltandsands",
+  "Name": "Salt and sands",
   "Authors": [
     "Catasteroid"
   ],
-  "contributors": [
+  "Contributors": [
     "Lucas",
     "cyanoplax",
     "Hieronymus",
@@ -14,9 +14,9 @@
     "Sekelsta",
     "Sammy_SMD"
   ],
-  "description": "Adds an array of ocean-enriching content, cultivate shellfish for meat and shells!",
-  "version": "1.1.1",
-  "dependencies": {
+  "Description": "Adds an array of ocean-enriching content, cultivate shellfish for meat and shells!",
+  "Version": "1.1.1",
+  "Dependencies": {
     "game": "",
   },
   "Side": "Universal",
