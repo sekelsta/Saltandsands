@@ -3,7 +3,7 @@
 	class: "ItemWearable",
 	variantgroups: [
 		{ code: "category",  states: ["arm"] },
-		{ code: "arm", combine: "SelectiveMultiply", onVariant: "category", states: [
+		{ code: "arm", states: [
 		"copper-pearl-bracelet", "brass-pearl-bracelet",  "silver-pearl-bracelet", 
 		"gold-pearl-bracelet", "electrum-pearl-bracelet", "platinum-pearl-bracelet", 
 		"copper-coral-bracelet", "brass-coral-bracelet", "silver-coral-bracelet", 
@@ -22,11 +22,12 @@
 	attributes: {
 		wearableAttachment: true,
 		clothescategory: "arm",
-		warmth: 0
+		warmth: 0,
+		attachableToEntity: {
+			texturePrefixCode: "{arm}-bracelet",
+		},
 	},
     textures: {
-		"pearls": { base: "item/pearls" },
-		"coralpieces": { base: "item/coralpieces" },
 		"seraph": { base: "game:block/transparent" }
 	},
 	texturesByType: {

@@ -12,7 +12,7 @@
 			base: "game:entity/humanoid/seraph" 
 		},
 		"*-coral-choker": {
-			base: "entity/humanoid/seraph/clothing/neck/{neck}" 
+			base: "entity/clothing/coral-choker" 
 		}
 	},
 	storageFlags: 128,
