@@ -10,7 +10,7 @@
 	],
 	shape: { base: "item/bivalves/{type}loose" },
 	textures: {
-		color: { base: "game:block/creature/seashell/plain" }
+		color: { base: "game:block/creature/aquatic/seashell/plain" }
 	},
 	creativeinventory: { "general": ["*"], "items": ["*"] },
 	maxstacksize: 64,

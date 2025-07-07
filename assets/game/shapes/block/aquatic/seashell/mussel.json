@@ -8,7 +8,7 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"color": "block/creature/seashell/plain"
+		"color": "block/creature/aquatic/seashell/plain"
 	},
 	"elements": [
 		{

@@ -2,7 +2,7 @@
   {
     "file": "game:config/tradelists/trader-clothing.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "game:clothes-neck-pearl-necklace",
       "type": "item",
@@ -21,7 +21,7 @@
   {
     "file": "game:config/tradelists/trader-clothing.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-neck-coral-necklace",
       "type": "item",
@@ -39,7 +39,7 @@
   {
     "file": "game:config/tradelists/trader-clothing.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-neck-coral-choker",
       "type": "item",

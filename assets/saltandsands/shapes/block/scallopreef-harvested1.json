@@ -8,7 +8,7 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"color": "game:block/creature/seashell/seafoam",
+		"color": "game:block/creature/aquatic/seashell/seafoam",
 		"muddygravel": "game:block/soil/muddygravel",
 		"rock": "game:block/stone/rock/andesite1",
 		"conglomerate1": "game:block/stone/rock/conglomerate1"

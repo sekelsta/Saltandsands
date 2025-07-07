@@ -1,6 +1,6 @@
 {
 	code: "pearl",
-	texture: { base: "block/metal/ingot/{metal}" },
+	texture: { base: "item/pearls" },
 	creativeinventory: { "general": ["*"], "items": ["*"] },
 	maxstacksize: 64,
 	materialDensity: 900,

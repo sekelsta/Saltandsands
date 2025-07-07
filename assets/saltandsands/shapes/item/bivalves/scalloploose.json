@@ -8,7 +8,7 @@
 	"textureSizes": {
 	},
 	"textures": {
-		"color": "game:block/creature/seashell/seafoam"
+		"color": "game:block/creature/aquatic/seashell/seafoam"
 	},
 	"elements": [
 		{

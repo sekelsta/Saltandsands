@@ -2,7 +2,7 @@
   {
     "file": "game:config/tradeliststrader-luxuries.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:coralpiece",
       "type": "item",
@@ -20,7 +20,7 @@
   {
     "file": "game:config/tradeliststrader-luxuries.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:pearl",
       "type": "item",
@@ -39,7 +39,7 @@
   {
     "file": "game:config/tradeliststrader-luxuries.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-neck-coral-necklace",
       "type": "item",
@@ -57,7 +57,7 @@
   {
     "file": "game:config/tradeliststrader-luxuries.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-neck-coral-choker",
       "type": "item",
@@ -75,7 +75,7 @@
   {
     "file": "game:config/tradeliststrader-luxuries.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-arm-silver-pearl-bracelet",
       "type": "item",
@@ -93,7 +93,7 @@
   {
     "file": "game:config/tradeliststrader-luxuries.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-arm-gold-pearl-bracelet",
       "type": "item",
@@ -111,7 +111,7 @@
   {
     "file": "game:config/tradeliststrader-luxuries.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-arm-electrum-pearl-bracelet",
       "type": "item",
@@ -130,7 +130,7 @@
   {
     "file": "game:config/tradeliststrader-luxuries.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-emblem-silver-pearl-brooch",
       "type": "item",
@@ -148,7 +148,7 @@
   {
     "file": "game:config/tradeliststrader-luxuries.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-emblem-gold-pearl-brooch",
       "type": "item",
@@ -166,7 +166,7 @@
   {
     "file": "game:config/tradeliststrader-luxuries.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-emblem-electrum-pearl-brooch",
       "type": "item",
@@ -186,7 +186,7 @@
   {
     "file": "game:config/tradeliststrader-luxuries.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-arm-silver-coral-bracelet",
       "type": "item",
@@ -204,7 +204,7 @@
   {
     "file": "game:config/tradeliststrader-luxuries.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-arm-gold-coral-bracelet",
       "type": "item",
@@ -222,7 +222,7 @@
   {
     "file": "game:config/tradeliststrader-luxuries.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-arm-electrum-coral-bracelet",
       "type": "item",
@@ -241,7 +241,7 @@
   {
     "file": "game:config/tradeliststrader-luxuries.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-emblem-silver-coral-brooch",
       "type": "item",
@@ -259,7 +259,7 @@
   {
     "file": "game:config/tradeliststrader-luxuries.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-emblem-gold-coral-brooch",
       "type": "item",
@@ -277,7 +277,7 @@
   {
     "file": "game:config/tradeliststrader-luxuries.json",
     "op": "add",
-    "path": "buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-emblem-electrum-coral-brooch",
       "type": "item",

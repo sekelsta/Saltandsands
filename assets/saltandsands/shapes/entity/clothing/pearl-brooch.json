@@ -9,7 +9,7 @@
 		"pendants2": [16,16]
 	},
 	"textures": {
-		"metal": "D:/Vintage Story/1.18.6/assets/survival/textures/block/metal/ingot/brass",
+		"metal": "game:block/metal/ingot/brass",
 		"pearls": "item/pearls"
 	},
 	"elements": [
