@@ -1,59 +1,41 @@
 {
-	code: "urchin",
-	variantgroups: [
-		{ code: "type", states: ["antarctic", "banded", "cape", "chilean", "egg", "fire", "green", "kina", "longspine", "needle", "pacificpurple", "redspined", "tuxedo"] },
+	"code": "urchin",
+	"variantgroups": [
+		{ "code": "type", "states": ["antarctic", "banded", "cape", "chilean", "egg", "fire", "green", "kina", "longspine", "needle", "pacificpurple", "redspined", "tuxedo"] }
 	],
-	shape: { base: "block/urchin/{type}" },
-	textures: {
-		body: { base: "block/urchin/{type}body" },
-		spines: { base: "block/urchin/{type}spines" } 
+	"shape": { "base": "block/urchin/{type}" },
+	"textures": {
+		"body": { "base": "block/urchin/{type}body" },
+		"spines": { "base": "block/urchin/{type}spines" } 
 	},
-	creativeinventory: { "general": ["*"], "items": ["*"] },
-	maxstacksize: 64,
-	materialDensity: 100,
-	guiTransform: {
-		rotation: { x: -3, y: 35, z: -154 },
-		origin: { x: 0.5, y: 0.5, z: 0.5 },
-		scale: 1.81
+	"creativeinventory": { "general": ["*"], "items": ["*"] },
+	"maxstacksize": 64,
+	"materialDensity": 100,
+	"guiTransform": {
+		"rotation": { "x": -3, "y": 35, "z": -154 },
+		"origin": { "x": 0.5, "y": 0.5, "z": 0.5 },
+		"scale": 1.81
 	},
-	fpHandTransform: {
-		translation: { x: 0, y: -0.2, z: 0 },
-		rotation: { x: -45, y: 104, z: -33 },
-		scale: 1.2
+	"fpHandTransform": {
+		"translation": { "x": 0, "y": -0.2, "z": 0 },
+		"rotation": { "x": -45, "y": 104, "z": -33 },
+		"scale": 1.2
 	},
-	tpHandTransform: {
-		translation: { x: -1, y: -1.1, z: -1 },
-		rotation: { x: 7, y: 3, z: -88 },
-		scale: 0.48
+	"tpHandTransform": {
+		"translation": { "x": -1, "y": -1.1, "z": -1 },
+		"rotation": { "x": 7, "y": 3, "z": -88 },
+		"scale": 0.48
 	},
-	groundTransform: {
-		scale: 3.6
+	"groundTransform": {
+		"scale": 3.6
 	},
-	transitionablePropsByType: {
+	"transitionablePropsByType": {
 		"*":  [{
-			type: "Perish",
-			freshHours: { avg: 120 },
-			transitionHours: { avg: 36 },
-			transitionedStack: { type: "item", code: "game:rot" },
-			transitionRatio: 1
+			"type": "Perish",
+			"freshHours": { "avg": 120 },
+			"transitionHours": { "avg": 36 },
+			"transitionedStack": { "type": "item", "code": "game:rot" },
+			"transitionRatio": 1
 		}]
-	},
-	guiTransform: {
-		rotation: { x: -43, y: 114, z: 180 },
-		origin: { x: 0.5, y: 0.2, z: 0.5 },
-		scale: 3.25
-	},
-	fpHandTransform: {
-		rotation: { x: 0, y: -24, z: 0 }
-	},
-	tpHandTransform: {
-		translation: { x: -0.87, y: 0.04, z: -0.8 },
-		rotation: { x: 2, y: 31, z: -25 },
-		origin: { x: 0.5, y: -0.1, z: 0.5 },
-		scale: 0.6
-	},
-	groundTransform: {
-		origin: { x: 0.5, y: 0, z: 0.5 },
-		scale: 3
 	}
 }

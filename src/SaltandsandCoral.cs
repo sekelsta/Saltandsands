@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Vintagestory.API.Client;
 using Vintagestory.API.Common;
+using Vintagestory.API.Config;
 using Vintagestory.API.MathTools;
 using Vintagestory.API.Util;
 using Vintagestory.GameContent;
@@ -30,7 +31,7 @@ namespace Saltandsands
 		private AssetLocation coralSubstrateBlock = new AssetLocation();
 		private bool extremeSlopeCancels;
 		private int extremeSlopeThreshold;
-		BlockPos tmpPos = new BlockPos();
+		BlockPos tmpPos = new BlockPos(0);
 
         public override void OnLoaded(ICoreAPI api)
         {
@@ -127,7 +128,6 @@ namespace Saltandsands
 			tmpPos = tmpPos.Set(pos.X, pos.Y, pos.Z);	
             float reefSubstrateRadius = reefRadius * 1.2f;
             int range = (int)Math.Ceiling(reefSubstrateRadius);
-            int chunksize = api.World.BlockAccessor.ChunkSize;
             Vec2i vecTmp = new Vec2i();
 
 			for (int dx = -range; dx <= range; dx++)

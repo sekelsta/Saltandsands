@@ -1,13 +1,13 @@
 [
 	{
-		ingredientPattern: "H,S",
-		shapeless: true,
-		ingredients: {
-			"S": { type: "item", code: "game:knife-*", isTool: true, toolDurabilityCost: 1 },
-			"H": { type: "item", code: "saltandsands:urchin-*", name: "urchintype", allowedVariants: ["antarctic", "banded", "cape", "chilean", "egg", "fire", "green", "kina", "longspine", "needle", "pacificpurple", "redspined", "tuxedo"], quantity: 1 }
+		"ingredientPattern": "H,S",
+		"shapeless": true,
+		"ingredients": {
+			"S": { "type": "item", "code": "game:knife-*", "isTool": true, "toolDurabilityCost": 1 },
+			"H": { "type": "item", "code": "saltandsands:urchin-*", "name": "urchintype", "allowedVariants": ["antarctic", "banded", "cape", "chilean", "egg", "fire", "green", "kina", "longspine", "needle", "pacificpurple", "redspined", "tuxedo"], "quantity": 1 }
 		},
-		width: 1,
-		height: 2,
-		output: { type: "item", code: "saltandsands:bivalvemeat-urchin-raw"  }
+		"width": 1,
+		"height": 2,
+		"output": { "type": "item", "code": "saltandsands:bivalvemeat-urchin-raw"  }
 	}
 ]

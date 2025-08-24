@@ -1,137 +1,137 @@
 {
-	code: "clothes",
-	class: "ItemWearable",
-	variantgroups: [
-		{ code: "category",  states: ["emblem"] },
-		{ code: "emblem", combine: "SelectiveMultiply", onVariant: "category", states: [
+	"code": "clothes",
+	"class": "ItemWearable",
+	"variantgroups": [
+		{ "code": "category",  "states": ["emblem"] },
+		{ "code": "emblem", "combine": "SelectiveMultiply", "onVariant": "category", "states": [
 			"copper-pearl-brooch", "brass-pearl-brooch", "silver-pearl-brooch", 
 			"gold-pearl-brooch", "electrum-pearl-brooch", "platinum-pearl-brooch",
 			"copper-coral-brooch", "brass-coral-brooch", "silver-coral-brooch", 
 			"gold-coral-brooch", "electrum-coral-brooch", "platinum-coral-brooch"
-		] },
+		] }
 	],
-	shapeByType: {
+	"shapeByType": {
 		"*-pearl-brooch": {
-			base: "entity/clothing/pearl-brooch" 
+			"base": "entity/clothing/pearl-brooch" 
 		},
 		"*-coral-brooch": {
-			base: "entity/clothing/coral-brooch" 
+			"base": "entity/clothing/coral-brooch" 
 		},
 		"*": {
-			base: "game:entity/humanoid/seraph" 
+			"base": "game:entity/humanoid/seraph" 
 		}
 	},
-	storageFlags: 128,
-	attributesByType: {
+	"storageFlags": 128,
+	"attributesByType": {
 		"*-pearl-brooch": {
-			wearableAttachment: true,
-			clothescategory: "emblem",
-			warmth: 0
+			"wearableAttachment": true,
+			"clothescategory": "emblem",
+			"warmth": 0
 		},
 		"*-coral-brooch": {
-			wearableAttachment: true,
-			clothescategory: "emblem",
-			warmth: 0
+			"wearableAttachment": true,
+			"clothescategory": "emblem",
+			"warmth": 0
 		},
 		"*": {
-			clothescategory: "emblem",
-			warmth: 0
+			"clothescategory": "emblem",
+			"warmth": 0
 		}
 	},	
-	texturesByType: {
+	"texturesByType": {
 		"*-copper-pearl-brooch": {
-			"metal": { base: "game:block/metal/plate/copper" },
-			"pearls": { base: "item/pearls" },
-			"seraph": { base: "game:block/transparent" }
+			"metal": { "base": "game:block/metal/plate/copper" },
+			"pearls": { "base": "item/pearls" },
+			"seraph": { "base": "game:block/transparent" }
 		},
 		"*-brass-pearl-brooch": {
-			"metal": { base: "game:block/metal/plate/brass" },
-			"pearls": { base: "item/pearls" },
-			"seraph": { base: "game:block/transparent" }
+			"metal": { "base": "game:block/metal/plate/brass" },
+			"pearls": { "base": "item/pearls" },
+			"seraph": { "base": "game:block/transparent" }
 		},
 		"*-silver-pearl-brooch": {
-			"metal": { base: "game:block/metal/plate/silver"},
-			"pearls": { base: "item/pearls" },
-			"seraph": { base: "game:block/transparent" }
+			"metal": { "base": "game:block/metal/plate/silver"},
+			"pearls": { "base": "item/pearls" },
+			"seraph": { "base": "game:block/transparent" }
 		},
 		"*-gold-pearl-brooch": {
-			"metal": { base: "game:block/metal/plate/gold"},
-			"pearls": { base: "item/pearls" },
-			"seraph": { base: "game:block/transparent" }
+			"metal": { "base": "game:block/metal/plate/gold"},
+			"pearls": { "base": "item/pearls" },
+			"seraph": { "base": "game:block/transparent" }
 		},
 		"*-electrum-pearl-brooch": {
-			"metal": { base: "game:block/metal/plate/electrum"},
-			"pearls": { base: "item/pearls" },
-			"seraph": { base: "game:block/transparent" }
+			"metal": { "base": "game:block/metal/plate/electrum"},
+			"pearls": { "base": "item/pearls" },
+			"seraph": { "base": "game:block/transparent" }
 		},
 		"*-platinum-pearl-brooch": {
-			"metal": { base: "game:block/metal/plate/platinum"},
-			"pearls": { base: "item/pearls" },
-			"seraph": { base: "game:block/transparent" }
+			"metal": { "base": "game:block/metal/plate/platinum"},
+			"pearls": { "base": "item/pearls" },
+			"seraph": { "base": "game:block/transparent" }
 		},
 		"*-copper-coral-brooch": {
-			"metal": { base: "game:block/metal/plate/copper"},
-			"coral": { base: "item/coralpieces" },
-			"seraph": { base: "game:block/transparent" }
+			"metal": { "base": "game:block/metal/plate/copper"},
+			"coral": { "base": "item/coralpieces" },
+			"seraph": { "base": "game:block/transparent" }
 		},
 		"*-brass-coral-brooch": {
-			"metal": { base: "game:block/metal/plate/brass"},
-			"coral": { base: "item/coralpieces" },
-			"seraph": { base: "game:block/transparent" }
+			"metal": { "base": "game:block/metal/plate/brass"},
+			"coral": { "base": "item/coralpieces" },
+			"seraph": { "base": "game:block/transparent" }
 		},
 		"*-silver-coral-brooch": {
-			"metal": { base: "game:block/metal/plate/silver"},
-			"coral": { base: "item/coralpieces" },
-			"seraph": { base: "game:block/transparent" }
+			"metal": { "base": "game:block/metal/plate/silver"},
+			"coral": { "base": "item/coralpieces" },
+			"seraph": { "base": "game:block/transparent" }
 		},
 		"*-gold-coral-brooch": {
-			"metal": { base: "game:block/metal/plate/gold"},
-			"coral": { base: "item/coralpieces" },
-			"seraph": { base: "game:block/transparent" }
+			"metal": { "base": "game:block/metal/plate/gold"},
+			"coral": { "base": "item/coralpieces" },
+			"seraph": { "base": "game:block/transparent" }
 		},
 		"*-electrum-coral-brooch": {
-			"metal": { base: "game:block/metal/plate/electrum"},
-			"coral": { base: "item/coralpieces" },
-			"seraph": { base: "game:block/transparent" }
+			"metal": { "base": "game:block/metal/plate/electrum"},
+			"coral": { "base": "item/coralpieces" },
+			"seraph": { "base": "game:block/transparent" }
 		},
 		"*-platinum-coral-brooch": {
-			"metal": { base: "game:block/metal/plate/platinum"},
-			"coral": { base: "item/coralpieces" },
-			"seraph": { base: "game:block/transparent" }
+			"metal": { "base": "game:block/metal/plate/platinum"},
+			"coral": { "base": "item/coralpieces" },
+			"seraph": { "base": "game:block/transparent" }
 		},
 		"*": {
-			"seraph": { base: "entity/humanoid/seraphclothes/{category}/{emblem}" }
+			"seraph": { "base": "entity/humanoid/seraphclothes/{category}/{emblem}" }
 		}
 	},
-	creativeinventory: { "general": ["*"], "items": ["*"], "clothing": ["*"] },
-	renderAlphaTest: 0.25,
-	fpHandTransformByType: {
+	"creativeinventory": { "general": ["*"], "items": ["*"], "clothing": ["*"] },
+	"renderAlphaTest": 0.25,
+	"fpHandTransformByType": {
 		"*": {
-			translation: { x: 0.9, y: -0.4, z: -0.3 },
-			rotation: { x: 180, y: 42, z: -29 },
-			scale: 2.5
+			"translation": { "x": 0.9, "y": -0.4, "z": -0.3 },
+			"rotation": { "x": 180, "y": 42, "z": -29 },
+			"scale": 2.5
 		}
 	},
-	tpHandTransformByType: {
+	"tpHandTransformByType": {
 		"*": {
-			translation: { x: -0.7, y: -0.35, z: -1.2 },
-			rotation: { x: -13, y: -64, z: 49 },
-			scale: 0.55
+			"translation": { "x": -0.7, "y": -0.35, "z": -1.2 },
+			"rotation": { "x": -13, "y": -64, "z": 49 },
+			"scale": 0.55
 		}
 	},
-	guiTransformByType: {
+	"guiTransformByType": {
 		"*": {
-			translation: { x: 0, y: 0, z: 0 },
-			rotation: { x: 174, y: 54, z: 27 },
-			origin: { x: 0.38, y: 1.3, z: 0.48 },
-			scale: 4.04
+			"translation": { "x": 0, "y": 0, "z": 0 },
+			"rotation": { "x": 174, "y": 54, "z": 27 },
+			"origin": { "x": 0.38, "y": 1.3, "z": 0.48 },
+			"scale": 4.04
 		}
 	},
-	groundTransformByType: {
+	"groundTransformByType": {
 		"*": {
-			translation: { x: 0.05, y: -0.2, z: 0 },
-			rotation: { x: 0, y: 0, z: -101 },
-			scale: 2
+			"translation": { "x": 0.05, "y": -0.2, "z": 0 },
+			"rotation": { "x": 0, "y": 0, "z": -101 },
+			"scale": 2
 		}
 	}
 }

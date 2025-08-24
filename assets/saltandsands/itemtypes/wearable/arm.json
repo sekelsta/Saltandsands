@@ -1,106 +1,106 @@
 {
-	code: "clothes",
-	class: "ItemWearable",
-	variantgroups: [
-		{ code: "category",  states: ["arm"] },
-		{ code: "arm", states: [
+	"code": "clothes",
+	"class": "ItemWearable",
+	"variantgroups": [
+		{ "code": "category",  "states": ["arm"] },
+		{ "code": "arm", "states": [
 		"copper-pearl-bracelet", "brass-pearl-bracelet",  "silver-pearl-bracelet", 
 		"gold-pearl-bracelet", "electrum-pearl-bracelet", "platinum-pearl-bracelet", 
 		"copper-coral-bracelet", "brass-coral-bracelet", "silver-coral-bracelet", 
 		"gold-coral-bracelet", "electrum-coral-bracelet", "platinum-coral-bracelet"
-		] },
+		] }
 	],
-	shapeByType: {
+	"shapeByType": {
 		"*-pearl-bracelet": {
-			base: "entity/clothing/copper-pearl-bracelet"
+			"base": "entity/clothing/copper-pearl-bracelet"
 		},
 		"*-coral-bracelet": {
-			base: "entity/clothing/copper-coral-bracelet"
+			"base": "entity/clothing/copper-coral-bracelet"
 		}
 	},
-	storageFlags: 128,
-	attributes: {
-		wearableAttachment: true,
-		clothescategory: "arm",
-		warmth: 0,
-		attachableToEntity: {
-			texturePrefixCode: "{arm}-bracelet",
-		},
+	"storageFlags": 128,
+	"attributes": {
+		"wearableAttachment": true,
+		"clothescategory": "arm",
+		"warmth": 0,
+		"attachableToEntity": {
+			"texturePrefixCode": "{arm}-bracelet"
+		}
 	},
-    textures: {
-		"seraph": { base: "game:block/transparent" }
+    "textures": {
+		"seraph": { "base": "game:block/transparent" }
 	},
-	texturesByType: {
+	"texturesByType": {
 		"clothes-arm-copper-*": {
-			"metal": { base: "game:block/metal/ingot/copper" },
+			"metal": { "base": "game:block/metal/ingot/copper" }
 		},
 		"clothes-arm-brass-*": {
-			"metal": { base: "game:block/metal/ingot/brass" },
+			"metal": { "base": "game:block/metal/ingot/brass" }
 		},
 		"clothes-arm-silver-*": {
-			"metal": { base: "game:block/metal/ingot/silver" },
+			"metal": { "base": "game:block/metal/ingot/silver" }
 		},
 		"clothes-arm-gold-*": {
-			"metal": { base: "game:block/metal/ingot/gold" },
+			"metal": { "base": "game:block/metal/ingot/gold" }
 		},
 		"clothes-arm-electrum-*": {
-			"metal": { base: "game:block/metal/ingot/electrum" },
+			"metal": { "base": "game:block/metal/ingot/electrum" }
 		},
 		"clothes-arm-platinum-*": {
-			"metal": { base: "game:block/metal/ingot/platinum" },
-		},
-	},
-	creativeinventory: { "general": ["*"], "items": ["*"], "clothing": ["*"] },
-	renderAlphaTest: 0.25,
-	fpHandTransformByType: {
-		"*-bracelet": {
-			translation: { x: 0.6, y: -0.3, z: -0.7 },
-			rotation: { x: 180, y: 42, z: -29 },
-			scale: 2.5
-		},
-		"*": {
-			translation: { x: 0.6, y: 0, z: -0.5 },
-			rotation: { x: 180, y: 42, z: -29 },
-			scale: 2.5
+			"metal": { "base": "game:block/metal/ingot/platinum" }
 		}
 	},
-	tpHandTransformByType: {
+	"creativeinventory": { "general": ["*"], "items": ["*"], "clothing": ["*"] },
+	"renderAlphaTest": 0.25,
+	"fpHandTransformByType": {
 		"*-bracelet": {
-			translation: { x: -0.9, y: -0.8, z: -0.55 },
-			rotation: { x: -13, y: -64, z: 49 },
-			scale: 0.87
+			"translation": { "x": 0.6, "y": -0.3, "z": -0.7 },
+			"rotation": { "x": 180, "y": 42, "z": -29 },
+			"scale": 2.5
 		},
 		"*": {
-			translation: { x: -0.9, y: -1, z: -1 },
-			rotation: { x: -13, y: -64, z: 49 },
-			scale: 0.55
+			"translation": { "x": 0.6, "y": 0, "z": -0.5 },
+			"rotation": { "x": 180, "y": 42, "z": -29 },
+			"scale": 2.5
 		}
 	},
-	guiTransformByType: {
+	"tpHandTransformByType": {
 		"*-bracelet": {
-			translation: { x: -7, y: -1.4, z: -0 },
-			rotation: { x: 139, y: -53, z: -28 },
-			origin: { x: 1.6, y: 0.36, z: 1.45 },
-			scale: 4.5
+			"translation": { "x": -0.9, "y": -0.8, "z": -0.55 },
+			"rotation": { "x": -13, "y": -64, "z": 49 },
+			"scale": 0.87
 		},
 		"*": {
-			rotate: false,
-			translation: { x: 0, y: 0, z: 19 },
-			rotation: { x: 174, y: -30, z: 23 },
-			origin: { x: 0.52, y: 0.78, z: 0.5 },
-			scale: 2.5
+			"translation": { "x": -0.9, "y": -1, "z": -1 },
+			"rotation": { "x": -13, "y": -64, "z": 49 },
+			"scale": 0.55
 		}
 	},
-	groundTransformByType: {
+	"guiTransformByType": {
 		"*-bracelet": {
-			translation: { x: 0.05, y: -0.08, z: 0 },
-			rotation: { x: 0, y: 0, z: 0 },
-			scale: 2
+			"translation": { "x": -7, "y": -1.4, "z": 0 },
+			"rotation": { "x": 139, "y": -53, "z": -28 },
+			"origin": { "x": 1.6, "y": 0.36, "z": 1.45 },
+			"scale": 4.5
 		},
 		"*": {
-			translation: { x: 0.05, y: -0.3, z: 0 },
-			rotation: { x: 0, y: 0, z: 0 },
-			scale: 2
+			"rotate": false,
+			"translation": { "x": 0, "y": 0, "z": 19 },
+			"rotation": { "x": 174, "y": -30, "z": 23 },
+			"origin": { "x": 0.52, "y": 0.78, "z": 0.5 },
+			"scale": 2.5
+		}
+	},
+	"groundTransformByType": {
+		"*-bracelet": {
+			"translation": { "x": 0.05, "y": -0.08, "z": 0 },
+			"rotation": { "x": 0, "y": 0, "z": 0 },
+			"scale": 2
+		},
+		"*": {
+			"translation": { "x": 0.05, "y": -0.3, "z": 0 },
+			"rotation": { "x": 0, "y": 0, "z": 0 },
+			"scale": 2
 		}
 	}
 }

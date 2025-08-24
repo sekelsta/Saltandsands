@@ -1,22 +1,21 @@
 {
-	code: "bivalve",
-	classByType: {
+	"code": "bivalve",
+	"classByType": {
 		"*-live": "Livebivalve",
 		"*-dead": "Bivalve"
 	},
-	variantgroups: [
-		{ code: "type", states: ["scallop", "clam", "freshwatermussel"] },
-		{ code: "living", states: ["live", "dead"] }
+	"variantgroups": [
+		{ "code": "type", "states": ["scallop", "clam", "freshwatermussel"] },
+		{ "code": "living", "states": ["live", "dead"] }
 	],
-	shape: { base: "item/bivalves/{type}loose" },
-	textures: {
-		color: { base: "game:block/creature/aquatic/seashell/plain" }
+	"shape": { "base": "item/bivalves/{type}loose" },
+	"textures": {
+		"color": { "base": "game:block/creature/aquatic/seashell/plain" }
 	},
-	creativeinventory: { "general": ["*"], "items": ["*"] },
-	maxstacksize: 64,
-	materialDensity: 100,
-
-	attributesByType: {
+	"creativeinventory": { "general": ["*"], "items": ["*"] },
+	"maxstacksize": 64,
+	"materialDensity": 100,
+	"attributesByType": {
 		"*-scallop-live": {
 			"bivalveBlock": "saltandsands:bivalvereef-scallop-saltwater-establishing-free",
 			"waterCode": "saltwater"
@@ -30,87 +29,87 @@
 			"waterCode": "water"
 		},
 		"*-scallop-dead": {
-			"processingResults": [ { type: "item", code: "saltandsands:bivalvemeat-scallop-raw", quantity: 1  }, { type: "block", code: "game:seashell-scallop-seafoam", quantity: 2  } ],
-			"rareProcessingResultStacks": [ { type: "item", code: "saltandsands:pearl", quantity: 1  } ],
+			"processingResults": [ { "type": "item", "code": "saltandsands:bivalvemeat-scallop-raw", "quantity": 1  }, { "type": "block", "code": "game:seashell-scallop-seafoam", "quantity": 2  } ],
+			"rareProcessingResultStacks": [ { "type": "item", "code": "saltandsands:pearl", "quantity": 1  } ],
 			"rareProcessingResultChances": [ 0.33 ],
 			"rareProcessingResultExclusive": [ "true" ],
-			"processingTime": 1.0,
+			"processingTime": 1.0
 		},
 		"*-clam-dead": {
-			"processingResults": [ { type: "item", code: "saltandsands:bivalvemeat-clam-raw", quantity: 1  }, { type: "block", code: "game:seashell-clam-plain", quantity: 2  } ],
-			"rareProcessingResultStacks": [ { type: "item", code: "saltandsands:pearl", quantity: 1  } ],
+			"processingResults": [ { "type": "item", "code": "saltandsands:bivalvemeat-clam-raw", "quantity": 1  }, { "type": "block", "code": "game:seashell-clam-plain", "quantity": 2  } ],
+			"rareProcessingResultStacks": [ { "type": "item", "code": "saltandsands:pearl", "quantity": 1  } ],
 			"rareProcessingResultChances": [ 0.33 ],
 			"rareProcessingResultExclusive": [ "true" ],
-			"processingTime": 1.0,
+			"processingTime": 1.0
 		},
 		"*-freshwatermussel-dead": {
-			"processingResults": [ { type: "item", code: "saltandsands:bivalvemeat-freshwatermussel-raw", quantity: 1  }, { type: "block", code: "game:seashell-mussel-musselblue", quantity: 2  } ],
-			"rareProcessingResultStacks": [ { type: "item", code: "saltandsands:pearl", quantity: 1  } ],
+			"processingResults": [ { "type": "item", "code": "saltandsands:bivalvemeat-freshwatermussel-raw", "quantity": 1  }, { "type": "item", "code": "game:seashell-mussel-musselblue", "quantity": 2  } ],
+			"rareProcessingResultStacks": [ { "type": "item", "code": "saltandsands:pearl", "quantity": 1  } ],
 			"rareProcessingResultChances": [ 0.33 ],
 			"rareProcessingResultExclusive": [ "true" ],
-			"processingTime": 0.5,
+			"processingTime": 0.5
 		}
 	},
-	transitionablePropsByType: {
+	"transitionablePropsByType": {
 		"*-scallop-live":  [{
-			type: "Perish",
-			freshHours: { avg: 24 },
-			transitionHours: { avg: 0 },
-			transitionedStack: { type: "item", code: "bivalve-scallop-dead" },
-			transitionRatio: 1
+			"type": "Perish",
+			"freshHours": { "avg": 24 },
+			"transitionHours": { "avg": 0 },
+			"transitionedStack": { "type": "item", "code": "bivalve-scallop-dead" },
+			"transitionRatio": 1
 		}],
 		"*-clam-live":  [{
-			type: "Perish",
-			freshHours: { avg: 24 },
-			transitionHours: { avg: 0 },
-			transitionedStack: { type: "item", code: "bivalve-clam-dead" },
-			transitionRatio: 1
+			"type": "Perish",
+			"freshHours": { "avg": 24 },
+			"transitionHours": { "avg": 0 },
+			"transitionedStack": { "type": "item", "code": "bivalve-clam-dead" },
+			"transitionRatio": 1
 		}],
 		"*-freshwatermussel-live":  [{
-			type: "Perish",
-			freshHours: { avg: 24 },
-			transitionHours: { avg: 0 },
-			transitionedStack: { type: "item", code: "bivalve-freshwatermussel-dead" },
-			transitionRatio: 1
+			"type": "Perish",
+			"freshHours": { "avg": 24 },
+			"transitionHours": { "avg": 0 },
+			"transitionedStack": { "type": "item", "code": "bivalve-freshwatermussel-dead" },
+			"transitionRatio": 1
 		}],
 		"*-scallop-dead":  [{
-			type: "Perish",
-			freshHours: { avg: 120 },
-			transitionHours: { avg: 24 },
-			transitionedStack: { type: "item", code: "game:rot" },
-			transitionRatio: 1
+			"type": "Perish",
+			"freshHours": { "avg": 120 },
+			"transitionHours": { "avg": 24 },
+			"transitionedStack": { "type": "item", "code": "game:rot" },
+			"transitionRatio": 1
 		}],
 		"*-clam-dead":  [{
-			type: "Perish",
-			freshHours: { avg: 120 },
-			transitionHours: { avg: 36 },
-			transitionedStack: { type: "item", code: "game:rot" },
-			transitionRatio: 1
+			"type": "Perish",
+			"freshHours": { "avg": 120 },
+			"transitionHours": { "avg": 36 },
+			"transitionedStack": { "type": "item", "code": "game:rot" },
+			"transitionRatio": 1
 		}],
 		"*-freshwatermussel-dead":  [{
-			type: "Perish",
-			freshHours: { avg: 120 },
-			transitionHours: { avg: 36 },
-			transitionedStack: { type: "item", code: "game:rot" },
-			transitionRatio: 1
+			"type": "Perish",
+			"freshHours": { "avg": 120 },
+			"transitionHours": { "avg": 36 },
+			"transitionedStack": { "type": "item", "code": "game:rot" },
+			"transitionRatio": 1
 		}]
 	},
-	guiTransform: {
-		rotation: { x: -43, y: 132, z: 0 },
-		origin: { x: 0.5, y: 0.1, z: 0.5 },
-		scale: 2.7
+	"guiTransform": {
+		"rotation": { "x": -43, "y": 132, "z": 0 },
+		"origin": { "x": 0.5, "y": 0.1, "z": 0.5 },
+		"scale": 2.7
 	},
-	fpHandTransform: {
-		rotation: { x: 0, y: -24, z: 0 }
+	"fpHandTransform": {
+		"rotation": { "x": 0, "y": -24, "z": 0 }
 	},
-	tpHandTransform: {
-		translation: { x: -0.87, y: 0.04, z: -0.8 },
-		rotation: { x: 2, y: 31, z: -25 },
-		origin: { x: 0.5, y: -0.1, z: 0.5 },
-		scale: 0.6
+	"tpHandTransform": {
+		"translation": { "x": -0.87, "y": 0.04, "z": -0.8 },
+		"rotation": { "x": 2, "y": 31, "z": -25 },
+		"origin": { "x": 0.5, "y": -0.1, "z": 0.5 },
+		"scale": 0.6
 	},
-	groundTransform: {
-		origin: { x: 0.5, y: 0, z: 0.5 },
-		scale: 3
+	"groundTransform": {
+		"origin": { "x": 0.5, "y": 0, "z": 0.5 },
+		"scale": 3
 	}
 }

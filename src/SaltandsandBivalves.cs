@@ -76,7 +76,7 @@ namespace Saltandsands
                 return false;
             }
 
-            Block belowBlock = blockAccessor.GetBlock(pos.X, pos.Y - 1, pos.Z);
+            Block belowBlock = blockAccessor.GetBlock(pos.DownCopy());
 
             if (belowBlock.Fertility > 0 && minDepth == 0)
             {
@@ -92,10 +92,10 @@ namespace Saltandsands
 				if(belowBlock.LiquidCode != waterCode) return false;
                 for(var currentDepth = 0; currentDepth <= maxDepth + 1; currentDepth ++)
                 {
-                    belowBlock = blockAccessor.GetBlock(pos.X, pos.Y - currentDepth, pos.Z);
+                    belowBlock = blockAccessor.GetBlock(pos.DownCopy(currentDepth));
                     if (belowBlock.Fertility > 0)
                     {
-						Block aboveBlock = blockAccessor.GetBlock(pos.X, pos.Y - currentDepth + 1, pos.Z);
+      Block aboveBlock = blockAccessor.GetBlock(pos.DownCopy(currentDepth - 1));
                         if(aboveBlock.LiquidCode != waterCode) return false;
                         //if(currentDepth < minDepth + 1) return false;
 						
@@ -158,7 +158,7 @@ namespace Saltandsands
                 return;
             }
 
-            SpawnBlockBrokenParticles(pos);
+            world.BlockAccessor.GetBlock(pos).SpawnBlockBrokenParticles(pos, byPlayer);
             world.BlockAccessor.SetBlock(0, pos);
         }
 		
@@ -189,8 +189,8 @@ namespace Saltandsands
             base.OnLoaded(api);
 
             rnd = new LCGRandom(api.World.Seed);
-			
-			/*
+   processingSecRequired = Attributes["processingTime"].AsFloat(1.2f);
+   /*
             api.Logger.Error("Resolving processing results...");
             JsonItemStack[] pstacks = Attributes["processingResults"].AsObject<JsonItemStack[]>();
             List<ItemStack> stacklist = new List<ItemStack>();
@@ -329,7 +329,7 @@ namespace Saltandsands
 
                 tf.Translation.Set(nowx - Math.Min(1.5f, secondsUsed*4), nowy, 0);
                 //byEntity.Controls.UsingHeldItemTransformBefore = tf;
-				byEntity.Controls.UsingHeldItemTransformAfter = tf;
+				//byEntity.Controls.UsingHeldItemTransformAfter = tf;
 
                 curX = nowx;
                 curY = nowy;
@@ -505,7 +505,7 @@ namespace Saltandsands
 
                 //jstack.Resolve(api.World, "Bivalve opening result");
                 //AssetLocation toPlaceCode;
-				bool debugMessages = Attributes["debugMessages"].AsBool(false);
+				            debugMessages = Attributes["debugMessages"].AsBool(false);
                 if (debugMessages == true)
                 {
                     api.Logger.Error("ItemLiveBivalve debugMessages is TRUE, debug messages active!");
