@@ -32,8 +32,8 @@ namespace Saltandsands
 
 		public override bool CanPlantStay(IBlockAccessor blockAccessor, BlockPos pos)
         {
-            Block block = blockAccessor.GetBlock(pos.X, pos.Y - 1, pos.Z);
-            return (block.Fertility > 0) || (blockAccessor.GetBlock(pos.X, pos.Y, pos.Z).LiquidCode == waterCode);
+            Block block = blockAccessor.GetBlock(pos.DownCopy());
+            return (block.Fertility > 0) || (blockAccessor.GetBlock(pos).LiquidCode == waterCode);
         }
 		
         // Worldgen placement, tests to see how many blocks below water the plant is being placed, and if that's allowed for the plant
@@ -45,9 +45,9 @@ namespace Saltandsands
             {
                 return false;
             }
-
-            Block belowBlock = blockAccessor.GetBlock(pos.X, pos.Y - 1, pos.Z);
-
+ 
+            Block belowBlock = blockAccessor.GetBlock(pos.DownCopy());
+ 
             if (belowBlock.Fertility > 0 && minDepth == 0)
             {
                 Block placingBlock = blockAccessor.GetBlock(Code);
@@ -62,13 +62,13 @@ namespace Saltandsands
 				if(belowBlock.LiquidCode != waterCode) return false;
                 for(var currentDepth = 1; currentDepth <= maxDepth + 1; currentDepth ++)
                 {
-                    belowBlock = blockAccessor.GetBlock(pos.X, pos.Y - currentDepth, pos.Z);
+                    belowBlock = blockAccessor.GetBlock(pos.DownCopy(currentDepth));
                     if (belowBlock.Fertility > 0)
                     {
-						Block aboveBlock = blockAccessor.GetBlock(pos.X, pos.Y - currentDepth + 1, pos.Z);
+                        Block aboveBlock = blockAccessor.GetBlock(pos.DownCopy(currentDepth - 1));
                         if(aboveBlock.LiquidCode != waterCode) return false;
                         //if(currentDepth < minDepth + 1) return false;
-						
+      
                         Block placingBlock = blockAccessor.GetBlock(Code);
                         if (placingBlock == null) return false;
 
@@ -159,16 +159,16 @@ namespace Saltandsands
 		
         public override bool CanPlantStay(IBlockAccessor blockAccessor, BlockPos pos)
         {
-            Block block = blockAccessor.GetBlock(pos.X, pos.Y - 1, pos.Z);
-            return (block.Fertility > 0) || (block is BlockSASSeaweed) || (blockAccessor.GetBlock(pos.X, pos.Y, pos.Z).LiquidCode == waterCode);
+            Block block = blockAccessor.GetBlock(pos.DownCopy());
+            return (block.Fertility > 0) || (block is BlockSASSeaweed) || (blockAccessor.GetBlock(pos).LiquidCode == waterCode);
         }
 
         public override void OnJsonTesselation(ref MeshData sourceMesh, ref int[] lightRgbsByCorner, BlockPos pos, Block[] chunkExtBlocks, int extIndex3d)
         {
             int windData =
-                ((api.World.BlockAccessor.GetBlock(pos.X, pos.Y - 1, pos.Z) is BlockSASSeaweed) ? 1 : 0)
-                + ((api.World.BlockAccessor.GetBlock(pos.X, pos.Y - 2, pos.Z) is BlockSASSeaweed) ? 1 : 0)
-                + ((api.World.BlockAccessor.GetBlock(pos.X, pos.Y - 3, pos.Z) is BlockSASSeaweed) ? 1 : 0)
+                ((api.World.BlockAccessor.GetBlock(pos.DownCopy(1)) is BlockSASSeaweed) ? 1 : 0)
+                + ((api.World.BlockAccessor.GetBlock(pos.DownCopy(2)) is BlockSASSeaweed) ? 1 : 0)
+                + ((api.World.BlockAccessor.GetBlock(pos.DownCopy(3)) is BlockSASSeaweed) ? 1 : 0)
             ;
 
             for (int i = 0; i < sourceMesh.FlagsCount; i++)

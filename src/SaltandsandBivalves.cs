@@ -75,9 +75,9 @@ namespace Saltandsands
             {
                 return false;
             }
-
-            Block belowBlock = blockAccessor.GetBlock(pos.X, pos.Y - 1, pos.Z);
-
+ 
+            Block belowBlock = blockAccessor.GetBlock(pos.DownCopy());
+ 
             if (belowBlock.Fertility > 0 && minDepth == 0)
             {
                 Block placingBlock = blockAccessor.GetBlock(Code);
@@ -92,13 +92,13 @@ namespace Saltandsands
 				if(belowBlock.LiquidCode != waterCode) return false;
                 for(var currentDepth = 0; currentDepth <= maxDepth + 1; currentDepth ++)
                 {
-                    belowBlock = blockAccessor.GetBlock(pos.X, pos.Y - currentDepth, pos.Z);
+                    belowBlock = blockAccessor.GetBlock(pos.DownCopy(currentDepth));
                     if (belowBlock.Fertility > 0)
                     {
-						Block aboveBlock = blockAccessor.GetBlock(pos.X, pos.Y - currentDepth + 1, pos.Z);
+                        Block aboveBlock = blockAccessor.GetBlock(pos.DownCopy(currentDepth - 1));
                         if(aboveBlock.LiquidCode != waterCode) return false;
                         //if(currentDepth < minDepth + 1) return false;
-						
+
                         Block placingBlock = blockAccessor.GetBlock(Code);
                         if (placingBlock == null) return false;
 
@@ -157,8 +157,8 @@ namespace Saltandsands
                 world.BlockAccessor.SetBlock(world.GetBlock(CodeWithVariants(new string[] { "state" }, new string[] { "harvested" })).BlockId, pos);
                 return;
             }
-
-            SpawnBlockBrokenParticles(pos);
+ 
+            SpawnBlockBrokenParticles(pos, byPlayer);
             world.BlockAccessor.SetBlock(0, pos);
         }
 		
@@ -175,7 +175,7 @@ namespace Saltandsands
         float curY;
         
         float prevSecUsed;
-		float processingSecRequired;
+        float processingSecRequired = 1.2f;
         LCGRandom rnd;
 
         //ItemStack[] processingResultStacks;
@@ -329,7 +329,7 @@ namespace Saltandsands
 
                 tf.Translation.Set(nowx - Math.Min(1.5f, secondsUsed*4), nowy, 0);
                 //byEntity.Controls.UsingHeldItemTransformBefore = tf;
-				byEntity.Controls.UsingHeldItemTransformAfter = tf;
+                byEntity.Controls.UsingHeldItemTransformAfter = tf;
 
                 curX = nowx;
                 curY = nowy;
@@ -498,7 +498,7 @@ namespace Saltandsands
         public AssetLocation placedBivalve;
         //public Block placedBivalve; 
         public string waterType;
-		private bool debugMessages;
+        private bool debugMessages = false;
         public override void OnLoaded(ICoreAPI api)
         {
             base.OnLoaded(api);
