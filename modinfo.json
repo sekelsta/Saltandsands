@@ -12,10 +12,11 @@
     "Ледяная Соня",
     "AzuliBluespots",
     "Sekelsta",
-    "Sammy_SMD"
+    "Sammy_SMD",
+    "LarekFlynn"
   ],
   "Description": "Adds an array of ocean-enriching content, cultivate shellfish for meat and shells!",
-  "Version": "1.1.1",
+  "Version": "1.1.2",
   "Dependencies": {
     "game": "",
   },
