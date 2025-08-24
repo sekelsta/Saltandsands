@@ -7,6 +7,7 @@ using Vintagestory.GameContent;
 using System.Linq;
 using System;
 using Vintagestory.API.Common.Entities;
+using Vintagestory.API.Config;
 
 namespace Saltandsands
 {
@@ -21,16 +22,16 @@ namespace Saltandsands
 		private int reefMaxHeightBelowSealevel;
 		private int reefMaxHeightAboveSealevel;
 		private int maxSlopeHeightDiff;
-		private AssetLocation[] coralTypes = new AssetLocation[] { 
+		private AssetLocation[] coralTypes = new AssetLocation[] {
 		"saltandsands:coralbrain-blue", "saltandsands:coralbrain-green", "saltandsands:coralbrain-red", "saltandsands:coralbrain-yellow",
-		"saltandsands:coralfan-blue", "saltandsands:coralfan-orange", "saltandsands:coralfan-purple", "saltandsands:coralfan-red", "saltandsands:coralfan-violet", "saltandsands:coralfan-yellow", 
-		"saltandsands:coralstaghorn-blue", "saltandsands:coralstaghorn-orange", "saltandsands:coralstaghorn-purple", "saltandsands:coralstaghorn-yellow", 
-		"saltandsands:coraltable-brown", "saltandsands:coraltable-gray", "saltandsands:coraltable-green", "saltandsands:coraltable-red", 
+		"saltandsands:coralfan-blue", "saltandsands:coralfan-orange", "saltandsands:coralfan-purple", "saltandsands:coralfan-red", "saltandsands:coralfan-violet", "saltandsands:coralfan-yellow",
+		"saltandsands:coralstaghorn-blue", "saltandsands:coralstaghorn-orange", "saltandsands:coralstaghorn-purple", "saltandsands:coralstaghorn-yellow",
+		"saltandsands:coraltable-brown", "saltandsands:coraltable-gray", "saltandsands:coraltable-green", "saltandsands:coraltable-red",
 		"saltandsands:coraltube-blue", "saltandsands:coraltube-orange", "saltandsands:coraltube-pink", "saltandsands:coraltube-purple", "saltandsands:coraltube-red", "saltandsands:coraltube-yellow" };
 		private AssetLocation coralSubstrateBlock = new AssetLocation();
 		private bool extremeSlopeCancels;
 		private int extremeSlopeThreshold;
-		BlockPos tmpPos = new BlockPos();
+		BlockPos tmpPos = new BlockPos(0);
 
         public override void OnLoaded(ICoreAPI api)
         {
@@ -127,7 +128,6 @@ namespace Saltandsands
 			tmpPos = tmpPos.Set(pos.X, pos.Y, pos.Z);	
             float reefSubstrateRadius = reefRadius * 1.2f;
             int range = (int)Math.Ceiling(reefSubstrateRadius);
-            int chunksize = api.World.BlockAccessor.ChunkSize;
             Vec2i vecTmp = new Vec2i();
 
 			for (int dx = -range; dx <= range; dx++)
