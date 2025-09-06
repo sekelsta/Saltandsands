@@ -1,281 +1,448 @@
 [
-
-    {
-        "op": "add",
-        "path": "/attributesByType/claypot-cooked/textureMapping/bivalvemeat-scallop-raw",
-        "value": [
-          "meat",
-          "clammeat"
-        ],
-        "file": "game:blocktypes/clay/pot.json"
-    },
-	{
-        "op": "add",
-        "path": "/attributesByType/claypot-cooked/textureMapping/bivalvemeat-scallop-cured",
-        "value": [
-          "meat",
-          "clammeat"
-        ],
-        "file": "game:blocktypes/clay/pot.json"
-    },
-	{
-        "op": "add",
-        "path": "/attributesByType/claypot-cooked/textureMapping/bivalvemeat-clam-raw",
-        "value": [
-          "meat",
-          "clammeat"
-        ],
-        "file": "game:blocktypes/clay/pot.json"
-    },
-	{
-        "op": "add",
-        "path": "/attributesByType/claypot-cooked/textureMapping/bivalvemeat-clam-cured",
-        "value": [
-          "meat",
-          "clammeat"
-        ],
-        "file": "game:blocktypes/clay/pot.json"
-    },
-	{
-        "op": "add",
-        "path": "/attributesByType/claypot-cooked/textureMapping/bivalvemeat-freshwatermussel-raw",
-        "value": [
-          "meat",
-          "clammeat"
-        ],
-        "file": "game:blocktypes/clay/pot.json"
-    },
-	{
-        "op": "add",
-        "path": "/attributesByType/claypot-cooked/textureMapping/bivalvemeat-freshwatermussel-cured",
-        "value": [
-          "meat",
-          "clammeat"
-        ],
-        "file": "game:blocktypes/clay/pot.json"
-    },
-	{
-        "op": "add",
-        "path": "/attributesByType/claypot-cooked/textureMapping/bivalvemeat-urchin-raw",
-        "value": [
-          "meat",
-          "clammeat"
-        ],
-        "file": "game:blocktypes/clay/pot.json"
-    },
-	{
-        "op": "add",
-        "path": "/attributesByType/claypot-cooked/textureMapping/bivalvemeat-urchin-cured",
-        "value": [
-          "meat",
-          "clammeat"
-        ],
-        "file": "game:blocktypes/clay/pot.json"
-    },
-	
-	{
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-scallop-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-scallop-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-scallop-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-scallop-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/bivalvemeat-scallop-raw",
+    "value": ["meat", "group4"]
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-scallop-cured",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-scallop-cured",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-scallop-cured",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-scallop-cured",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/bivalvemeat-scallop-cured",
+    "value": ["meat", "group4"]
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-clam-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-clam-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-clam-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-clam-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/bivalvemeat-clam-raw",
+    "value": ["meat", "group4"]
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-clam-cured",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-clam-cured",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-clam-cured",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-clam-cured",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/bivalvemeat-clam-cured",
+    "value": ["meat", "group4"]
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-freshwatermussel-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-freshwatermussel-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-freshwatermussel-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-freshwatermussel-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/bivalvemeat-freshwatermussel-raw",
+    "value": ["meat", "group4"]
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-freshwatermussel-cured",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-freshwatermussel-cured",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-freshwatermussel-cured",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-freshwatermussel-cured",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/bivalvemeat-freshwatermussel-cured",
+    "value": ["meat", "group4"]
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-urchin-raw",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-urchin-raw",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-urchin-raw",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-urchin-raw",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/bivalvemeat-urchin-raw",
+    "value": ["meat", "group4"]
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/0/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-urchin-cured",
+      "shapeElement": "bowl/meat stew/*",
+      "textureMapping": [ "meat", "group4" ]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/3/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-urchin-cured",
+      "shapeElement": "bowl/red meat/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/meatystew",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-urchin-cured",
+      "shapeElement": "bowl/red meat 2/*",
+      "textureMapping": ["meat", "group1"]
+    }
+  },
+  {
+    "file": "game:recipes/cooking/soup",
+    "side": "server",
+    "op": "add",
+    "path": "/ingredients/4/validStacks/-",
+    "value": {
+      "type": "item",
+      "code": "saltandsands:bivalvemeat-urchin-cured",
+      "shapeElement": "bowl/meat/*",
+      "textureMapping": [ "meat", "group1" ]
+    }
+  },
+  {
+    "file": "game:blocktypes/clay/fired/pot",
+    "side": "server",
+    "op": "add",
+    "path": "/attributesByType/claypot-blue-cooked/textureMapping/bivalvemeat-urchin-cured",
+    "value": ["meat", "group4"]
+  },
+  {
         "op": "add",
         "path": "/texturesByType/*/clammeat",
-        "value": { base: "saltandsands:block/meals/meal-seaweed-clams" },
+        "value": { "base": "saltandsands:block/meals/meal-seaweed-clams" },
         "file": "game:blocktypes/clay/pot.json"
-    },
-	
-	
-	{
-        "op": "add",
-        "path": "/ingredients/4/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-scallop-raw", shapeElement: "bowl/meat/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/soup.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/4/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-scallop-cured", shapeElement: "bowl/meat/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/soup.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/4/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-clam-raw", shapeElement: "bowl/meat/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/soup.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/4/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-clam-cured", shapeElement: "bowl/meat/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/soup.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/4/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-freshwatermussel-raw", shapeElement: "bowl/meat/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/soup.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/4/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-freshwatermussel-cured", shapeElement: "bowl/meat/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/soup.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/4/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-urchin-raw", shapeElement: "bowl/meat/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/soup.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/4/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-urchin-cured", shapeElement: "bowl/meat/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/soup.json"
-    },
-
-	
-	{
-        "op": "add",
-        "path": "/ingredients/0/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-scallop-raw", shapeElement: "bowl/meat stew/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/0/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-scallop-cured", shapeElement: "bowl/meat stew/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/0/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-clam-raw", shapeElement: "bowl/meat stew/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/0/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-clam-cured", shapeElement: "bowl/meat stew/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/0/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-freshwatermussel-raw", shapeElement: "bowl/meat stew/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/0/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-freshwatermussel-cured", shapeElement: "bowl/meat stew/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/0/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-urchin-raw", shapeElement: "bowl/meat stew/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/0/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-urchin-cured", shapeElement: "bowl/meat stew/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	
-	{
-        "op": "add",
-        "path": "/ingredients/2/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-scallop-raw", shapeElement: "bowl/red meat/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/2/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-scallop-cured", shapeElement: "bowl/red meat/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/2/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-clam-raw", shapeElement: "bowl/red meat/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/2/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-clam-cured", shapeElement: "bowl/red meat/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/2/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-freshwatermussel-raw", shapeElement: "bowl/red meat/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/2/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-freshwatermussel-cured", shapeElement: "bowl/red meat/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/2/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-urchin-raw", shapeElement: "bowl/red meat/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/2/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-urchin-cured", shapeElement: "bowl/red meat/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	
-	{
-        "op": "add",
-        "path": "/ingredients/3/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-scallop-raw", shapeElement: "bowl/red meat 2/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/3/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-scallop-cured", shapeElement: "bowl/red meat 2/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/3/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-clam-raw", shapeElement: "bowl/red meat 2/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/3/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-clam-cured", shapeElement: "bowl/red meat 2/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/3/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-freshwatermussel-raw", shapeElement: "bowl/red meat 2/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/3/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-freshwatermussel-cured", shapeElement: "bowl/red meat 2/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/3/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-urchin-raw", shapeElement: "bowl/red meat 2/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
-    },
-	{
-        "op": "add",
-        "path": "/ingredients/3/validStacks/-",
-        "value": { type: "item", code: "saltandsands:bivalvemeat-urchin-cured", shapeElement: "bowl/red meat 2/*", textureMapping: ["meat", "clammeat"] },
-        "file": "game:recipes/cooking/meatystew.json"
     }
-	
 ]
