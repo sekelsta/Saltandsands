@@ -1,9 +1,9 @@
 [
   
   {
-    "file": "game:entities/humanoid/trader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
-    "path": "/attributes/tradeProps/buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-arm-platinum-pearl-bracelet",
       "type": "item",
@@ -20,9 +20,9 @@
   },
  
   {
-    "file": "game:entities/humanoid/trader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
-    "path": "/attributes/tradeProps/buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-emblem-platinum-pearl-brooch",
       "type": "item",
@@ -41,9 +41,9 @@
   
   
   {
-    "file": "game:entities/humanoid/trader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
-    "path": "/attributes/tradeProps/buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-arm-platinum-coral-bracelet",
       "type": "item",
@@ -61,9 +61,9 @@
   
   
   {
-    "file": "game:entities/humanoid/trader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
-    "path": "/attributes/tradeProps/buying/list/-",
+    "path": "/buying/list/-",
     "value": {
       "code": "saltandsands:clothes-emblem-platinum-coral-brooch",
       "type": "item",
