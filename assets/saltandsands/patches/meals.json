@@ -440,9 +440,9 @@
     "value": ["meat", "group4"]
   },
   {
-        "op": "add",
-        "path": "/texturesByType/*/clammeat",
-        "value": { "base": "saltandsands:block/meals/meal-seaweed-clams" },
-        "file": "game:blocktypes/clay/pot.json"
-    }
+    "op": "add",
+    "path": "/texturesByType/*/clammeat",
+    "value": { "base": "saltandsands:block/meals/meal-seaweed-clams" },
+    "file": "game:blocktypes/clay/pot.json"
+  }
 ]

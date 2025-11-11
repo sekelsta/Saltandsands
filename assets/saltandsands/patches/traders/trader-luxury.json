@@ -1,6 +1,6 @@
 [
   {
-    "file": "game:config/tradeliststrader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
     "path": "/buying/list/-",
     "value": {
@@ -18,7 +18,7 @@
     }
   },
   {
-    "file": "game:config/tradeliststrader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
     "path": "/buying/list/-",
     "value": {
@@ -37,7 +37,7 @@
   },
 
   {
-    "file": "game:config/tradeliststrader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
     "path": "/buying/list/-",
     "value": {
@@ -55,7 +55,7 @@
     }
   },
   {
-    "file": "game:config/tradeliststrader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
     "path": "/buying/list/-",
     "value": {
@@ -73,7 +73,7 @@
     }
   },
   {
-    "file": "game:config/tradeliststrader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
     "path": "/buying/list/-",
     "value": {
@@ -91,7 +91,7 @@
     }
   },
   {
-    "file": "game:config/tradeliststrader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
     "path": "/buying/list/-",
     "value": {
@@ -109,7 +109,7 @@
     }
   },
   {
-    "file": "game:config/tradeliststrader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
     "path": "/buying/list/-",
     "value": {
@@ -128,7 +128,7 @@
   },
   
   {
-    "file": "game:config/tradeliststrader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
     "path": "/buying/list/-",
     "value": {
@@ -146,7 +146,7 @@
     }
   },
   {
-    "file": "game:config/tradeliststrader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
     "path": "/buying/list/-",
     "value": {
@@ -164,7 +164,7 @@
     }
   },
   {
-    "file": "game:config/tradeliststrader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
     "path": "/buying/list/-",
     "value": {
@@ -184,7 +184,7 @@
   
   
   {
-    "file": "game:config/tradeliststrader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
     "path": "/buying/list/-",
     "value": {
@@ -202,7 +202,7 @@
     }
   },
   {
-    "file": "game:config/tradeliststrader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
     "path": "/buying/list/-",
     "value": {
@@ -220,7 +220,7 @@
     }
   },
   {
-    "file": "game:config/tradeliststrader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
     "path": "/buying/list/-",
     "value": {
@@ -239,7 +239,7 @@
   },
   
   {
-    "file": "game:config/tradeliststrader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
     "path": "/buying/list/-",
     "value": {
@@ -257,7 +257,7 @@
     }
   },
   {
-    "file": "game:config/tradeliststrader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
     "path": "/buying/list/-",
     "value": {
@@ -275,7 +275,7 @@
     }
   },
   {
-    "file": "game:config/tradeliststrader-luxuries.json",
+    "file": "game:config/tradelists/trader-luxuries.json",
     "op": "add",
     "path": "/buying/list/-",
     "value": {
