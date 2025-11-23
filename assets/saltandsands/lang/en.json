@@ -54,6 +54,9 @@
 	"item-bivalvemeat-urchin-raw": "Urchin meat (raw)",
 	"item-bivalvemeat-urchin-cooked": "Urchin meat (cooked)",
 	"item-bivalvemeat-urchin-cured": "Urchin meat (cured)",
+
+	"game:meal-ingredient-stew-primary-bivalvemeat": "Shellfish",
+	"game:meal-ingredient-stew-secondary-bivalvemeat": "Shellfish",
 	
 	"game:meal-ingredient-soup-primary-scallop-raw": "Scallop",
 	"game:meal-ingredient-soup-primary-scallop-cured": "Scallop",
