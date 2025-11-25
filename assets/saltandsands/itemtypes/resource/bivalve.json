@@ -34,21 +34,21 @@
 			"rareProcessingResultStacks": [ { type: "item", code: "saltandsands:pearl", quantity: 1  } ],
 			"rareProcessingResultChances": [ 0.33 ],
 			"rareProcessingResultExclusive": [ "true" ],
-			"processingTime": 1.0,
+			"processingTime": 1.8,
 		},
 		"*-clam-dead": {
 			"processingResults": [ { type: "item", code: "saltandsands:bivalvemeat-clam-raw", quantity: 1  }, { type: "block", code: "game:seashell-clam-plain", quantity: 2  } ],
 			"rareProcessingResultStacks": [ { type: "item", code: "saltandsands:pearl", quantity: 1  } ],
 			"rareProcessingResultChances": [ 0.33 ],
 			"rareProcessingResultExclusive": [ "true" ],
-			"processingTime": 1.0,
+			"processingTime": 1.8,
 		},
 		"*-freshwatermussel-dead": {
 			"processingResults": [ { type: "item", code: "saltandsands:bivalvemeat-freshwatermussel-raw", quantity: 1  }, { type: "block", code: "game:seashell-mussel-musselblue", quantity: 2  } ],
 			"rareProcessingResultStacks": [ { type: "item", code: "saltandsands:pearl", quantity: 1  } ],
 			"rareProcessingResultChances": [ 0.33 ],
 			"rareProcessingResultExclusive": [ "true" ],
-			"processingTime": 0.5,
+			"processingTime": 1.5,
 		}
 	},
 	transitionablePropsByType: {

@@ -200,7 +200,7 @@ namespace Saltandsands
             }
             processingResultStacks = stacklist.ToArray();
             
-            processingSecRequired = Attributes["processingTime"].AsFloat(1.2f);
+            processingSecRequired = Attributes["processingTime"].AsFloat(2.0f);
 
             // Consider moving these to BlockDropItemstack and making use of the lastDrop field
             pstacks = Attributes["rareProcessingResultStacks"].AsObject<JsonItemStack[]>();
@@ -258,8 +258,6 @@ namespace Saltandsands
 
         public override void OnHeldInteractStart(ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handling)
         {
-            if (slot.Itemstack.TempAttributes.GetBool("consumed") == true) return;
-
             handling = EnumHandHandling.PreventDefault;
 
             IPlayer byPlayer = (byEntity as EntityPlayer)?.Player;
@@ -299,11 +297,10 @@ namespace Saltandsands
                 curY = nowy;
 
                 prevSecUsed = secondsUsed;
+                return secondsUsed < processingSecRequired;
             }
 
-            if (api.World.Side == EnumAppSide.Server) return true;
-
-            return secondsUsed < processingSecRequired + 0.1f;
+            return true;
         }
 
         public override bool OnHeldInteractCancel(float secondsUsed, ItemSlot slot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, EnumItemUseCancelReason cancelReason)
@@ -320,7 +317,7 @@ namespace Saltandsands
                     // Handle processing results - shells, meat, other mundane items
                     for (int i = 0; i < processingResultStacks.Length; i++)
                     {
-                        ItemStack resultstack = processingResultStacks[i];
+                        ItemStack resultstack = processingResultStacks[i].Clone();
                         if (!byEntity.TryGiveItemStack(resultstack))
                         {
                             byEntity.World.SpawnItemEntity(resultstack, byEntity.Pos.XYZ.Add(0, 0.5, 0));
@@ -336,7 +333,7 @@ namespace Saltandsands
                         double roll = byEntity.World.Rand.NextDouble();
                         if (roll < rareChances[i])
                         {
-                            ItemStack resultstack = rareStacks[i];
+                            ItemStack resultstack = rareStacks[i].Clone();
                             if (!byEntity.TryGiveItemStack(resultstack))
                             {
                                 byEntity.World.SpawnItemEntity(resultstack, byEntity.Pos.XYZ.Add(0, 0.5, 0));
@@ -350,13 +347,10 @@ namespace Saltandsands
                         rareChances.RemoveAt(i);
                         isRareExclusive.RemoveAt(i);
                     }
-                   
-                    slot.TakeOut(1);
-                    slot.MarkDirty();
-                } else
-                {
-                    slot.Itemstack.TempAttributes.SetBool("consumed", true);
                 }
+
+                slot.TakeOut(1);
+                slot.MarkDirty();
             }
         }
 
@@ -382,33 +376,33 @@ namespace Saltandsands
         {
             base.OnLoaded(api);
 
-                placedBivalve = new AssetLocation(this.Attributes["bivalveBlock"].AsString());
-                if (api.World.GetBlock(placedBivalve) == null)
-                {
-                    api.Logger.Error("Could not resolve invalid block code '{0}' for live bivalve item {1}!",placedBivalve.GetName(), this.Code);
-                    return;
-                }
+            placedBivalve = new AssetLocation(this.Attributes["bivalveBlock"].AsString());
+            if (api.World.GetBlock(placedBivalve) == null)
+            {
+                api.Logger.Error("Could not resolve invalid block code '{0}' for live bivalve item {1}!",placedBivalve.GetName(), this.Code);
+                return;
+            }
 
-                string wcode = Attributes["waterCode"].ToString();
-                if (wcode == "")
-                {
-                    api.Logger.Warning("ItemLiveBivalve had no valid water type code, defaulting to saltwater");
-                    waterType = "saltwater";
-                }
-                else if (wcode == "boilingwater" || wcode == "lava") 
-                {
-                    api.Logger.Error("ItemLiveBivalve had watercode of {0}, this would make no sense, defaulting to saltwater", wcode);
-                    waterType = "saltwater";
-                }
-                else if (wcode != "water" && wcode != "saltwater" && wcode != "boilingwater") 
-                {
-                    api.Logger.Error("ItemLiveBivalve had an invalid water type code {0}, defaulting to saltwater", wcode);
-                    waterType = "saltwater";
-                }
-                else
-                {
-                    waterType = wcode;
-                }
+            string wcode = Attributes["waterCode"].ToString();
+            if (wcode == "")
+            {
+                api.Logger.Warning("ItemLiveBivalve had no valid water type code, defaulting to saltwater");
+                waterType = "saltwater";
+            }
+            else if (wcode == "boilingwater" || wcode == "lava") 
+            {
+                api.Logger.Error("ItemLiveBivalve had watercode of {0}, this would make no sense, defaulting to saltwater", wcode);
+                waterType = "saltwater";
+            }
+            else if (wcode != "water" && wcode != "saltwater" && wcode != "boilingwater") 
+            {
+                api.Logger.Error("ItemLiveBivalve had an invalid water type code {0}, defaulting to saltwater", wcode);
+                waterType = "saltwater";
+            }
+            else
+            {
+                waterType = wcode;
+            }
         }
 
         public override void OnHeldInteractStart(ItemSlot itemslot, EntityAgent byEntity, BlockSelection blockSel, EntitySelection entitySel, bool firstEvent, ref EnumHandHandling handHandling)
