@@ -119,7 +119,7 @@ namespace Saltandsands
                 double posx = blockSel.Position.X + blockSel.HitPosition.X;
                 double posy = blockSel.Position.Y + blockSel.HitPosition.Y;
                 double posz = blockSel.Position.Z + blockSel.HitPosition.Z;
-                player.Entity.World.PlaySoundAt(resistance > 0 ? Sounds.GetHitSound(player) : Sounds.GetBreakSound(player), posx, posy, posz, player, true, 16, 1);
+                player.Entity.World.PlaySoundAt(resistance > 0 ? Sounds.GetHitSound(player) : Sounds.GetBreakSound(player), posx, posy, posz, blockSel.Position.dimension, player);
             }
 
             return resistance;
@@ -146,7 +146,7 @@ namespace Saltandsands
                     }
                 }
 
-                world.PlaySoundAt(Sounds.GetBreakSound(byPlayer), pos.X, pos.Y, pos.Z, byPlayer);
+                world.PlaySoundAt(Sounds.GetBreakSound(byPlayer), pos.X, pos.Y, pos.Z, pos.dimension, byPlayer);
             }
 
             if (byPlayer != null && Variant["state"] == "normal" && (byPlayer.InventoryManager.ActiveTool == EnumTool.Knife || byPlayer.InventoryManager.ActiveTool == EnumTool.Sickle || byPlayer.InventoryManager.ActiveTool == EnumTool.Scythe))
@@ -457,7 +457,7 @@ namespace Saltandsands
 
             if (ok)
             {
-                byEntity.World.PlaySoundAt(block.Sounds.GetBreakSound(byPlayer), blockSel.Position.X + 0.5, blockSel.Position.Y + 0.5, blockSel.Position.Z + 0.5, byPlayer);
+                byEntity.World.PlaySoundAt(block.Sounds.GetBreakSound(byPlayer), blockSel.Position.X + 0.5, blockSel.Position.Y + 0.5, blockSel.Position.Z + 0.5, blockSel.Position.dimension, byPlayer);
                 itemslot.TakeOut(1);
                 itemslot.MarkDirty();
                 handHandling = EnumHandHandling.PreventDefaultAction;
