@@ -16,9 +16,9 @@
     "LarekFlynn"
   ],
   "Description": "Adds an array of ocean-enriching content, cultivate shellfish for meat and shells!",
-  "Version": "1.1.6",
+  "Version": "1.2.0",
   "Dependencies": {
-    "game": "",
+    "game": "1.22.0-rc.5",
   },
   "Side": "Universal",
   "RequiredOnClient": true,

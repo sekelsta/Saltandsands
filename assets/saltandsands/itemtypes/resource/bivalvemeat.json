@@ -14,8 +14,8 @@
 				rotation: { x: 0, y: 53, z: -90 }
 			},
 			useFirepitModel: "Spit"
-		},		
-		nutritionPropsWhenInMeal: { satiety: 200, foodcategory: "Protein" },
+		},
+		nutritionPropsWhenInMeal: { satietyByType: {"*-freshwatermussel-*": 80, "*-urchin-*": 80, "*": 100 }, foodcategory: "Protein" },
 		displaycaseable: true,
 		shelvable: true,
 	},
@@ -36,28 +36,28 @@
 	},
 	creativeinventory: { "general": ["*-raw", "*-cooked"], "items": ["*-raw", "*-cooked"] },
 	nutritionPropsByType: {
-		"*-freshwatermussel-raw": { satiety: 75, foodcategory: "Protein" },
-		"*-freshwatermussel-cooked": { satiety: 125, foodcategory: "Protein" },
-		"*-freshwatermussel-cured": { satiety: 100, foodcategory: "Protein" },
-		"*-urchin-raw": { satiety: 75, foodcategory: "Protein" },
-		"*-urchin-cooked": { satiety: 125, foodcategory: "Protein" },
-		"*-urchin-cured": { satiety: 100, foodcategory: "Protein" },
-		"*-raw": { satiety: 150, foodcategory: "Protein" },
-		"*-cooked": { satiety: 250, foodcategory: "Protein" },
-		"*-cured": { satiety: 200, foodcategory: "Protein" }
+		"*-freshwatermussel-raw": { satiety: 30, foodcategory: "Protein" },
+		"*-freshwatermussel-cooked": { satiety: 60, foodcategory: "Protein" },
+		"*-freshwatermussel-cured": { satiety: 50, foodcategory: "Protein" },
+		"*-urchin-raw": { satiety: 30, foodcategory: "Protein" },
+		"*-urchin-cooked": { satiety: 60, foodcategory: "Protein" },
+		"*-urchin-cured": { satiety: 50, foodcategory: "Protein" },
+		"*-raw": { satiety: 40, foodcategory: "Protein" },
+		"*-cooked": { satiety: 80, foodcategory: "Protein" },
+		"*-cured": { satiety: 65, foodcategory: "Protein" }
 	},
 	transitionablePropsByType: {
 		"*-raw": [{
 			type: "Perish",
-			freshHours: { avg: 48 },
-			transitionHours: { avg: 24 },
+			freshHours: { avg: 36 },
+			transitionHours: { avg: 12 },
 			transitionedStack: { type: "item", code: "game:rot" },
 			transitionRatio: 1
 		}],
 		"*-cooked": [{
 			type: "Perish",
-			freshHours: { avg: 120 },
-			transitionHours: { avg: 36 },
+			freshHours: { avg: 96 },
+			transitionHours: { avg: 24 },
 			transitionedStack: { type: "item", code: "game:rot" },
 			transitionRatio: 1
 		}],

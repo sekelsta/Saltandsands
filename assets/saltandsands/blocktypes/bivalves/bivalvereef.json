@@ -12,42 +12,42 @@
 			"bivalvereef-scallop-*-harvested-*": {
 				convertFrom: "*-scallop-{habitat}-harvested-{cover}", 
 				convertTo: "bivalvereef-scallop-{habitat}-normal-{cover}", 
-				inGameHours: "336",
+				inGameHours: "480",
 				resetBelowTemperature: -8,
 				stopBelowTemperature: -6
 			},
 			"bivalvereef-clam-*-harvested-*": {
 				convertFrom: "*-clam-{habitat}-harvested-{cover}", 
 				convertTo: "bivalvereef-clam-{habitat}-normal-{cover}", 
-				inGameHours: "336",
+				inGameHours: "480",
 				resetBelowTemperature: 2,
 				stopBelowTemperature: 4
 			},
 			"bivalvereef-freshwatermussel-*-harvested-*": {
 				convertFrom: "*-freshwatermussel-{habitat}-harvested-{cover}", 
 				convertTo: "bivalvereef-freshwatermussel-{habitat}-normal-{cover}", 
-				inGameHours: "336",
+				inGameHours: "480",
 				resetBelowTemperature: 2,
 				stopBelowTemperature: 4
 			},
 			"bivalvereef-scallop-*-establishing-*": {
 				convertFrom: "*-scallop-{habitat}-establishing-{cover}", 
 				convertTo: "bivalvereef-scallop-{habitat}-normal-{cover}", 
-				inGameHours: "480",
+				inGameHours: "720",
 				resetBelowTemperature: -8,
 				stopBelowTemperature: -6
 			},
 			"bivalvereef-clam-*-establishing-*": {
 				convertFrom: "*-clam-{habitat}-establishing-{cover}", 
 				convertTo: "bivalvereef-clam-{habitat}-normal-{cover}", 
-				inGameHours: "480",
+				inGameHours: "720",
 				resetBelowTemperature: 2,
 				stopBelowTemperature: 4
 			},
 			"bivalvereef-freshwatermussel-*-establishing-*": {
 				convertFrom: "*-freshwatermussel-{habitat}-establishing-{cover}", 
 				convertTo: "bivalvereef-freshwatermussel-{habitat}-normal-{cover}", 
-				inGameHours: "480",
+				inGameHours: "720",
 				resetBelowTemperature: 2,
 				stopBelowTemperature: 4
 			}
@@ -151,11 +151,11 @@
 		scale: 0.65
 	},
 	dropsByType: {
-		"*scallop-*-normal-*": [ { type: "item", code: "bivalve-scallop-live", quantity: { avg: 2, var: 1 } } ],
+		"*scallop-*-normal-*": [ { type: "item", code: "bivalve-scallop-live", quantity: { avg: 1.2 } } ],
 		"*scallop-*-harvested-*":  [ { type: "item", code: "bivalve-scallop-live", quantity: { avg: 1, var: 0 } } ],
-		"*clam-*-normal-*":  [ { type: "item", code: "bivalve-clam-live", quantity: { avg: 2, var: 1 } } ],
+		"*clam-*-normal-*":  [ { type: "item", code: "bivalve-clam-live", quantity: { avg: 1.2 } } ],
 		"*clam-*-harvested-*":  [ { type: "item", code: "bivalve-clam-live", quantity: { avg: 1, var: 0 } } ],
-		"*freshwatermussel-*-normal-*":  [ { type: "item", code: "bivalve-freshwatermussel-live", quantity: { avg: 2, var: 1 } } ],
+		"*freshwatermussel-*-normal-*":  [ { type: "item", code: "bivalve-freshwatermussel-live", quantity: { avg: 1.2 } } ],
 		"*freshwatermussel-*-harvested-*":  [ { type: "item", code: "bivalve-freshwatermussel-live", quantity: { avg: 1, var: 0 } } ]
 	}
 }

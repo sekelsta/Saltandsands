@@ -32,21 +32,21 @@
 		"*-scallop-dead": {
 			"processingResults": [ { type: "item", code: "saltandsands:bivalvemeat-scallop-raw", quantity: 1  }, { type: "block", code: "game:seashell-scallop-seafoam", quantity: 2  } ],
 			"rareProcessingResultStacks": [ { type: "item", code: "saltandsands:pearl", quantity: 1  } ],
-			"rareProcessingResultChances": [ 0.33 ],
+			"rareProcessingResultChances": [ 0.08 ],
 			"rareProcessingResultExclusive": [ "true" ],
 			"processingTime": 1.8,
 		},
 		"*-clam-dead": {
 			"processingResults": [ { type: "item", code: "saltandsands:bivalvemeat-clam-raw", quantity: 1  }, { type: "block", code: "game:seashell-clam-plain", quantity: 2  } ],
 			"rareProcessingResultStacks": [ { type: "item", code: "saltandsands:pearl", quantity: 1  } ],
-			"rareProcessingResultChances": [ 0.33 ],
+			"rareProcessingResultChances": [ 0.12 ],
 			"rareProcessingResultExclusive": [ "true" ],
 			"processingTime": 1.8,
 		},
 		"*-freshwatermussel-dead": {
 			"processingResults": [ { type: "item", code: "saltandsands:bivalvemeat-freshwatermussel-raw", quantity: 1  }, { type: "block", code: "game:seashell-mussel-musselblue", quantity: 2  } ],
 			"rareProcessingResultStacks": [ { type: "item", code: "saltandsands:pearl", quantity: 1  } ],
-			"rareProcessingResultChances": [ 0.33 ],
+			"rareProcessingResultChances": [ 0.04 ],
 			"rareProcessingResultExclusive": [ "true" ],
 			"processingTime": 1.5,
 		}
