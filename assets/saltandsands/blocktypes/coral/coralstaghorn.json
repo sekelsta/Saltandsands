@@ -11,7 +11,7 @@
     "drawtype": "JSONAndWater",
 	"renderpass": "liquid",
 	"matterstate": "liquid",
-	"blockmaterial": "liquid",
+	"blockmaterial": "water",
 	"faceCullMode": "liquid",
     "randomDrawOffset": true,
     "texturesByType": {
